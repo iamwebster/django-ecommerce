@@ -1,9 +1,9 @@
-{% extends "main/base.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 
 {% block content %}
-    <main class="main">
+    <section class="main__section">
         <div class="container">
             <div class="banner__wrap">
                 <img src="{% static 'img/banner-sneaker.png' %}" alt="banner sneaker" class="banner__img">
@@ -11,11 +11,11 @@
                     <p class="banner__text">The best selection of trends this season.</p>
                     <b class="banner__title">Step into comfort</b>
                     <div class="banner__links__wrap">
-                        <a href="#" class="banner__link">Men</a>
-                        <a href="#" class="banner__link">Women</a>
+                        <a href="{% url 'catalog' %}" class="banner__link">Men</a>
+                        <a href="{% url 'catalog' %}" class="banner__link">Women</a>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 {% endblock %}

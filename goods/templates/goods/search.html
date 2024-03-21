@@ -1,0 +1,20 @@
+{% extends 'goods/catalog.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/search_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/catalog_style.css' %}">
+{% endblock %}
+
+
+{% block title %}Search...{% endblock %}
+
+{% block search %}
+
+<form method="post" class="form__search">
+    {% csrf_token %}
+    <input type="text" class="form__search__input" placeholder="Enter the name of the sneaker...">
+    <button type="submit" class="form__search__button">Search</button>
+</form>
+
+{% endblock %}
