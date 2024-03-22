@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/categories_style.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="main_section">
+    <div class="container">
+        <h2 class="main__title">Select category:</h2>
+        <div class="categories__wrap">
+            <a href="{% url 'all_products' %}" class="categories__link">All products</a>
+            {% for cat in categories %}
+            <a href="#" class="categories__link">{{ cat.name}}</a>
+            {% endfor %}
+        </div>
+    </div>
+</section>    
+
+{% endblock %}

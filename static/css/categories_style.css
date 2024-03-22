@@ -1,0 +1,20 @@
+.categories__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 30px
+}
+
+.categories__link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+    color: #fff;
+	font-size: 68px;
+	font-weight: 500;
+	background-color: #22262A;
+}
+
+.categories__link:hover {
+	background-color: #9c120b;
+}
