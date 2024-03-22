@@ -30,12 +30,12 @@
 }
 
 /* if sale */
-.catalog__card__price__new {
+.catalog__card__price_new {
     font-weight: 500;
     color: #e61515;
 }
 
-.catalog__card__price_sale {
+.catalog__card__price_old {
     text-decoration: line-through;
 }
 
