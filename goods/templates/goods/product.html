@@ -1,11 +1,54 @@
 {% extends 'base.html' %}
+{% load static %}
 
+
+{% block css %} 
+<link rel="stylesheet" href="{% static 'css/product_style.css' %}">
+{% endblock %}
 
 
 {% block content %}
 <section class="main_section">
     <div class="container">
-        
+        <a href="#" class="back-button"><span class="material-icons back-button_icon">arrow_back_ios</span>Back to the list of sneakers</a>
+        <div class="product__wrap">
+            <div class="product__images__wrap">
+                <img class="product__image product__image_main"src="{{ product.image.url }}" alt="">
+                <img class="product__image" src="{{ product.image.url }}" alt="">
+                <img class="product__image" src="{{ product.image.url }}" alt="">
+                <img class="product__image" src="{{ product.image.url }}" alt="">
+                <img class="product__image" src="{{ product.image.url }}" alt="">
+            </div>
+            <div class="product__info__wrap">
+                <h2 class="product__info__title">{{ product.name }}</h2>
+                <p class="product__info__article">Article: {{ product.article }}</p>
+                <div class="product__info__price__wrap">
+                    {% if product.discount %}
+                    <p class="product__info__price product__info__price_new">$ {{ product.sell_price }}</p>
+                    <p class="product__info__price_old">$ {{ product.price }}</p>
+                    {% else %}
+                    <p class="product__info__price">$ {{ product.price }}</p>
+                    {% endif %}
+                </div>
+                <div class="product__info__size__wrap">
+                    <p class="product__info__size__title">Choose a size:</p>
+                    <ul class="product__info__size__list">
+                        <li class="product__info__size__item"><button class="product__info__size__button">38</button></li>
+                        <li class="product__info__size__item"><button class="product__info__size__button">39</button></li>
+                        <li class="product__info__size__item"><button class="product__info__size__button">40</button></li>
+                        <li class="product__info__size__item"><button class="product__info__size__button">41</button></li>
+                        <li class="product__info__size__item"><button class="product__info__size__button">42</button></li>
+                        <li class="product__info__size__item"><button class="product__info__size__button">43</button></li>
+                        <li class="product__info__size__item"><button class="product__info__size__button">44</button></li>
+                    </ul>
+                </div>
+                <button class="product__info__add-button">Add to cart</button>
+                <div class="product__info__description__wrap">
+                    <p class="product__info__description__title">Description:</p>
+                    <p class="product__info__description__text">{{ product.description }}</p>    
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

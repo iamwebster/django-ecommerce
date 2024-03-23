@@ -38,7 +38,7 @@ class Product(models.Model):
             return round(self.price - self.price * self.discount / 100, 2)
 
 
-    def get_article(self):
+    def article(self):
         return f'{self.id:05}'
 
 

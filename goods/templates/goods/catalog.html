@@ -10,13 +10,13 @@
 
     <section class="main_section">
         <div class="container">
-            <h2 class="main__title">{% block title %}{% endblock %}</h2>
+            <h2 class="main__title">{% block title %}{{ slug }}{% endblock %}</h2>
             {% block search %}
             {% endblock %}
             <div class="catalog__wrap">
                 {% for product in products %}
                 <div class="catalog__card">
-                    <a href="{% url 'product' product.slug %}" class="catalog__card__link">
+                    <a href="{% url 'product_detail' product.slug %}" class="catalog__card__link">
                         <img src="{{ product.image.url }}" alt="#" class="catalog__card__img">
                     </a>
                     <div class="catalog__card__info">

@@ -15,18 +15,15 @@ def categories(request, gender_slug):
 def catalog(request, gender_slug, category_slug):
     if category_slug == "all":
         products = Product.objects.filter(gender__slug=gender_slug)
-        category_name = 'All products'
     else:
         products = Product.objects.filter(
             gender__slug=gender_slug, category__slug=category_slug
         )
-        category = Category.objects.get(slug=category_slug)
-        category_name = category.name
-    
+
     return render(
         request,
         "goods/catalog.html",
-        {"products": products, "slug": category_slug, 'category_name': category_name},
+        {"products": products, "slug": category_slug},
     )
 
 
