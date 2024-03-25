@@ -37,75 +37,23 @@
                     </div>
                 </div>
                 {% endfor %}
-                {% comment %} <div class="catalog__card">
-                    <a href="#" class="catalog__card__link">
-                        <img src="{% static 'img/sneaker_img.png' %}" alt="#" class="catalog__card__img">
-                    </a>
-                    <div class="catalog__card__info">
-                        <a href="#" class="catalog__card__name">Nike Air Force 1 Premium</a>
-                        <div class="catalog__card__price__wrap">
-                            <p class="catalog__card__price__new">$200</p>
-                            <p class="catalog__card__price_sale">$200</p>
-                            <p class="catalog__card__price">$200</p>
-                        </div>
-                        <button class="catalog__card__button">
-                            <span class="catalog__card__button__add">add to cart</span>
-                            <span class="material-icons catalog__card__button__icon">add_shopping_cart</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="catalog__card">
-                    <a href="#" class="catalog__card__link">
-                        <img src="{% static 'img/sneaker_img.png' %}" alt="#" class="catalog__card__img">
-                    </a>
-                    <div class="catalog__card__info">
-                        <a href="#" class="catalog__card__name">Nike Air Force 1 Premium</a>
-                        <div class="catalog__card__price__wrap">
-                            <p class="catalog__card__price__new">$200</p>
-                            <p class="catalog__card__price_sale">$200</p>
-                            <p class="catalog__card__price">$200</p>
-                        </div>
-                        <button class="catalog__card__button">
-                            <span class="catalog__card__button__add">add to cart</span>
-                            <span class="material-icons catalog__card__button__icon">add_shopping_cart</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="catalog__card">
-                    <a href="#" class="catalog__card__link">
-                        <img src="{% static 'img/sneaker_img.png' %}" alt="#" class="catalog__card__img">
-                    </a>
-                    <div class="catalog__card__info">
-                        <a href="#" class="catalog__card__name">Nike Air Force 1 Premium</a>
-                        <div class="catalog__card__price__wrap">
-                            <p class="catalog__card__price__new">$200</p>
-                            <p class="catalog__card__price_sale">$200</p>
-                            <p class="catalog__card__price">$200</p>
-                        </div>
-                        <button class="catalog__card__button">
-                            <span class="catalog__card__button__add">add to cart</span>
-                            <span class="material-icons catalog__card__button__icon">add_shopping_cart</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="catalog__card">
-                    <a href="#" class="catalog__card__link">
-                        <img src="{% static 'img/sneaker_img.png' %}" alt="#" class="catalog__card__img">
-                    </a>
-                    <div class="catalog__card__info">
-                        <a href="#" class="catalog__card__name">Nike Air Force 1 Premium</a>
-                        <div class="catalog__card__price__wrap">
-                            <p class="catalog__card__price__new">$200</p>
-                            <p class="catalog__card__price_sale">$200</p>
-                            <p class="catalog__card__price">$200</p>
-                        </div>
-                        <button class="catalog__card__button">
-                            <span class="catalog__card__button__add">add to cart</span>
-                            <span class="material-icons catalog__card__button__icon">add_shopping_cart</span>
-                        </button>
-                    </div>
-                </div> {% endcomment %}
-                
+            </div>
+            <div class="pagination__wrap">
+                {% if products.has_previous %}
+                <a href="?page={{ products.previous_page_number }}"><span class="material-icons pagination__button">arrow_back_ios</span></a>
+                {% else %}
+                <span class="material-icons pagination__button disabled">arrow_back_ios</span>
+                {% endif %}
+
+                {% for page in products.paginator.page_range %}
+                <a {% if products.number == page %} class="disabled" {% endif %} href="?page={{ page }}">{{ page }}</a>
+                {% endfor %}
+
+                {% if products.has_next %}
+                <a href="?page={{ products.next_page_number }}"><span class="material-icons pagination__button">arrow_forward_ios</span></a>
+                {% else %}
+                <span class="material-icons pagination__button disabled">arrow_forward_ios</span>
+                {% endif %}
             </div>
         </div>
     </section>

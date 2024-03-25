@@ -13,17 +13,22 @@ def categories(request, gender_slug):
 
 
 def catalog(request, gender_slug, category_slug):
+    page = request.GET.get('page', 1)
+
     if category_slug == "all":
         products = Product.objects.filter(gender__slug=gender_slug)
     else:
         products = Product.objects.filter(
             gender__slug=gender_slug, category__slug=category_slug
         )
+    
+    paginator = Paginator(products, 30)
+    current_page = paginator.page(int(page))
 
     return render(
         request,
         "goods/catalog.html",
-        {"products": products, "slug": category_slug},
+        {"products": current_page, "slug": category_slug},
     )
 
 

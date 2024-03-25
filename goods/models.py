@@ -22,6 +22,8 @@ class Category(models.Model):
     
 
 class Product(models.Model):
+    class Meta:
+        ordering = ('id',)
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
     description = models.TextField(null=True, blank=True)
