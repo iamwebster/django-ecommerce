@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load goods_tags %}
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/catalog_style.css' %}">
@@ -7,12 +8,28 @@
 
 
 {% block content %}
-
     <section class="main_section">
         <div class="container">
-            <h2 class="main__title">{% block title %}{{ slug }}{% endblock %}</h2>
-            {% block search %}
-            {% endblock %}
+            {% if products %}
+            <h2 class="main__title">{% categories_tag slug %}</h2>
+            <div class="dropdown__wrap">
+                <div class="dropdown_info">
+                    <span class="dropdown__title">Sort by:</span>
+                    {% if request.GET.order_by == 'price' %}
+                    <span>low to high</span>
+                    {% elif request.GET.order_by == '-price' %}
+                    <span>high to low</span>
+                    {% else %}
+                    <span>default</span>
+                    {% endif %}
+                </div>
+                <ul class="dropdown">
+                    <li><a href="?">Default</a></li>
+                    <li><a href="?order_by=price">Price: low to high</a></li>
+                    <li><a href="?order_by=-price">Price: high to low</a></li>
+                </ul>
+            </div>
+
             <div class="catalog__wrap">
                 {% for product in products %}
                 <div class="catalog__card">
@@ -40,21 +57,24 @@
             </div>
             <div class="pagination__wrap">
                 {% if products.has_previous %}
-                <a href="?page={{ products.previous_page_number }}"><span class="material-icons pagination__button">arrow_back_ios</span></a>
+                <a href="?{% change_params page=products.previous_page_number %}"><span class="material-icons pagination__button">arrow_back_ios</span></a>
                 {% else %}
                 <span class="material-icons pagination__button disabled">arrow_back_ios</span>
                 {% endif %}
 
                 {% for page in products.paginator.page_range %}
-                <a {% if products.number == page %} class="disabled" {% endif %} href="?page={{ page }}">{{ page }}</a>
+                <a {% if products.number == page %} class="disabled"{% endif %} href="?{% change_params page=page %}">{{ page }}</a>
                 {% endfor %}
 
                 {% if products.has_next %}
-                <a href="?page={{ products.next_page_number }}"><span class="material-icons pagination__button">arrow_forward_ios</span></a>
+                <a href="?{% change_params page=products.next_page_number %}"><span class="material-icons pagination__button">arrow_forward_ios</span></a>
                 {% else %}
                 <span class="material-icons pagination__button disabled">arrow_forward_ios</span>
                 {% endif %}
             </div>
+        {% else %}
+        <p class="nothing-found">Nothing was found</p>
+        {% endif %}
         </div>
     </section>
 

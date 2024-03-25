@@ -10,14 +10,14 @@
 {% block content %}
 <section class="main_section">
     <div class="container">
-        <a href="#" class="back-button"><span class="material-icons back-button_icon">arrow_back_ios</span>Back to the list of sneakers</a>
+        <a href="{{ request.META.HTTP_REFERER }}" class="back-button"><span class="material-icons back-button_icon">arrow_back_ios</span>Back to the list of sneakers</a>
         <div class="product__wrap">
             <div class="product__images__wrap">
                 <img class="product__image product__image_main"src="{{ product.image.url }}" alt="">
-                <img class="product__image" src="{{ product.image.url }}" alt="">
-                <img class="product__image" src="{{ product.image.url }}" alt="">
-                <img class="product__image" src="{{ product.image.url }}" alt="">
-                <img class="product__image" src="{{ product.image.url }}" alt="">
+                <img class="product__image" src="{{ product.image.url }}" alt="{{ product.name }}">
+                <img class="product__image" src="{{ product.image.url }}" alt="{{ product.name }}">
+                <img class="product__image" src="{{ product.image.url }}" alt="{{ product.name }}">
+                <img class="product__image" src="{{ product.image.url }}" alt="{{ product.name }}">
             </div>
             <div class="product__info__wrap">
                 <h2 class="product__info__title">{{ product.name }}</h2>

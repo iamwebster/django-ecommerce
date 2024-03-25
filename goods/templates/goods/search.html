@@ -1,4 +1,4 @@
-{% extends 'goods/catalog.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block css %}
@@ -7,14 +7,45 @@
 {% endblock %}
 
 
-{% block title %}Search...{% endblock %}
 
-{% block search %}
 
-<form method="post" class="form__search">
-    {% csrf_token %}
-    <input type="text" class="form__search__input" placeholder="Enter the name of the sneaker...">
-    <button type="submit" class="form__search__button">Search</button>
-</form>
-
+{% block content %}
+<section class="main_section">
+    <div class="container">
+        <h2 class="main__title">{% block title %}Search...{% endblock %}</h2>
+        <form method="get" class="form__search">
+            <input type="text" class="form__search__input" placeholder="Enter the sneaker name or article number..." name="q">
+            <button type="submit" class="form__search__button">Search</button>
+        </form>
+        {% if not products %}
+        <p class="nothing-found">Nothing was found</p>
+        {% else %}
+        <div class="catalog__wrap">
+            {% for product in products %}
+            <div class="catalog__card">
+                <a href="{% url 'product_detail' product.slug %}" class="catalog__card__link">
+                    <img src="{{ product.image.url }}" alt="#" class="catalog__card__img">
+                </a>
+                <div class="catalog__card__info">
+                    <a href="#" class="catalog__card__name">{{ product.name }}</a>
+                    <div class="catalog__card__price__wrap">
+                        {% if product.discount %}
+                        <p class="catalog__card__price_new">${{ product.sell_price }}</p>
+                        <p class="catalog__card__price_old">${{ product.price }}</p>
+                        <small>-{{ product.discount }}%</small>
+                        {% else %}
+                        <p class="catalog__card__price">{{ product.price }}</p>
+                        {% endif %}
+                    </div>
+                    <button class="catalog__card__button">
+                        <span class="catalog__card__button__add">add to cart</span>
+                        <span class="material-icons catalog__card__button__icon">add_shopping_cart</span>
+                    </button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>
 {% endblock %}

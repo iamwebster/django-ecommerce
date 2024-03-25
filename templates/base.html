@@ -20,21 +20,21 @@
     <header class="header">
         <div class="container">
             <div class="header__wrap">
-                <div class="header__logo">
-                    <h1 class="header__logo__title">Sneaker World</h1>
-                    <span class="material-icons header__logo__icon">
-                        public
+                <a href="{% url 'home' %}" class="header__logo">
+                    <span class="header__logo__title">
+                        Sneaker World 
                     </span>
-                </div>
+                    <span class="material-icons header__logo__icon">public</span>
+                </a>
                 <nav class="header__nav">
                     <ul class="header__list">
-                        <li class="header__item"><a href="{% url 'home' %}" class="header__link">Home</a></li>
+                        {% comment %} <li class="header__item"><a href="{% url 'home' %}" class="header__link">Home</a></li> {% endcomment %}
                         <li class="header__item"><a href="/admin" class="header__link">Profile</a></li>
                         <li class="header__item"><a href="{% url 'about' %}" class="header__link">About us</a></li>
                     </ul>
                 </nav>
                 <div class="header__user__links">
-                    <a href="#" class="material-icons header__user__link">search</a>
+                    <a href="{% url 'search' %}" class="material-icons header__user__link">search</a>
                     <a href="#" class="material-icons header__user__link">favorite_border</a>
                     <a href="#" class="material-icons header__user__link">shopping_cart</a>
                 </div>

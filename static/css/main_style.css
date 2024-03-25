@@ -58,6 +58,7 @@ span {
 
 /* HEADER */
 .header__logo {
+	display: block;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -80,6 +81,7 @@ span {
 .header__logo__title {
 	font-size: 28px;
 	line-height: 42px;
+	font-weight: 700;
 }
 
 .header__list {
@@ -159,4 +161,13 @@ span {
 	text-align: center;
 	font-size: 28px;
     padding-bottom: 50px;
+}
+
+.nothing-found {
+	text-align: center;
+	font-size: 50px;
+	padding-top: 150px;
+	cursor: default;
+	font-weight: 600;
+	color: #999999;
 }
