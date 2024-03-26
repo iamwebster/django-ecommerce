@@ -5,7 +5,7 @@ from .utils import query_search
 
 
 def categories(request, gender_slug):
-    categories = Category.objects.filter(gender__slug=gender_slug)
+    categories = Category.objects.all()
     return render(
         request,
         "goods/categories.html",
