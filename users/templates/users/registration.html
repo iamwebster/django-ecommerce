@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/users_style.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="main_section">
+    <div class="container container_users">
+        <div class="form__wrap">
+            <h2 class="main__title">Register</h2>
+            <form method="post" class="users__form">
+                {% csrf_token %}
+                <div class="form__item">
+                    <label for="name" class="form__label">Name*</label>
+                    <input type="text" class="form__field" id="name">
+                </div>
+                <div class="form__item">
+                    <label for="surname" class="form__label">Surname*</label>
+                    <input type="text" class="form__field" id="surname"> 
+                </div>
+
+                <div class="form__item">
+                    <label for="username" class="form__label">Username*</label>   
+                    <input type="text" class="form__field" id="username"> 
+                </div>
+                <div class="form__item">
+                    <label for="email" class="form__label">Email*</label>  
+                    <input type="email" class="form__field" id="email">  
+                </div>
+                <div class="form__item">  
+                    <label for="password" class="form__label">Password*</label>
+                    <input type="password" class="form__field" id="password"> 
+                </div> 
+                <div class="form__item">
+                    <label for="repassword" class="form__label">Repassword*</label>  
+                    <input type="password" class="form__field" id="repassword">  
+                </div>
+                <p>* - required field</p>
+                <button class="form__button" type="submit">Submit</button>  
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

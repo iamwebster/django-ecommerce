@@ -1,0 +1,93 @@
+/* REGISTER */
+
+.container_users {
+    max-width: 700px;
+}
+
+.form__wrap {
+    border: 2px solid black;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.users__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form__label {
+    font-size: 18px;
+}
+
+.form__field {
+    border: 1px solid #333;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.form__button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form__button:hover {
+    background-color: #9c120b;
+}
+
+/* LOGIN */
+
+.auth__links__wrap {
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+
+.auth__link:hover {
+    text-decoration: underline;
+}
+
+.auth__another__wrap {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.auth__another__title {
+    padding: 15px 0;
+}
+
+.auth__another__link {
+    position: relative;
+    background-color: #333;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 10px 10px 30px;
+}
+
+.auth__another__link__img {
+    position: absolute;
+    left: 8px;
+    top: 12px;
+}
+
+.auth__another__link:hover {
+    background-color: #9c120b;
+}
+
+
+/* PROFILE */
+
+/* .profile__wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile__form__wrap,
+.profile__cart__wrap {
+    width: 48%;
+} */

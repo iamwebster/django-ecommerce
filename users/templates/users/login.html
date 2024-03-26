@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/users_style.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="main_section">
+    <div class="container container_users">
+        <div class="form__wrap">
+            <h2 class="main__title">Login</h2>
+            <form method="post" class="users__form">
+                {% csrf_token %}
+                <div class="form__item">
+                    <label for="name" class="form__label">Username*</label>
+                    <input type="text" class="form__field" id="name">
+                </div>
+                <div class="form__item">
+                    <label for="password" class="form__label">Password*</label>
+                    <input type="password" class="form__field" id="password"> 
+                </div>
+                <p>* - required field</p>
+                <button class="form__button" type="submit">Submit</button> 
+            </form>
+            <div class="auth__links__wrap">
+                <a href="#" class="auth__link">Forgot the password?</a>
+                <span> | </span>
+                <a href="#" class="auth__link">Create profile</a>
+            </div> 
+            <div class="auth__another__wrap">
+                <p class="auth__another__title">Other authorization methods:</p>
+                <div class="auth__another__links__wrap">
+                    <a href="#" class="auth__another__link"><img src="{% static 'img/icons/google.svg' %}" alt="#" class="auth__another__link__img"> Google</a>
+                    <a href="#" class="auth__another__link"><img src="{% static 'img/icons/facebook.svg' %}" alt="#" class="auth__another__link__img"> Facebook</a>
+                    <a href="#" class="auth__another__link"><img src="{% static 'img/icons/github.svg' %}" alt="#" class="auth__another__link__img"> GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

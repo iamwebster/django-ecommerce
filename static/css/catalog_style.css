@@ -84,6 +84,21 @@
 
 /* FILTERS */
 
+.catalog__info {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+
+}
+
+.catalog__info__text {
+    padding-bottom: 20px;
+}
+
+.catalog__info__qty {
+    font-weight: 500;
+}
+
 .dropdown__wrap {
     display: inline-block;
     position: relative;

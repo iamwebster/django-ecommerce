@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/users_style.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="main_section">
+    <div class="container">
+        <div class="profile__wrap">
+            <div class="form__wrap profile__form__wrap">
+                <h2 class="main__title">Profile</h2>
+                <form method="post" class="users__form">
+                    {% csrf_token %}
+                    <div class="form__item">
+                        <label for="name" class="form__label">Username*</label>
+                        <input type="text" class="form__field" id="name">
+                    </div>
+                    <div class="form__item">
+                        <label for="password" class="form__label">Password*</label>
+                        <input type="password" class="form__field" id="password"> 
+                    </div>
+                    <p>* - required field</p>
+                    <button class="form__button" type="submit">Submit</button> 
+                </form>
+            </div>
+            {% comment %} <div class="form__wrap profile__cart__wrap">
+                <h2 class="main__title">Cart</h2>
+                <div class="profile__cart__product__wrap">
+                    <p class="profile__cart__product__title">Products:</p> 
+
+                    <div class="profile__cart__product__item">
+                        <button class="profile__cart__product__btn">-</button>
+                        <input type="number" class="profile__cart__product__qty">
+                        <button class="profile__cart__product__btn">+</button>
+                        <p class="profile__cart__product__price">$321</p>
+                        <p class="profile__cart__product__price_total">$642</p>
+                        <button class="profile__cart__product__delete">Delete</button>
+                    </div>
+                    <div class="profile__cart__product__item">
+                        <button class="profile__cart__product__btn">-</button>
+                        <input type="number" class="profile__cart__product__qty">
+                        <button class="profile__cart__product__btn">+</button>
+                        <p class="profile__cart__product__price">$321</p>
+                        <p class="profile__cart__product__price_total">$642</p>
+                        <button class="profile__cart__product__delete">Delete</button>
+                    </div>
+                </div>
+                <div class="profile__cart__total__wrap">
+                    <p class="profile__cart__product__title">Total price:</p>
+                    <p class="profile__cart__total_product_price">$42142</p>
+                </div>
+            </div> {% endcomment %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

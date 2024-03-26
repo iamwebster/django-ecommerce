@@ -20,6 +20,7 @@
         {% if not products %}
         <p class="nothing-found">Nothing was found</p>
         {% else %}
+        <p class="catalog__info__text">Quantity of Sneakers: <span class="catalog__info__qty">{{ products|length }}</span></p>    
         <div class="catalog__wrap">
             {% for product in products %}
             <div class="catalog__card">

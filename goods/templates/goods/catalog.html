@@ -12,24 +12,26 @@
         <div class="container">
             {% if products %}
             <h2 class="main__title">{% categories_tag slug %}</h2>
-            <div class="dropdown__wrap">
-                <div class="dropdown_info">
-                    <span class="dropdown__title">Sort by:</span>
-                    {% if request.GET.order_by == 'price' %}
-                    <span>low to high</span>
-                    {% elif request.GET.order_by == '-price' %}
-                    <span>high to low</span>
-                    {% else %}
-                    <span>default</span>
-                    {% endif %}
+            <div class="catalog__info">
+                <div class="dropdown__wrap">
+                    <div class="dropdown_info">
+                        <span class="dropdown__title">Sort by:</span>
+                        {% if request.GET.order_by == 'price' %}
+                        <span>low to high</span>
+                        {% elif request.GET.order_by == '-price' %}
+                        <span>high to low</span>
+                        {% else %}
+                        <span>default</span>
+                        {% endif %}
+                    </div>
+                    <ul class="dropdown">
+                        <li><a href="?">Default</a></li>
+                        <li><a href="?order_by=price">Price: low to high</a></li>
+                        <li><a href="?order_by=-price">Price: high to low</a></li>
+                    </ul>
                 </div>
-                <ul class="dropdown">
-                    <li><a href="?">Default</a></li>
-                    <li><a href="?order_by=price">Price: low to high</a></li>
-                    <li><a href="?order_by=-price">Price: high to low</a></li>
-                </ul>
+                <p>Quantity of Sneakers: <span class="catalog__info__qty">{{ products|length }}</span></p>                
             </div>
-
             <div class="catalog__wrap">
                 {% for product in products %}
                 <div class="catalog__card">
