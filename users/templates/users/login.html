@@ -15,21 +15,25 @@
             <h2 class="main__title">Login</h2>
             <form method="post" class="users__form">
                 {% csrf_token %}
+                
+                <p class="error-text">{% if form.non_field_errors %}{{ form.non_field_errors.as_text }}{% endif %}</p>
+                
                 <div class="form__item">
-                    <label for="name" class="form__label">Username*</label>
-                    <input type="text" class="form__field" id="name">
+                    <label for="id_name" class="form__label">Username*</label>
+                    <input type="text" name="username" value="{% if form.username.value %}{{ form.username.value }}{% endif %}" class="form__field" id="id_name" required>
                 </div>
                 <div class="form__item">
-                    <label for="password" class="form__label">Password*</label>
-                    <input type="password" class="form__field" id="password"> 
+                    <label for="id_password" class="form__label">Password*</label>
+                    <input type="password" name="password" class="form__field" id="id_password" required> 
                 </div>
+
                 <p>* - required field</p>
                 <button class="form__button" type="submit">Submit</button> 
             </form>
             <div class="auth__links__wrap">
                 <a href="#" class="auth__link">Forgot the password?</a>
                 <span> | </span>
-                <a href="#" class="auth__link">Create profile</a>
+                <a href="{% url 'register' %}" class="auth__link">Create profile</a>
             </div> 
             <div class="auth__another__wrap">
                 <p class="auth__another__title">Other authorization methods:</p>

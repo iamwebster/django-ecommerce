@@ -28,9 +28,10 @@
                 </a>
                 <nav class="header__nav">
                     <ul class="header__list">
-                        {% comment %} <li class="header__item"><a href="{% url 'home' %}" class="header__link">Home</a></li> {% endcomment %}
+                        {% comment %} <li class="header__item"><a href="{% url 'logout' %}" class="header__link">{{ request.user.username }}</a></li> {% endcomment %}
                         <li class="header__item"><a href="{% url 'profile' %}" class="header__link">Profile</a></li>
                         <li class="header__item"><a href="{% url 'about' %}" class="header__link">About us</a></li>
+                        {% if user.is_superuser %}<li class="header__item"><a href="/admin" class="header__link">To Admin panel</a></li>{% endif %}
                     </ul>
                 </nav>
                 <div class="header__user__links">

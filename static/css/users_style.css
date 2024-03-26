@@ -91,3 +91,8 @@
 .profile__cart__wrap {
     width: 48%;
 } */
+
+.error-text {
+    color: #9c120b;
+    font-size: 13px;
+}

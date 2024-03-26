@@ -17,29 +17,52 @@
                 {% csrf_token %}
                 <div class="form__item">
                     <label for="name" class="form__label">Name*</label>
-                    <input type="text" class="form__field" id="name">
+                    <input type="text" placeholder="Ivan" value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}" name="first_name" class="form__field" id="name" required>
+                    {% if form.first_name.errors %}
+                    <p class="error-text">{{ form.first_name.errors.as_text }}</p>
+                    {% endif %}
                 </div>
+
                 <div class="form__item">
                     <label for="surname" class="form__label">Surname*</label>
-                    <input type="text" class="form__field" id="surname"> 
+                    <input type="text" placeholder="Ivanov" value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}"  name="last_name" class="form__field" id="surname" required> 
+                    {% if form.last_name.errors %}
+                    <p class="error-text">{{ form.last_name.errors.as_text }}</p>
+                    {% endif %}
                 </div>
 
                 <div class="form__item">
                     <label for="username" class="form__label">Username*</label>   
-                    <input type="text" class="form__field" id="username"> 
+                    <input type="text" placeholder="IvanIvanIvan" value="{% if form.username.value %}{{ form.username.value }}{% endif %}"  name="username" class="form__field" id="username" required> 
+                    {% if form.username.errors %}
+                    <p class="error-text">{{ form.username.errors.as_text }}</p>
+                    {% endif %}
                 </div>
+
                 <div class="form__item">
                     <label for="email" class="form__label">Email*</label>  
-                    <input type="email" class="form__field" id="email">  
+                    <input type="email" placeholder="ivan@ivan.com" value="{% if form.email.value %}{{ form.email.value }}{% endif %}"  name="email" class="form__field" id="email" required>  
+                    {% if form.email.errors %}
+                    <p class="error-text">{{ form.email.errors.as_text }}</p>
+                    {% endif %}
                 </div>
+
                 <div class="form__item">  
                     <label for="password" class="form__label">Password*</label>
-                    <input type="password" class="form__field" id="password"> 
+                    <input type="password" placeholder="Your password" name="password1" class="form__field" id="password" required> 
+                    {% if form.password1.errors %}
+                    <p class="error-text">{{ form.password1.errors.as_text }}</p>
+                    {% endif %}
                 </div> 
+
                 <div class="form__item">
                     <label for="repassword" class="form__label">Repassword*</label>  
-                    <input type="password" class="form__field" id="repassword">  
+                    <input type="password" placeholder="Repeat password" name="password2" class="form__field" id="repassword" required> 
+                    {% if form.password2.errors %}
+                    <p class="error-text">{{ form.password2.errors.as_text }}</p>
+                    {% endif %} 
                 </div>
+
                 <p>* - required field</p>
                 <button class="form__button" type="submit">Submit</button>  
             </form>
