@@ -28,8 +28,13 @@
                 </a>
                 <nav class="header__nav">
                     <ul class="header__list">
-                        {% comment %} <li class="header__item"><a href="{% url 'logout' %}" class="header__link">{{ request.user.username }}</a></li> {% endcomment %}
+                        {% if user.is_authenticated %}
                         <li class="header__item"><a href="{% url 'profile' %}" class="header__link">Profile</a></li>
+                        <li class="header__item"><a href="{% url 'logout' %}" class="header__link">Logout</a></li>
+                        {% else %}
+                        <li class="header__item"><a href="{% url 'login' %}" class="header__link">Login</a></li>
+                        <li class="header__item"><a href="{% url 'register' %}" class="header__link">Register</a></li>
+                        {% endif %}
                         <li class="header__item"><a href="{% url 'about' %}" class="header__link">About us</a></li>
                         {% if user.is_superuser %}<li class="header__item"><a href="/admin" class="header__link">To Admin panel</a></li>{% endif %}
                     </ul>

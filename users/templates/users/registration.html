@@ -16,48 +16,48 @@
             <form method="post" class="users__form">
                 {% csrf_token %}
                 <div class="form__item">
-                    <label for="name" class="form__label">Name*</label>
-                    <input type="text" placeholder="Ivan" value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}" name="first_name" class="form__field" id="name" required>
+                    <label for="id_name" class="form__label">Name*</label>
+                    <input type="text" placeholder="Ivan" value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}" name="first_name" class="form__field" id="id_name" required>
                     {% if form.first_name.errors %}
                     <p class="error-text">{{ form.first_name.errors.as_text }}</p>
                     {% endif %}
                 </div>
 
                 <div class="form__item">
-                    <label for="surname" class="form__label">Surname*</label>
-                    <input type="text" placeholder="Ivanov" value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}"  name="last_name" class="form__field" id="surname" required> 
+                    <label for="id_surname" class="form__label">Surname*</label>
+                    <input type="text" placeholder="Ivanov" value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}"  name="last_name" class="form__field" id="id_surname" required> 
                     {% if form.last_name.errors %}
                     <p class="error-text">{{ form.last_name.errors.as_text }}</p>
                     {% endif %}
                 </div>
 
                 <div class="form__item">
-                    <label for="username" class="form__label">Username*</label>   
-                    <input type="text" placeholder="IvanIvanIvan" value="{% if form.username.value %}{{ form.username.value }}{% endif %}"  name="username" class="form__field" id="username" required> 
+                    <label for="id_username" class="form__label">Username*</label>   
+                    <input type="text" placeholder="IvanIvanIvan" value="{% if form.username.value %}{{ form.username.value }}{% endif %}"  name="username" class="form__field" id="id_username" required> 
                     {% if form.username.errors %}
                     <p class="error-text">{{ form.username.errors.as_text }}</p>
                     {% endif %}
                 </div>
 
                 <div class="form__item">
-                    <label for="email" class="form__label">Email*</label>  
-                    <input type="email" placeholder="ivan@ivan.com" value="{% if form.email.value %}{{ form.email.value }}{% endif %}"  name="email" class="form__field" id="email" required>  
+                    <label for="id_email" class="form__label">Email*</label>  
+                    <input type="email" placeholder="ivan@ivan.com" value="{% if form.email.value %}{{ form.email.value }}{% endif %}"  name="email" class="form__field" id="id_email" required>  
                     {% if form.email.errors %}
                     <p class="error-text">{{ form.email.errors.as_text }}</p>
                     {% endif %}
                 </div>
 
                 <div class="form__item">  
-                    <label for="password" class="form__label">Password*</label>
-                    <input type="password" placeholder="Your password" name="password1" class="form__field" id="password" required> 
+                    <label for="id_password" class="form__label">Password*</label>
+                    <input type="password" placeholder="Your password" name="password1" class="form__field" id="id_password" required> 
                     {% if form.password1.errors %}
                     <p class="error-text">{{ form.password1.errors.as_text }}</p>
                     {% endif %}
                 </div> 
 
                 <div class="form__item">
-                    <label for="repassword" class="form__label">Repassword*</label>  
-                    <input type="password" placeholder="Repeat password" name="password2" class="form__field" id="repassword" required> 
+                    <label for="id_repassword" class="form__label">Repassword*</label>  
+                    <input type="password" placeholder="Repeat password" name="password2" class="form__field" id="id_repassword" required> 
                     {% if form.password2.errors %}
                     <p class="error-text">{{ form.password2.errors.as_text }}</p>
                     {% endif %} 

@@ -10,52 +10,59 @@
 {% block content %}
 
 <section class="main_section">
-    <div class="container">
-        <div class="profile__wrap">
-            <div class="form__wrap profile__form__wrap">
-                <h2 class="main__title">Profile</h2>
-                <form method="post" class="users__form">
-                    {% csrf_token %}
-                    <div class="form__item">
-                        <label for="name" class="form__label">Username*</label>
-                        <input type="text" class="form__field" id="name">
+    <div class="container container_profile">
+        <h2 class="main__title">Your profile</h2>
+        <div class="profile__info__wrap">
+            {% if user.image %}
+            <img class="profile__img" src="{{ user.image.url }}" alt="user_image">
+            {% else %}
+            <img class="profile__img" src="{% static 'img/default_image.png' %}" alt="default_image">
+            {% endif %}
+            <div class="profile__info">
+                <div class="profile__name__update__wrap">
+                    <p class="profile__name">{{ user.first_name }} {{ user.last_name }}</p>
+                    <a href="{% url 'update_profile' %}" class="profile__update__link">Update profile</a>
+                </div>
+                <p class="profile__username">username: {{ user.username }}</p>
+                <p class="profile__email">email: {{ user.email }}</p>
+                <div class="profile__analytics__wrap">
+                    <div class="profile__analytics__item">
+                        <p class="profile__analytics__detail">Purchased sneakers:</p>
+                        <p class="profile__analytics__detail-total">4</p>
                     </div>
-                    <div class="form__item">
-                        <label for="password" class="form__label">Password*</label>
-                        <input type="password" class="form__field" id="password"> 
+                    <div class="profile__analytics__item">
+                        <p class="profile__analytics__detail">Amount of purchases:</p>
+                        <p class="profile__analytics__detail-total">$1274</p>
                     </div>
-                    <p>* - required field</p>
-                    <button class="form__button" type="submit">Submit</button> 
-                </form>
+                </div>
             </div>
-            {% comment %} <div class="form__wrap profile__cart__wrap">
-                <h2 class="main__title">Cart</h2>
-                <div class="profile__cart__product__wrap">
-                    <p class="profile__cart__product__title">Products:</p> 
-
-                    <div class="profile__cart__product__item">
-                        <button class="profile__cart__product__btn">-</button>
-                        <input type="number" class="profile__cart__product__qty">
-                        <button class="profile__cart__product__btn">+</button>
-                        <p class="profile__cart__product__price">$321</p>
-                        <p class="profile__cart__product__price_total">$642</p>
-                        <button class="profile__cart__product__delete">Delete</button>
-                    </div>
-                    <div class="profile__cart__product__item">
-                        <button class="profile__cart__product__btn">-</button>
-                        <input type="number" class="profile__cart__product__qty">
-                        <button class="profile__cart__product__btn">+</button>
-                        <p class="profile__cart__product__price">$321</p>
-                        <p class="profile__cart__product__price_total">$642</p>
-                        <button class="profile__cart__product__delete">Delete</button>
-                    </div>
-                </div>
-                <div class="profile__cart__total__wrap">
-                    <p class="profile__cart__product__title">Total price:</p>
-                    <p class="profile__cart__total_product_price">$42142</p>
-                </div>
-            </div> {% endcomment %}
         </div>
+        <h2 class="profile__orders__title">Your orders:</h2>
+        <div class="profile__orders__wrap">
+            <div class="profile__order__item">
+                <div class="profile__order__info__wrap">
+                    <p class="profile__order__info">Order № 256 - 03/27/2024 16:51</p>
+                    <p>Status: <span class="profile__order__status">in processed</span></p>
+                </div>
+                <a href="#" class="profile__order__detail__link">Order details</a>
+            </div>
+            <div class="profile__order__item">
+                <div class="profile__order__info__wrap">
+                    <p class="profile__order__info">Order № 241 - 03/15/2024 08:21</p>
+                    <p>Status: <span class="profile__order__status">completed</span></p>
+                </div>
+                <a href="#" class="profile__order__detail__link">Order details</a>
+            </div>
+            <div class="profile__order__item">
+                <div class="profile__order__info__wrap">
+                    <p class="profile__order__info">Order № 213 - 02/19/2024 13:01</p>
+                    <p>Status: <span class="profile__order__status">completed</span></p>
+                </div>
+                <a href="#" class="profile__order__detail__link">Order details</a>
+            </div>
+
+        </div>
+        <a href="#" class="profile__order__history">Show the order history</a>
     </div>
 </section>
 

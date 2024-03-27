@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/users_style.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="main_section">
+    <div class="container container_users">
+        <div class="form__wrap">
+            <h2 class="main__title">Edit profile</h2>
+            <form method="post" class="users__form" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% if user.image %}
+                <div class="form__image__wrap">
+                    <img class="form__image" src="{{ user.image.url }}" alt="user_image">
+                </div>
+                {% else %}
+                <div class="form__image__wrap">
+                    <img class="form__image" src="{% static 'img/default_image.png' %}" alt="default_image">
+                </div>
+                {% endif %}
+                
+                <div class="form__item">
+                    <label for="id_image" class="form__label">Image</label>
+                    <input type="file" name="image" class="form__field" id="id_image">
+                    {% if form.image.errors %}
+                    <p class="error-text">{{ form.image.errors.as_text }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="form__item">
+                    <label for="id_name" class="form__label">Name</label>
+                    <input type="text" value="{{ form.first_name.value }}" name="first_name" class="form__field" id="id_name">
+                    {% if form.first_name.errors %}
+                    <p class="error-text">{{ form.first_name.errors.as_text }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="form__item">
+                    <label for="id_surname" class="form__label">Surname</label>
+                    <input type="text" value="{{ form.last_name.value }}" name="last_name" class="form__field" id="id_surname"> 
+                    {% if form.last_name.errors %}
+                    <p class="error-text">{{ form.last_name.errors.as_text }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="form__item">
+                    <label for="id_username" class="form__label">Username</label>   
+                    <input type="text" value="{{ form.username.value }}"  name="username" class="form__field" id="id_username"> 
+                    {% if form.username.errors %}
+                    <p class="error-text">{{ form.username.errors.as_text }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="form__item">
+                    <label for="id_email" class="form__label">Email</label>  
+                    <input type="email" value="{{ form.email.value }}" name="email" class="form__field" id="id_email">  
+                    {% if form.email.errors %}
+                    <p class="error-text">{{ form.email.errors.as_text }}</p>
+                    {% endif %}
+                </div>
+
+                <button class="form__button" type="submit">Update profile</button>  
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

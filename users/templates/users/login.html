@@ -15,6 +15,9 @@
             <h2 class="main__title">Login</h2>
             <form method="post" class="users__form">
                 {% csrf_token %}
+                {% if request.GET.next %}
+                    <input type="hidden" name="next" value="{{ request.GET.next }}">
+                {% endif %}
                 
                 <p class="error-text">{% if form.non_field_errors %}{{ form.non_field_errors.as_text }}{% endif %}</p>
                 
