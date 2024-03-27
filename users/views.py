@@ -63,5 +63,9 @@ def update_profile(request):
             return HttpResponseRedirect(reverse('profile'))
     else:
         form = UserRegistrationForm(instance=request.user)
-        
+
     return render(request, 'users/update_profile.html', {'form': form})
+
+
+def cart_page(request):
+    return render(request, 'users/cart_page.html')
