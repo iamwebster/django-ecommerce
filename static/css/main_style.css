@@ -110,6 +110,13 @@ span {
 	color: #9c120b;
 }
 
+.header__cart__wrap {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 5px;
+}
+
 /* BANNER */
 .banner__wrap {
 	padding: 120px 0 100px;

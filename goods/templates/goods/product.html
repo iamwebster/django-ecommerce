@@ -42,7 +42,7 @@
                         <li class="product__info__size__item"><button class="product__info__size__button">44</button></li>
                     </ul>
                 </div>
-                <button class="product__info__add-button">Add to cart</button>
+                <a href="{% url 'cart_add' product.id %}" class="product__info__add-button">Add to cart</a>
                 <div class="product__info__description__wrap">
                     <p class="product__info__description__title">Description:</p>
                     <p class="product__info__description__text">{{ product.description }}</p>    

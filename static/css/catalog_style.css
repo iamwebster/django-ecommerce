@@ -46,6 +46,7 @@
 }
 
 .catalog__card__button {
+    display: inline-block;
     display: flex;
     align-items: center;
     border: 1px black solid;

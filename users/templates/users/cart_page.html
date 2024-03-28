@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %} 
+{% load cart_tag %}
 
 
 {% block css %} 
@@ -8,55 +9,34 @@
 
 
 {% block content %}
+{% get_user_carts request as carts %}
 
 <section class="main_section">
     <div class="container">
-        <h2 class="main__title">Your cart</h2>
+        <h2 class="main__title">Your cart ({{ carts.total_qty }} items)</h2>
         <div class="cart__label__wrap">
             <p class="cart__label cart__label_main">Item</p>
             <p class="cart__label">Price</p>
             <p class="cart__label">Quantity</p>
             <p class="cart__label">Total</p>
+            <p class="cart__label"></p>
         </div>
+        {% for cart in carts %}
         <div class="cart__item__wrap">
             <div class="cart__item__product__wrap">
-                <img class="cart__item__product__img" src="{% static 'img/sneaker_img.png' %}" alt="">
-                <p class="cart__item__product__name">Nike Air Max 1</p>
+                <img class="cart__item__product__img" src="{{ cart.product.image.url }}" alt="">
+                <p class="cart__item__product__name">{{ cart.product.name }}</p>
             </div>
-            <p class="cart__item__price cart__item">$321</p>
+            <p class="cart__item__price cart__item">${{ cart.product.sell_price }}</p>
             <div class="cart__item__qty__wrap cart__item">
                 <button class="cart__item__qty__btn">+</button>
-                <p class="cart__item__qty">2</p>
+                <p class="cart__item__qty">{{ cart.quantity }}</p>
                 <button class="cart__item__qty__btn">-</button>
             </div>
-            <p class="cart__item__total-price cart__item">$642</p>
+            <p class="cart__item__total-price cart__item">${{ cart.product_price }}</p>
+            <p class="cart__item__delete-link"><a href="{% url 'cart_remove' cart.id %}" class="material-icons">clear</a></p>
         </div>
-        <div class="cart__item__wrap">
-            <div class="cart__item__product__wrap">
-                <img class="cart__item__product__img" src="{% static 'img/sneaker_img.png' %}" alt="">
-                <p class="cart__item__product__name">Nike Air Max 1</p>
-            </div>
-            <p class="cart__item__price cart__item">$321</p>
-            <div class="cart__item__qty__wrap cart__item">
-                <button class="cart__item__qty__btn">+</button>
-                <p class="cart__item__qty">2</p>
-                <button class="cart__item__qty__btn">-</button>
-            </div>
-            <p class="cart__item__total-price cart__item">$642</p>
-        </div>
-        <div class="cart__item__wrap">
-            <div class="cart__item__product__wrap">
-                <img class="cart__item__product__img" src="{% static 'img/sneaker_img.png' %}" alt="">
-                <p class="cart__item__product__name">Nike Air Max 1</p>
-            </div>
-            <p class="cart__item__price cart__item">$321</p>
-            <div class="cart__item__qty__wrap cart__item">
-                <button class="cart__item__qty__btn">+</button>
-                <p class="cart__item__qty">2</p>
-                <button class="cart__item__qty__btn">-</button>
-            </div>
-            <p class="cart__item__total-price cart__item">$642</p>
-        </div>
+        {% endfor %}
         <div class="cart__result__wrap">
             <div class="cart__result__item">
                 <p class="cart__result__item__label">Subtotal:</p>
@@ -64,7 +44,7 @@
             </div>
             <div class="cart__result__item">
                 <p class="cart__result__item__label">Grand total:</p>
-                <p class="cart__result__item__total cart__result__item__total_grand">$1926</p>
+                <p class="cart__result__item__total cart__result__item__total_grand">${{ carts.total_price }}</p>
             </div>
         </div>
         <a href="#" class="cart__result__checkout">Check Out</a>

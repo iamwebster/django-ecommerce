@@ -19,7 +19,8 @@ def login(request):
                 auth.login(request, user)
                 # messages.success(request, f'{username} successfully log in.')
 
-                if request.POST.get('next', None):
+                redirect_page = request.POST.get('next', None)
+                if redirect_page and redirect_page != reverse('logout'):
                     return HttpResponseRedirect(request.POST.get('next'))
                 
                 return HttpResponseRedirect(reverse('home'))
@@ -67,5 +68,5 @@ def update_profile(request):
     return render(request, 'users/update_profile.html', {'form': form})
 
 
-def cart_page(request):
+def user_cart(request):
     return render(request, 'users/cart_page.html')
