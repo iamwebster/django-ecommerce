@@ -29,9 +29,9 @@
             </div>
             <p class="cart__item__price cart__item">${{ cart.product.sell_price }}</p>
             <div class="cart__item__qty__wrap cart__item">
-                <button class="cart__item__qty__btn">+</button>
+                <a href="{% url 'cart_change' cart.id 'plus' %}" class="cart__item__qty__btn">+</a>
                 <p class="cart__item__qty">{{ cart.quantity }}</p>
-                <button class="cart__item__qty__btn">-</button>
+                <a href="{% url 'cart_change' cart.id 'minus' %}" class="cart__item__qty__btn">-</a>
             </div>
             <p class="cart__item__total-price cart__item">${{ cart.product_price }}</p>
             <p class="cart__item__delete-link"><a href="{% url 'cart_remove' cart.id %}" class="material-icons">clear</a></p>

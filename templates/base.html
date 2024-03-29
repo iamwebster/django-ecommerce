@@ -47,7 +47,7 @@
                     <a href="#" class="material-icons header__user__link">favorite_border</a>
                     <div class="header__cart__wrap">
                         <a href="{% url 'cart' %}" class="material-icons header__user__link">shopping_cart</a>
-                        <p>{{ carts_qty.total_qty }}</p>
+                        <p id="ajax-qty">{{ carts_qty.total_qty }}</p>
                     </div>
                 </div>
             </div>
@@ -55,6 +55,8 @@
     </header>
     {% block content %}
     {% endblock %}
+    <script src="{% static 'js/jquery/jquery-3.7.1.js' %}"></script>
+    <script src="{% static 'js/jquery-ajax.js' %}"></script>
 </body>
 
 </html>
