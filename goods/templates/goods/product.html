@@ -22,6 +22,7 @@
             <div class="product__info__wrap">
                 <h2 class="product__info__title">{{ product.name }}</h2>
                 <p class="product__info__article">Article: {{ product.article }}</p>
+                {% if items %}
                 <div class="product__info__price__wrap">
                     {% if product.discount %}
                     <p class="product__info__price product__info__price_new">$ {{ product.sell_price }}</p>
@@ -30,20 +31,28 @@
                     <p class="product__info__price">$ {{ product.price }}</p>
                     {% endif %}
                 </div>
-                <div class="product__info__size__wrap">
-                    <p class="product__info__size__title">Choose a size:</p>
-                    <ul class="product__info__size__list">
-                        <li class="product__info__size__item"><button class="product__info__size__button">38</button></li>
-                        <li class="product__info__size__item"><button class="product__info__size__button">39</button></li>
-                        <li class="product__info__size__item"><button class="product__info__size__button">40</button></li>
-                        <li class="product__info__size__item"><button class="product__info__size__button">41</button></li>
-                        <li class="product__info__size__item"><button class="product__info__size__button">42</button></li>
-                        <li class="product__info__size__item"><button class="product__info__size__button">43</button></li>
-                        <li class="product__info__size__item"><button class="product__info__size__button">44</button></li>
-                    </ul>
-                </div>
-                <a href="{% url 'cart_add' %}" class="product__info__add-button ajax-add" data-product-id="{{ product.id }}">Add to cart</a>
-                {% csrf_token %}
+
+                <form method="post" action="{% url 'cart_add' %}" class="ajax-link">
+                    {% csrf_token %}
+                    <div class="product__info__size__wrap">
+                        <label class="product__info__size__title" for="sizes">Choose a size:</label>
+                        <select class="custom-select" id="sizes">
+                            {% for i in items %}
+                            <option name="size" value="{{ i.size }}">{{ i.size }}</option>
+                            {% endfor %}
+
+                            {% comment %} <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option> {% endcomment %}
+                        </select>
+                    </div>
+                    <button type="submit" class="product__info__add-button ajax-add" data-product-id="{{ product.id }}">Add to cart</button>
+                </form>
+                {% else %}
+                <p class="sold-out">Sold Out :(</p>
+                {% endif %}
+
+                {% comment %} <a href="{% url 'cart_add' %}" class="product__info__add-button ajax-add" data-product-id="{{ product.id }}">Add to cart</a> {% endcomment %}
                 <div class="product__info__description__wrap">
                     <p class="product__info__description__title">Description:</p>
                     <p class="product__info__description__text">{{ product.description }}</p>    

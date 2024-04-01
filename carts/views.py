@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
-from goods.models import Product 
+from goods.models import Product, ProductItem
 from .models import UserCart
 
 
 def cart_add(request):
-
     product_id = request.POST.get("product_id")
     product = Product.objects.get(id=product_id)
 

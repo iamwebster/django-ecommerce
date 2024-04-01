@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Category, Product
+from .models import Category, Product, ProductItem
 from django.core.paginator import Paginator
 from .utils import query_search
 
@@ -36,7 +36,8 @@ def catalog(request, gender_slug, category_slug):
 
 def product(request, product_slug):
     product = Product.objects.get(slug=product_slug)
-    return render(request, "goods/product.html", {"product": product})
+    product_item = ProductItem.objects.filter(product__slug=product_slug)
+    return render(request, "goods/product.html", {"product": product, 'items': product_item})
 
 
 def search(request):

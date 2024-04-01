@@ -49,11 +49,11 @@
                             <p class="catalog__card__price">${{ product.price }}</p>
                             {% endif %}
                         </div>
-                        <a href="{% url 'cart_add' %}" class="catalog__card__button ajax-add" data-product-id={{ product.id }}>
+                        {% comment %} <a href="{% url 'cart_add' %}" class="catalog__card__button ajax-add" data-product-id={{ product.id }}>
                             {% csrf_token %}
                             <span class="catalog__card__button__add">add to cart</span>
                             <span class="material-icons catalog__card__button__icon">add_shopping_cart</span>
-                        </a>
+                        </a> {% endcomment %}
                     </div>
                 </div>
                 {% endfor %}

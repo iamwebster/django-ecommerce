@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 
 class Gender(models.Model):
@@ -29,7 +30,6 @@ class Product(models.Model):
     image = models.ImageField(upload_to='sneakers/')
     price = models.FloatField(default=0.00)
     discount = models.IntegerField(null=True, blank=True)
-    quantity = models.PositiveIntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
 
@@ -46,3 +46,25 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+class ProductColor(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+    
+
+class ProductSize(models.Model):
+    size = models.DecimalField(default=00.0, max_digits=3, decimal_places=1)
+    remains = models.PositiveIntegerField()
+    
+
+class ProductItem(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    size = models.DecimalField(default=00.0, max_digits=3, decimal_places=1)
+    remains = models.PositiveIntegerField()
+
+    
+    def __str__(self):
+        return f'{self.product.name} | {self.size} | {self.remains}'

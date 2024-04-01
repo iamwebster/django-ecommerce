@@ -1,14 +1,16 @@
 $(document).ready(function () {
 
-    $(document).on('click', '.ajax-add', function (e) {
+    $(document).on('click', '.ajax-link', function (e) {
         e.preventDefault();
-
         var cartQtyTemp = $('#ajax-qty');
         var cartQty = parseInt(cartQtyTemp.text() || 0);
 
-        var productId = $(this).data('product-id');
+        var productIdTag = $(".ajax-add");
+        var productId = productIdTag.data('product-id')
+        console.log(productId);
 
-        var cartAddUrl = $(this).attr('href');
+        var cartAddUrl = $(this).attr('action');
+        console.log(cartAddUrl)
 
         $.ajax({
             url: cartAddUrl,
@@ -16,9 +18,9 @@ $(document).ready(function () {
             data: {
                 'product_id': productId,
                 'csrfmiddlewaretoken': $("[name=csrfmiddlewaretoken]").val(),
+                'size': $("[name=size]").val(),
             },
             success: function(response) {
-                console.log(response.message);
 
                 cartQty++;
                 cartQtyTemp.text(cartQty);
@@ -28,5 +30,4 @@ $(document).ready(function () {
             },
         });
     });
-
 });
