@@ -10,20 +10,23 @@
 }
 
 .cart__label_main {
-    width: 50%;
+    width: 45%;
     text-align: start;
 }
 
 .cart__label:nth-child(2) {
-    width: 15%;
+    width: 10%;
 }
 .cart__label:nth-child(3) {
-    width: 15%;
+    width: 10%;
 }
 .cart__label:nth-child(4) {
-    width: 15%; 
+    width: 15%;
 }
 .cart__label:nth-child(5) {
+    width: 15%; 
+}
+.cart__label:nth-child(6) {
     width: 5%;
 }
 
@@ -48,7 +51,7 @@
 }
 
 .cart__item__product__wrap {
-    width: 50%;
+    width: 45%;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -66,7 +69,11 @@
 }
 
 .cart__item__price {
-    width: 15%;
+    width: 10%;
+}
+
+.cart__item__size {
+    width: 10%;
 }
 
 .cart__item__qty__wrap {

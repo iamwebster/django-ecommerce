@@ -6,10 +6,12 @@ from .models import UserCart
 
 def cart_add(request):
     product_id = request.POST.get("product_id")
+    size = request.POST.get('size')
     product = Product.objects.get(id=product_id)
 
+    product_item = product.productitem_set.get(size=size)
     if request.user.is_authenticated:
-        cart = UserCart.objects.filter(user=request.user, product=product)
+        cart = UserCart.objects.filter(user=request.user, product_item=product_item)
 
         if cart.exists():
             cart_item = cart.first()
@@ -17,25 +19,44 @@ def cart_add(request):
                 cart_item.quantity += 1
                 cart_item.save()
         else:
-            UserCart.objects.create(user=request.user, product=product, quantity=1)
+            UserCart.objects.create(user=request.user, product_item=product_item, quantity=1)
     
     return JsonResponse({'message': 'The product has been added to cart!'})
 
 
-def cart_change(request, cart_id, operation):
+def cart_change(request):
+    
+    cart_id = request.POST.get("cart_id")
+    quantity = request.POST.get("quantity")
+
     cart = UserCart.objects.get(id=cart_id)
-    if operation == 'plus':
-        cart.quantity += 1
-    elif operation == 'minus':
-        if cart.quantity > 1:
-            cart.quantity -= 1
-    else:
-        return redirect(request.META['HTTP_REFERER'])
+
+    cart.quantity = quantity
     cart.save()
-    return redirect(request.META['HTTP_REFERER'])
+    updated_quantity = cart.quantity
+    cart_price = cart.product_price()
+    total_price = UserCart.objects.filter(user=request.user).total_price()
+    response_data = {
+        "message": "Products have been updated!",
+        "quantity": updated_quantity,
+        'total_price': total_price,
+        'cart_price': cart_price,
+    }
+
+    return JsonResponse(response_data)
 
 
-def cart_remove(request, cart_id):
+def cart_remove(request):
+    cart_id = request.POST.get('cart_id')
+
     cart = UserCart.objects.get(id=cart_id)
+    quantity = cart.quantity
+    cart_price = cart.product_price()
     cart.delete()
-    return redirect(request.META['HTTP_REFERER'])
+
+    response_data = {
+        'message': 'The product has been deleted!',
+        'quantity_deleted': quantity,
+        'cart_price': cart_price,
+    }
+    return JsonResponse(response_data)
