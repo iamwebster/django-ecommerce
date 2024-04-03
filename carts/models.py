@@ -27,4 +27,4 @@ class UserCart(models.Model):
         return round(self.product_item.product.sell_price() * int(self.quantity), 2)
 
     def __str__(self):
-        return f"{self.user.username}'s cart | {self.product_item.product.name} | qty: {self.quantity}"
+        return f"{self.user}'s cart | {self.product_item.product.name} | qty: {self.quantity}"

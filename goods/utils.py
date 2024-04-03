@@ -1,6 +1,7 @@
 from .models import Product
 from django.db.models import Q
 
+
 def query_search(query):
     if query.isdigit() and len(query) <=5:
         return Product.objects.filter(id=int(query))
@@ -16,5 +17,4 @@ def query_search(query):
 
     return Product.objects.filter(query_list)
 
-    
     

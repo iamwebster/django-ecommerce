@@ -22,7 +22,7 @@ $(document).ready(function () {
                 cartQtyTemp.text(cartQty);
             },
             error: function (response) {
-                console.log('Error: ', response)
+                console.log('Error: ', response);
             },
         });
     });
@@ -55,7 +55,7 @@ $(document).ready(function () {
 
             },
             error: function (response) {
-                console.log('Error: ', response)
+                console.log('Error: ', response);
             },
         });
     });
@@ -117,8 +117,8 @@ $(document).ready(function () {
                 $('.cart__result__item__total_grand').text('$' + response.total_price).text()
 
             },
-            error: function (data) {
-                console.log("Ошибка при добавлении товара в корзину");
+            error: function (response) {
+                console.log('Error: ', response);
             },
         });
     }

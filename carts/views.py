@@ -11,15 +11,26 @@ def cart_add(request):
 
     product_item = product.productitem_set.get(size=size)
     if request.user.is_authenticated:
-        cart = UserCart.objects.filter(user=request.user, product_item=product_item)
+        carts = UserCart.objects.filter(user=request.user, product_item=product_item)
 
-        if cart.exists():
-            cart_item = cart.first()
+        if carts.exists():
+            cart_item = carts.first()
             if cart_item:
                 cart_item.quantity += 1
                 cart_item.save()
         else:
             UserCart.objects.create(user=request.user, product_item=product_item, quantity=1)
+    
+    else:
+        carts = UserCart.objects.filter(session_key=request.session.session_key, product_item=product_item)
+
+        if carts.exists():
+            cart_item = carts.first()
+            if cart_item:
+                cart_item.quantity += 1
+                cart_item.save()
+        else:
+            UserCart.objects.create(session_key=request.session.session_key, product_item=product_item, quantity=1)
     
     return JsonResponse({'message': 'The product has been added to cart!'})
 
@@ -35,7 +46,11 @@ def cart_change(request):
     cart.save()
     updated_quantity = cart.quantity
     cart_price = cart.product_price()
-    total_price = UserCart.objects.filter(user=request.user).total_price()
+    if request.user.is_authenticated:
+        total_price = UserCart.objects.filter(user=request.user).total_price()
+    else:
+        total_price = UserCart.objects.filter(session_key=request.session.session_key).total_price()
+        
     response_data = {
         "message": "Products have been updated!",
         "quantity": updated_quantity,
