@@ -1,5 +1,42 @@
 $(document).ready(function () {
 
+    // $(document).ready(function($) {
+    $('.checkout__open').click(function() {
+        $('.checkout__fade').fadeIn();
+        return false;
+    });	
+    
+    $('.checkout__close').click(function() {
+        $(this).parents('.checkout__fade').fadeOut();
+        return false;
+    });		
+
+    $(document).keydown(function(e) {
+        if (e.keyCode === 27) {
+            e.stopPropagation();
+            $('.checkout__fade').fadeOut();
+        }
+    });
+    
+    $('.checkout__fade').click(function(e) {
+        if ($(e.target).closest('.checkout__wrap').length == 0) {
+            $(this).fadeOut();					
+        }
+    });	
+    // });
+
+
+    $("input[name='delivery']").change(function() {
+        var selectedValue = $(this).val();
+        if (selectedValue === "0") {
+            $("#deliveryAddressField").show();
+        } else {
+            $("#deliveryAddressField").hide();
+        }
+    });
+
+
+
     $(document).on('click', '.ajax-add', function (e) {
         e.preventDefault();
         var cartQtyTemp = $('#ajax-qty');

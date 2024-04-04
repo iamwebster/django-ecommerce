@@ -5,6 +5,9 @@
 
 {% block css %} 
 <link rel="stylesheet" href="{% static 'css/cart_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/checkout_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/users_style.css' %}">
+
 {% endblock %}
 
 
@@ -26,7 +29,7 @@
         <div class="cart__item__wrap" data-cart-id="{{ cart.id }}">
             <div class="cart__item__product__wrap">
                 <img class="cart__item__product__img" src="{{ cart.product_item.product.image.url }}" alt="">
-                <p class="cart__item__product__name">{{ cart.product_item.product.name }}</p>
+                <a href="{{ cart.product_item.product.get_absolute_url }}" class="cart__item__product__name">{{ cart.product_item.product.name }}</a>
             </div>
             <p class="cart__item__size cart__item">{{ cart.product_item.size }}</p>
             <p class="cart__item__price cart__item">${{ cart.product_item.product.sell_price }}</p>
@@ -43,17 +46,67 @@
         </div>
         {% endfor %}
         <div class="cart__result__wrap">
-            {% comment %} <div class="cart__result__item">
-                <p class="cart__result__item__label">Subtotal:</p>
-                <p class="cart__result__item__total">$1926</p>
-            </div> {% endcomment %}
             <div class="cart__result__item">
                 <p class="cart__result__item__label">Grand total:</p>
                 <p class="cart__result__item__total cart__result__item__total_grand">${{ carts.total_price }}</p>
             </div>
         </div>
-        <a href="#" class="cart__result__checkout">Check Out</a>
+        <a href="#" class="cart__result__checkout checkout__open">Check Out</a>
 
+        <div class="checkout__fade">
+            <div class="checkout__wrap">
+                <a class="material-icons checkout__close" href="#">clear</a>
+                <h3 class="checkout__title">Order details</h3>
+
+                <form method="post" class="users__form">
+                    {% csrf_token %}
+                    
+                    {% comment %} <p class="error-text">{% if form.non_field_errors %}{{ form.non_field_errors.as_text }}{% endif %}</p> {% endcomment %}
+                    
+                    <div class="form__item">
+                        <label for="id_first_name" class="form__label">First name</label>
+                        <input type="text" name="first_name" class="form__field" id="id_name" placeholder="Ivan" required>
+                    </div>
+                    <div class="form__item">
+                        <label for="id_last_name" class="form__label">Surname</label>
+                        <input type="text" name="last_name" class="form__field" id="id_last_name" placeholder="Ivanov" required> 
+                    </div>
+                    <div class="form__item">
+                        <label for="id_phone" class="form__label">Phone</label>
+                        <input type="number" name="phone" class="form__field" id="id_phone" placeholder="(555) 555-1234" required> 
+                    </div>
+                    <p class="form__label">Delivery method:</p>
+                    <div class="checkout__form__choose">
+                        <div class="checkout__form__choose-item">
+                            <input type="radio" name="delivery" id="id_need_delivery" value="0" checked>
+                            <label for="id_need_delivery">Need delivery</label>
+                        </div>
+                        <div class="checkout__form__choose-item">
+                            <input type="radio" name="delivery" id="id_pick_up_in_store" value="1">
+                            <label for="id_pick_up_in_store">Pick up in store</label>
+                        </div>
+                    </div>
+                    <div id="deliveryAddressField">
+                        <label for="id_delivery_address" class="form__label">Delivery address:</label>
+                        <textarea class="form__field" id="id_delivery_address"
+                            name="delivery_address" rows="2"></textarea>
+                    </div>
+                    <p class="form__label">Payment method:</p>
+                    <div class="checkout__form__choose">
+                        <div class="checkout__form__choose-item">
+                            <input type="radio" name="payment" id="id_card_payment" value="0" checked>
+                            <label for="id_card_payment">Card payment</label>
+                        </div>
+                        <div class="checkout__form__choose-item">
+                            <input type="radio" name="payment" id="id_cash_or_card_delivery" value="1">
+                            <label for="id_cash_or_card_delivery">Cash/Card on delivery</label>
+                        </div>
+                    </div>
+    
+                    <button class="form__button" type="submit">Submit</button> 
+                </form>
+            </div>		
+        </div>
     </div>
 </section>
 

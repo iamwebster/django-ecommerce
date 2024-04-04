@@ -68,6 +68,10 @@
     font-weight: 500;
 }
 
+.cart__item__product__name:hover {
+    text-decoration: underline;
+}
+
 .cart__item__price {
     width: 10%;
 }
