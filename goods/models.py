@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.text import slugify
+from django.urls import reverse
 
 
 class Gender(models.Model):
@@ -25,11 +25,11 @@ class Product(models.Model):
     class Meta:
         ordering = ('id',)
     name = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255, unique=True)
+    slug = models.SlugField(max_length=255, unique=True, verbose_name='URL')
     description = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to='sneakers/')
     price = models.FloatField(default=0.00)
-    discount = models.IntegerField(null=True, blank=True)
+    discount = models.IntegerField(null=True, blank=True, verbose_name='Discount %')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
 
@@ -38,7 +38,10 @@ class Product(models.Model):
         if self.discount:
             return round(self.price - self.price * self.discount / 100, 2)
         return self.price
-
+    
+    def get_absolute_url(self):
+        return reverse("product_detail", kwargs={"product_slug": self.slug})
+    
 
     def article(self):
         return f'{self.id:05}'
@@ -67,4 +70,4 @@ class ProductItem(models.Model):
 
     
     def __str__(self):
-        return f'{self.product.name} | {self.size} | {self.remains}'
+        return f'{self.product.name} | {self.size}'
