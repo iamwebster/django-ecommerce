@@ -58,47 +58,59 @@
                 <a class="material-icons checkout__close" href="#">clear</a>
                 <h3 class="checkout__title">Order details</h3>
 
-                <form method="post" class="users__form">
+                <form action="{% url 'cart' %}" method="post" class="users__form">
                     {% csrf_token %}
                     
-                    {% comment %} <p class="error-text">{% if form.non_field_errors %}{{ form.non_field_errors.as_text }}{% endif %}</p> {% endcomment %}
+                    <p class="error-text">{% if form.non_field_errors %}{{ form.non_field_errors.as_text }}{% endif %}</p>
                     
                     <div class="form__item">
                         <label for="id_first_name" class="form__label">First name</label>
-                        <input type="text" name="first_name" class="form__field" id="id_name" placeholder="Ivan" required>
+                        <input type="text" name="first_name" class="form__field" id="id_name" value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}" placeholder="Ivan" required>
+                        {% if form.first_name.errors %}
+                        <p class="error-text">{{ form.first_name.errors.as_text }}</p>
+                        {% endif %}
                     </div>
                     <div class="form__item">
                         <label for="id_last_name" class="form__label">Surname</label>
-                        <input type="text" name="last_name" class="form__field" id="id_last_name" placeholder="Ivanov" required> 
+                        <input type="text" name="last_name" class="form__field" id="id_last_name" value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}" placeholder="Ivanov" required> 
+                        {% if form.last_name.errors %}
+                        <p class="error-text">{{ form.last_name.errors.as_text }}</p>
+                        {% endif %}
                     </div>
                     <div class="form__item">
                         <label for="id_phone" class="form__label">Phone</label>
-                        <input type="number" name="phone" class="form__field" id="id_phone" placeholder="(555) 555-1234" required> 
+                        <input type="text" name="phone_number" class="form__field" id="id_phone" value="{% if form.phone_number.value %}{{ form.phone_number.value }}{% endif %}" placeholder="(XXX) XXX-XXXX" required> 
+                        {% if form.phone_number.errors %}
+                        <p class="error-text">{{ form.phone_number.errors.as_text }}</p>
+                        {% endif %}
                     </div>
                     <p class="form__label">Delivery method:</p>
                     <div class="checkout__form__choose">
                         <div class="checkout__form__choose-item">
-                            <input type="radio" name="delivery" id="id_need_delivery" value="0" checked>
+                            <input type="radio" name="need_delivery" id="id_need_delivery" value="1" checked>
                             <label for="id_need_delivery">Need delivery</label>
                         </div>
                         <div class="checkout__form__choose-item">
-                            <input type="radio" name="delivery" id="id_pick_up_in_store" value="1">
+                            <input type="radio" name="need_delivery" id="id_pick_up_in_store" value="0">
                             <label for="id_pick_up_in_store">Pick up in store</label>
                         </div>
                     </div>
                     <div id="deliveryAddressField">
                         <label for="id_delivery_address" class="form__label">Delivery address:</label>
                         <textarea class="form__field" id="id_delivery_address"
-                            name="delivery_address" rows="2"></textarea>
+                            name="delivery_address" value="{% if form.delivery_address.value %}{{ form.delivery_address.value }}{% endif %}"></textarea>
+                        {% if form.delivery_address.errors %}
+                        <p class="error-text">{{ form.delivery_address.errors.as_text }}</p>
+                        {% endif %}
                     </div>
                     <p class="form__label">Payment method:</p>
                     <div class="checkout__form__choose">
                         <div class="checkout__form__choose-item">
-                            <input type="radio" name="payment" id="id_card_payment" value="0" checked>
+                            <input type="radio" name="payment_on_delivery" id="id_card_payment" value="0" checked>
                             <label for="id_card_payment">Card payment</label>
                         </div>
                         <div class="checkout__form__choose-item">
-                            <input type="radio" name="payment" id="id_cash_or_card_delivery" value="1">
+                            <input type="radio" name="payment_on_delivery" id="id_cash_or_card_delivery" value="1">
                             <label for="id_cash_or_card_delivery">Cash/Card on delivery</label>
                         </div>
                     </div>

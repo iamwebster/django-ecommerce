@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-    // $(document).ready(function($) {
     $('.checkout__open').click(function() {
         $('.checkout__fade').fadeIn();
         return false;
@@ -23,12 +22,11 @@ $(document).ready(function () {
             $(this).fadeOut();					
         }
     });	
-    // });
 
 
-    $("input[name='delivery']").change(function() {
+    $("input[name='need_delivery']").change(function() {
         var selectedValue = $(this).val();
-        if (selectedValue === "0") {
+        if (selectedValue === "1") {
             $("#deliveryAddressField").show();
         } else {
             $("#deliveryAddressField").hide();

@@ -1,12 +1,25 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib import auth
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
+
+# from orders.forms import CreateOrderForm
 
 
 from .forms import UserLoginForm, UserRegistrationForm, ProfileForm
+# from carts.models import UserCart
+
+
+from django.contrib.auth.decorators import login_required
+from django.db import transaction
+from django.forms import ValidationError
+from django.shortcuts import redirect, render
+
 from carts.models import UserCart
+
+from orders.forms import CreateOrderForm
+from orders.models import Order, OrderItem
 
 
 def login(request):
@@ -81,5 +94,75 @@ def update_profile(request):
     return render(request, 'users/update_profile.html', {'form': form})
 
 
+# def user_cart(request):
+#     if request.user.is_authenticated:
+#         initial = {
+#                 'first_name': request.user.first_name,
+#                 'last_name': request.user.last_name,
+#         }
+
+#         form = CreateOrderForm(initial=initial)
+#     return render(request, 'users/cart_page.html', {'form': form})
+
+
+@login_required
 def user_cart(request):
-    return render(request, 'users/cart_page.html')
+    if request.method == 'POST':
+        form = CreateOrderForm(data=request.POST)
+        if form.is_valid():
+            try:
+                with transaction.atomic():
+                    user = request.user
+                    cart_items = UserCart.objects.filter(user=user)
+
+                    if cart_items.exists():
+                        # Create order
+                        order = Order.objects.create(
+                            user=user,
+                            phone_number=form.cleaned_data['phone_number'],
+                            need_delivery=form.cleaned_data['need_delivery'],
+                            delivery_address=form.cleaned_data['delivery_address'],
+                            payment_on_delivery=form.cleaned_data['payment_on_delivery'],
+                        )
+                        # Create ordering products
+                        for cart_item in cart_items:
+                            product_item=cart_item.product_item
+                            name=cart_item.product_item.product.name
+                            price=cart_item.product_item.product.sell_price()
+                            quantity=cart_item.quantity
+
+
+                            if product_item.remains < quantity:
+                                raise ValidationError(f'There is not enough quantity of product {name} in the warehouse\
+                                                       In stock - {product_item.remains}')
+
+                            OrderItem.objects.create(
+                                order=order,
+                                product_item=product_item,
+                                name=name,
+                                price=price,
+                                quantity=quantity,
+                            )
+                            product_item.remains -= quantity
+                            product_item.save()
+
+                        # Clean the user's cart after creating an order
+                        cart_items.delete()
+
+                        return redirect('profile')
+            except ValidationError as e:
+                print(str(e))
+                return redirect('cart')
+    else:
+        initial = {
+            'first_name': request.user.first_name,
+            'last_name': request.user.last_name,
+            }
+
+        form = CreateOrderForm(initial=initial)
+
+    context = {
+        'form': form,
+        'orders': True,
+    }
+    return render(request, 'users/cart_page.html', context=context)
