@@ -2,7 +2,20 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 from goods.models import ProductItem
+    
 
+class OrderQuerySet(models.QuerySet):
+
+    def total_price(self):
+        if self:
+            return sum(order.order_price() for order in self)
+        return 0
+    
+    def total_qty(self):
+        if self:
+            return sum(order.orderitem_quantity() for order in self)
+        return 0
+    
 
 class Order(models.Model):
     user = models.ForeignKey(
@@ -28,6 +41,15 @@ class Order(models.Model):
             ("refused", "Refused"),
         )
     )
+    objects = OrderQuerySet().as_manager()
+
+
+    def order_price(self):
+        return sum(item.product_price() for item in self.orderitem_set.all())
+    
+    def orderitem_quantity(self):
+        return sum(item.quantity for item in self.orderitem_set.all())
+
 
     def __str__(self):
         return f"Order № {self.pk} | Customer {self.user.first_name} {self.user.last_name}"
@@ -46,8 +68,9 @@ class OrderItem(models.Model):
     quantity = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    # objects = OrderItemQuerySet().as_manager()
 
-    def products_price(self):
+    def product_price(self):
         return round(self.product_item.product.sell_price() * self.quantity, 2)
 
     def __str__(self):

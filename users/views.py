@@ -1,25 +1,16 @@
-# from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib import auth
-# from django.contrib.auth.decorators import login_required
-
-# from orders.forms import CreateOrderForm
-
-
-from .forms import UserLoginForm, UserRegistrationForm, ProfileForm
-# from carts.models import UserCart
-
-
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from django.forms import ValidationError
-from django.shortcuts import redirect, render
 
 from carts.models import UserCart
-
 from orders.forms import CreateOrderForm
 from orders.models import Order, OrderItem
+
+from .forms import UserLoginForm, UserRegistrationForm, ProfileForm
 
 
 def login(request):
@@ -78,7 +69,9 @@ def logout(request):
 
 @login_required
 def profile(request):
-    return render(request, 'users/profile.html')
+    orders = Order.objects.filter(user=request.user)
+
+    return render(request, 'users/profile.html', {'orders': orders})
 
 
 @login_required
@@ -92,17 +85,6 @@ def update_profile(request):
         form = UserRegistrationForm(instance=request.user)
 
     return render(request, 'users/update_profile.html', {'form': form})
-
-
-# def user_cart(request):
-#     if request.user.is_authenticated:
-#         initial = {
-#                 'first_name': request.user.first_name,
-#                 'last_name': request.user.last_name,
-#         }
-
-#         form = CreateOrderForm(initial=initial)
-#     return render(request, 'users/cart_page.html', {'form': form})
 
 
 @login_required
@@ -146,12 +128,11 @@ def user_cart(request):
                             product_item.remains -= quantity
                             product_item.save()
 
-                        # Clean the user's cart after creating an order
+                        # Clean the user's cart after creating order
                         cart_items.delete()
 
                         return redirect('profile')
-            except ValidationError as e:
-                print(str(e))
+            except ValidationError:
                 return redirect('cart')
     else:
         initial = {

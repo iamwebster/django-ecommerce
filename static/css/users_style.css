@@ -86,23 +86,17 @@
 
 
 /* PROFILE */
-
-.container_profile {
-    max-width: 750px;
-    margin: 0 auto;
-}
-
 .profile__info__wrap {
-    border: 2px solid black;
-    padding: 30px;
-    border-radius: 5px;
     display: flex;
-    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    padding-bottom: 10px;
 }
 
 .profile__img {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
 }
 
 .profile__name__update__wrap {
@@ -119,12 +113,10 @@
 
 .profile__update__link {
     display: block;
-    font-weight: 300;
 }
 
 .profile__update__link:hover,
-.profile__order__history:hover,
-.profile__order__detail__link:hover {
+.profile__order__history:hover {
     text-decoration: underline;
 }
 
@@ -135,31 +127,18 @@
 
 .profile__email {
     color: #7e7e7e;
-    padding-bottom: 10px;
 }
 
 .profile__analytics__wrap {
-    display: flex;
-    gap: 20px
+    padding: 10px 0;
 }
 
 .profile__analytics__item {
-    border: 2px solid #333;
-    border-radius: 5px;
-    padding: 10px;
+    font-size: 16px;
 }
 
-.profile__analytics__detail {
+.profile__analytics__value {
     font-weight: 500;
-    font-size: 17px;
-    text-align: center;
-}
-
-.profile__analytics__detail-total {
-    text-align: center;
-    padding-top: 10px;
-    font-size: 17px;
-    font-weight: 700;
 }
 
 .profile__orders__wrap {
@@ -169,16 +148,13 @@
 }
 
 .profile__order__item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     border: 2px solid black;
     padding: 10px;
     border-radius: 5px;
 }
 
 .profile__orders__title {
-    padding: 30px 0 10px;
+    padding: 10px 0;
     text-align: center;
 }
 
@@ -190,6 +166,28 @@
     display: inline-block;
     padding-top: 10px;
     font-weight: 300;
+}
+
+.order-item__wrap {
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.order-item__item {
+    background-color: #f0f0f0;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.order-item__image {
+    width: 100px;
+    border-radius: 5px 0 0 5px;
+    object-fit: cover;
 }
 
 
