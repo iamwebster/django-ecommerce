@@ -22,6 +22,7 @@
 	grid-template-rows: repeat(4, 1fr);
 }
 
+
 .product__image {
 	width: 100%;
 	border-radius: 5px;
@@ -123,7 +124,6 @@ select {
 	appearance: none;
 	width: 50%;
 	font-size: 1.15rem;
-	/* padding: 0.675em 6em 0.675em 1em; */
 	padding: 10px 0 ;
 	background-color: #fff;
 	border: 2px solid #b3b3b3;

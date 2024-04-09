@@ -13,11 +13,12 @@
         <a href="{{ request.META.HTTP_REFERER }}" class="back-button"><span class="material-icons back-button_icon">arrow_back_ios</span>Back to the list of sneakers</a>
         <div class="product__wrap">
             <div class="product__images__wrap">
-                <img class="product__image product__image_main"src="{{ product.image.url }}" alt="">
-                <img class="product__image" src="{{ product.image.url }}" alt="{{ product.name }}">
-                <img class="product__image" src="{{ product.image.url }}" alt="{{ product.name }}">
-                <img class="product__image" src="{{ product.image.url }}" alt="{{ product.name }}">
-                <img class="product__image" src="{{ product.image.url }}" alt="{{ product.name }}">
+                <img class="product__image_main"src="{{ product.image.url }}" alt="">
+                
+                <img class="product__image" src="{{ product.productshots.image1.url }}" alt="">
+                <img class="product__image" src="{{ product.productshots.image2.url }}" alt="">
+                <img class="product__image" src="{{ product.productshots.image3.url }}" alt="">
+                <img class="product__image" src="{{ product.productshots.image4.url }}" alt="">
             </div>
             <div class="product__info__wrap">
                 <h2 class="product__info__title">{{ product.name }}</h2>
@@ -45,7 +46,7 @@
                     <button type="submit" class="product__info__add-button ajax-add" data-link="{% url 'cart_add' %}" data-product-id="{{ product.id }}">Add to cart</button>
                 </form>
                 {% else %}
-                <p class="sold-out">Sold Out :(</p>
+                <p class="sold-out">Sold Out</p>
                 {% endif %}
 
                 <div class="product__info__description__wrap">

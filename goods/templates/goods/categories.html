@@ -13,9 +13,9 @@
     <div class="container">
         <h2 class="main__title">Select category:</h2>
         <div class="categories__wrap">
-            <a href="{% url 'catalog' gender_slug 'all' %}" class="categories__link">All products</a>
+            <a href="{% url 'catalog' gender 'all' %}" class="categories__link">All products</a>
             {% for cat in categories %}
-            <a href="{% url 'catalog' gender_slug cat.slug %}" class="categories__link">{{ cat.name }}</a>
+            <a href="{% url 'catalog' gender cat.slug  %}" class="categories__link">{{ cat.name }}</a>
             {% endfor %}
         </div>
     </div>

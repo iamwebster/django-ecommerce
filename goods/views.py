@@ -4,25 +4,23 @@ from django.core.paginator import Paginator
 from .utils import query_search
 
 
-def categories(request, gender_slug):
-    categories = Category.objects.all()
+def categories(request, gender):
+    categories = Category.objects.filter(gender=gender)
     return render(
         request,
         "goods/categories.html",
-        {"categories": categories, "gender_slug": gender_slug},
+        {"categories": categories, 'gender': gender},
     )
 
 
-def catalog(request, gender_slug, category_slug):
+def catalog(request, gender, category_slug):
     page = request.GET.get('page', 1)
     order_by = request.GET.get('order_by', None)
 
     if category_slug != "all":
-        products = Product.objects.filter(
-            gender__slug=gender_slug, category__slug=category_slug
-        )
+        products = Product.objects.filter(category__slug=category_slug)
     else:
-        products = Product.objects.filter(gender__slug=gender_slug)
+        products = Product.objects.filter(category__gender=gender)
 
     if order_by == 'price' or order_by == '-price':
         products = products.order_by(order_by)

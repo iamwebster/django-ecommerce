@@ -50,7 +50,6 @@ class Order(models.Model):
     def orderitem_quantity(self):
         return sum(item.quantity for item in self.orderitem_set.all())
 
-
     def __str__(self):
         return f"Order № {self.pk} | Customer {self.user.first_name} {self.user.last_name}"
 
@@ -68,7 +67,6 @@ class OrderItem(models.Model):
     quantity = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
 
-    # objects = OrderItemQuerySet().as_manager()
 
     def product_price(self):
         return round(self.product_item.product.sell_price() * self.quantity, 2)

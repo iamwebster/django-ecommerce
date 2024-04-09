@@ -62,9 +62,8 @@ span {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	gap: 5px;
+	width: 22%;
 }
-
 
 .header__logo__icon {
 	font-size: 28px;
@@ -84,11 +83,15 @@ span {
 	font-weight: 700;
 }
 
+.header__nav {
+	width: 40%;
+}
+
 .header__list {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	gap: 50px;
+	gap: 10px;
 	font-weight: 500;
 	font-size: 18px;
 	text-transform: uppercase;
@@ -98,12 +101,11 @@ span {
 	color: #9c120b;
 }
 
-
 .header__user__links {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 40px;
+	width: 8%;
 }
 
 .header__user__link:hover {
@@ -117,6 +119,52 @@ span {
 	gap: 5px;
 }
 
+.nav__wrap {
+	color: #fff;
+	background-color: #000;
+	display: flex;
+	justify-content: space-around;
+	padding: 5px 0;
+	border-radius: 5px;
+}
+
+.nav__item {
+	display: block;
+}
+	
+.nav__wrap li {
+	display: block; 
+	padding: 0 15px;
+	background-color: #000; 
+	position: relative;
+	z-index: 1; 
+}
+	
+.nav__wrap li a {
+	display:block; 
+	font-size: 15px;  
+	text-align:center; 
+	color:#fff;
+}
+
+.nav__wrap li a:hover {
+	color:#c52017;
+}
+
+.nav__wrap ul {
+	position: absolute; 
+	left: -15px;
+	display: none; 
+}
+
+.nav__wrap ul li {
+	border-top: 1px solid #fff;
+}
+
+.nav__wrap ul a {
+	display:block;  
+}
+
 /* BANNER */
 .banner__wrap {
 	padding: 120px 0 100px;
@@ -125,9 +173,15 @@ span {
 	align-items: center;
 }
 
+
+
 .banner__img {
 	display: block;
 	width: 50%;
+}
+
+.banner__info {
+	width: 40%;
 }
 
 .banner__text {
@@ -146,7 +200,7 @@ span {
 	margin-top: 10px;
 	display: flex;
 	justify-content: space-between;
-	gap: 30px;
+	gap: 10px;
 }
 
 .banner__link {

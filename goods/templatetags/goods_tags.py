@@ -23,3 +23,8 @@ def change_params(context, **kwargs):
     query = context['request'].GET.dict()
     query.update(kwargs)
     return urlencode(query)
+
+
+@register.simple_tag()
+def get_categories(gender):
+    return Category.objects.filter(gender=gender)

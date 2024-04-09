@@ -2,23 +2,19 @@ from django.db import models
 from django.urls import reverse
 
 
-class Gender(models.Model):
-    name = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255, unique=True)
-
-    def __str__(self):
-        return self.name 
-
-
 class Category(models.Model):
     class Meta:
         verbose_name_plural = "Categories"
 
     name = models.CharField(max_length=255)
+    gender = models.CharField(max_length=255, choices=(
+        ('men', 'Men'),
+        ('women', 'Women'),
+    ))
     slug = models.SlugField(max_length=255, unique=True)
 
     def __str__(self):
-        return self.name
+        return f'{self.gender} | {self.name}'
     
 
 class Product(models.Model):
@@ -31,7 +27,7 @@ class Product(models.Model):
     price = models.FloatField(default=0.00)
     discount = models.IntegerField(null=True, blank=True, verbose_name='Discount %')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
+    # gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
 
 
     def sell_price(self):
@@ -58,9 +54,28 @@ class ProductColor(models.Model):
         return self.name
     
 
-class ProductSize(models.Model):
-    size = models.DecimalField(default=00.0, max_digits=3, decimal_places=1)
-    remains = models.PositiveIntegerField()
+class ProductShots(models.Model):
+    class Meta:
+        verbose_name_plural = 'Product shots'
+
+    product = models.OneToOneField(Product, on_delete=models.CASCADE)
+
+    image1 = models.ImageField()
+    image2 = models.ImageField(null=True, blank=True)
+    image3 = models.ImageField(null=True, blank=True)
+    image4 = models.ImageField(null=True, blank=True)
+
+
+    def save(self, *args, **kwargs):
+        for i in range(1, 5):
+            image_field = getattr(self, f"image{i}")
+            if image_field:
+                image_field.name = f"sneakers/{self.product.name}/{image_field.name}"
+        super(ProductShots, self).save(*args, **kwargs)
+
+
+    def __str__(self):
+        return self.product.name
     
 
 class ProductItem(models.Model):
