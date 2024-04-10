@@ -23,7 +23,7 @@
             <div class="product__info__wrap">
                 <h2 class="product__info__title">{{ product.name }}</h2>
                 <p class="product__info__article">Article: {{ product.article }}</p>
-                {% if items %}
+                {% if product.productitem_set.all %}
                 <div class="product__info__price__wrap">
                     {% if product.discount %}
                     <p class="product__info__price product__info__price_new">$ {{ product.sell_price }}</p>
@@ -38,8 +38,8 @@
                     <div class="product__info__size__wrap">
                         <label class="product__info__size__title" for="sizes">Choose a size:</label>
                         <select name="size" class="custom-select" id="sizes">
-                            {% for i in items %}
-                            <option value="{{ i.size }}">{{ i.size }}</option>
+                            {% for item in product.productitem_set.all %}
+                            <option value="{{ item.size }}">{{ item.size }}</option>
                             {% endfor %}
                         </select>
                     </div>
@@ -51,7 +51,7 @@
 
                 <div class="product__info__description__wrap">
                     <p class="product__info__description__title">Description:</p>
-                    <p class="product__info__description__text">{{ product.description }}</p>    
+                    <p class="product__info__description__text">{{ product.description|linebreaksbr }}</p>    
                 </div>
             </div>
         </div>

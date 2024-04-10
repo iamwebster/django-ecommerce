@@ -3,7 +3,7 @@
 
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/users_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/profile_style.css' %}">
 {% endblock %}
 
 
@@ -30,13 +30,19 @@
             </div>
             <hr>
             <div class="profile__analytics__wrap">
-                <p class="profile__analytics__item">Purchased sneakers: <span class="profile__analytics__value">{{ orders.total_qty }}</span></p>
-                <p class="profile__analytics__item">Amount of purchases: <span class="profile__analytics__value">${{ orders.total_price|floatformat:2 }}</span></p>
+                <div class="profile__analytics__item">
+                    <p class="profile__analytics__text">Amount of purchases:</p>
+                    <p class="profile__analytics__value">$ {{ orders.total_price|floatformat:2 }}</p>
+                </div>
+                <div class="profile__analytics__item">
+                    <p class="profile__analytics__text">Purchased sneakers:</p>
+                    <p class="profile__analytics__value">{{ orders.total_qty }}</p>
+                </div>
             </div>
             <hr>
             <h2 class="profile__orders__title">Your orders:</h2>
+            {% if orders %}
             <div class="profile__orders__wrap">
-
                 {% for order in orders %}
                 <div class="profile__order__item">
                     <div class="profile__order__info__wrap">
@@ -51,11 +57,9 @@
                     <div class="order-item__wrap">
                         {% for item in order.orderitem_set.all %}
                         <div class="order-item__item">
-                            {% comment %} <a href="{{ item.product_item.product.get_absolute_url }}"> {% endcomment %}
                                 <img class="order-item__image" src="{{ item.product_item.product.image.url }}" alt="">
-                            {% comment %} </a> {% endcomment %}
-                            <div class="">
-                                <a href="{{ item.product_item.product.get_absolute_url }}" class="order-item__info">{{ item.name }}</a>
+                            <div>
+                                <a href="{{ item.product_item.product.get_absolute_url }}" class="order-item__info order-item__link">{{ item.name }}</a>
                                 <p class="order-item__info">Size: {{ item.product_item.size }}</p>
                                 <p class="order-item__info">{{ item.quantity }}X = ${{ item.product_price }}</p>
                             </div>
@@ -67,7 +71,10 @@
                 {% endfor %}
 
             </div>
-            <a href="#" class="profile__order__history">Show the order history</a>
+            {% else %}
+            <div class="nothing-found">No orders yet</div>
+            {% endif %}
+            {% comment %} <a href="#" class="profile__order__history">Show the order history</a> {% endcomment %}
         </div>
     </div>
 </section>

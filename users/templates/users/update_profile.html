@@ -3,7 +3,7 @@
 
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/users_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/forms_style.css' %}">
 {% endblock %}
 
 
@@ -12,6 +12,7 @@
 <section class="main_section">
     <div class="container container_users">
         <div class="form__wrap">
+            <a href="{{ request.META.HTTP_REFERER }}" class="back-button"><span class="material-icons back-button_icon">arrow_back_ios</span>Back</a>
             <h2 class="main__title">Edit profile</h2>
             <form method="post" class="users__form" enctype="multipart/form-data">
                 {% csrf_token %}

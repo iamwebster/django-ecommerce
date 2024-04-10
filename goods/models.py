@@ -11,23 +11,36 @@ class Category(models.Model):
         ('men', 'Men'),
         ('women', 'Women'),
     ))
+    image = models.ImageField(null=True, blank=True)
     slug = models.SlugField(max_length=255, unique=True)
+
+    def save(self, *args, **kwargs):
+        self.image.name = f'{self.gender}/{self.name}/{self.image.name}'
+        super(Category, self).save(*args, **kwargs)
 
     def __str__(self):
         return f'{self.gender} | {self.name}'
-    
+
+
+class ProductColor(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+ 
 
 class Product(models.Model):
     class Meta:
         ordering = ('id',)
+
     name = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255, unique=True, verbose_name='URL')
+    slug = models.SlugField(max_length=255, unique=True, verbose_name='URL', blank=True)
     description = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to='sneakers/')
     price = models.FloatField(default=0.00)
     discount = models.IntegerField(null=True, blank=True, verbose_name='Discount %')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    # gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
+    color = models.ManyToManyField(ProductColor)
 
 
     def sell_price(self):
@@ -35,6 +48,7 @@ class Product(models.Model):
             return round(self.price - self.price * self.discount / 100, 2)
         return self.price
     
+
     def get_absolute_url(self):
         return reverse("product_detail", kwargs={"product_slug": self.slug})
     
@@ -42,13 +56,6 @@ class Product(models.Model):
     def article(self):
         return f'{self.id:05}'
 
-
-    def __str__(self):
-        return self.name
-    
-
-class ProductColor(models.Model):
-    name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name

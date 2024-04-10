@@ -18,6 +18,10 @@ a {
 }
 
 img {
+	transition: .4s;
+}
+
+img {
 	max-width: 100%;
 }
 
@@ -121,7 +125,7 @@ span {
 
 .nav__wrap {
 	color: #fff;
-	background-color: #000;
+	background-color: #22262A;
 	display: flex;
 	justify-content: space-around;
 	padding: 5px 0;
@@ -135,7 +139,7 @@ span {
 .nav__wrap li {
 	display: block; 
 	padding: 0 15px;
-	background-color: #000; 
+	background-color: #22262A; 
 	position: relative;
 	z-index: 1; 
 }
@@ -172,8 +176,6 @@ span {
 	justify-content: space-between;
 	align-items: center;
 }
-
-
 
 .banner__img {
 	display: block;
@@ -227,8 +229,18 @@ span {
 .nothing-found {
 	text-align: center;
 	font-size: 50px;
-	padding-top: 150px;
+	padding-top: 120px;
 	cursor: default;
 	font-weight: 600;
-	color: #999999;
+	color: #999;
+}
+
+.back-button {
+	color: #818181;
+	display: flex;
+	align-items: center;
+}
+
+.back-button_icon {
+	font-size: 20px;
 }

@@ -19,8 +19,13 @@ def catalog(request, gender, category_slug):
 
     if category_slug != "all":
         products = Product.objects.filter(category__slug=category_slug)
+
+    elif gender == 'sale' and category_slug == 'all':
+        products = Product.objects.exclude(discount__isnull=True)
+
     else:
         products = Product.objects.filter(category__gender=gender)
+        
 
     if order_by == 'price' or order_by == '-price':
         products = products.order_by(order_by)
@@ -34,8 +39,7 @@ def catalog(request, gender, category_slug):
 
 def product(request, product_slug):
     product = Product.objects.get(slug=product_slug)
-    product_item = ProductItem.objects.filter(product__slug=product_slug)
-    return render(request, "goods/product.html", {"product": product, 'items': product_item})
+    return render(request, "goods/product.html", {"product": product})
 
 
 def search(request):

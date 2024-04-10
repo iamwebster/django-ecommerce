@@ -1,18 +1,26 @@
 from django.contrib import admin
 from .models import Category, Product, ProductItem, ProductColor, ProductShots
 from django.utils.html import format_html
+from django.utils.text import slugify
+
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ['gender', 'name']}
-    list_display = ['name', 'gender', 'slug']
+    list_display = ['get_image', 'name', 'gender', 'slug']
+    list_display_links = ['get_image', 'name']
     list_filter = ['name', 'gender']
+
+    def get_image(self, obj):
+        return format_html('<img src="{}" width="75px" />'.format(obj.image.url))
+
+    get_image.short_description = 'Image'
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug': ['name']}
-    list_display = ['get_image', 'name', 'category', 'discount', 'sell_price']
+    prepopulated_fields = {'slug': ['name', 'color']}
+    list_display = ['get_image', 'name', 'color_name', 'category', 'discount', 'sell_price']
     list_display_links = ['get_image', 'name']
     list_editable = ['discount',]
     search_fields = ['name', 'description']
@@ -21,12 +29,20 @@ class ProductAdmin(admin.ModelAdmin):
         ('name', 'slug'),
         'description',
         'image',
+        'color',
         ('price', 'discount'),
         ('category'),
     ]
 
+    
+    def color_name(self, obj):
+        return slugify([i.name for i in obj.color.all()])
+        
+
     def get_image(self, obj):
-        return format_html('<img src="{}" width="75px" />'.format(obj.image.url))
+        if obj.image:
+            return format_html('<img src="{}" width="75px" />'.format(obj.image.url))
+        return 'No image'
     
     get_image.short_description = 'Image'
     
@@ -37,5 +53,5 @@ class ProductItemAdmin(admin.ModelAdmin):
     list_filter = ['size', 'remains']
 
 
-admin.site.register(ProductColor)
 admin.site.register(ProductShots)
+admin.site.register(ProductColor)
