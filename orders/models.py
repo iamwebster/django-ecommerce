@@ -8,7 +8,7 @@ class OrderQuerySet(models.QuerySet):
 
     def total_price(self):
         if self:
-            return sum(order.order_price() for order in self)
+            return round(sum(order.order_price() for order in self), 2)
         return 0
     
     def total_qty(self):
@@ -45,7 +45,7 @@ class Order(models.Model):
 
 
     def order_price(self):
-        return sum(item.product_price() for item in self.orderitem_set.all())
+        return round(sum(item.product_price() for item in self.orderitem_set.all()), 2)
     
     def orderitem_quantity(self):
         return sum(item.quantity for item in self.orderitem_set.all())

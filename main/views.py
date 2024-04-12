@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from goods.models import Product
 
 
 def main_page(request):
-    return render(request, 'main/main_page.html')
+    products = Product.objects.order_by('-id')[:10]
+    return render(request, 'main/main_page.html', {'products': products})
     
 
 def about(request):

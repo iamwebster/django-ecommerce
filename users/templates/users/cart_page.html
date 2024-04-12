@@ -5,8 +5,7 @@
 
 {% block css %} 
 <link rel="stylesheet" href="{% static 'css/cart_style.css' %}">
-<link rel="stylesheet" href="{% static 'css/checkout_style.css' %}">
-<link rel="stylesheet" href="{% static 'css/users_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/forms_style.css' %}">
 
 {% endblock %}
 
@@ -51,6 +50,7 @@
                 <p class="cart__result__item__total cart__result__item__total_grand">${{ carts.total_price }}</p>
             </div>
         </div>
+        {% if user.is_authenticated %}
         <a href="#" class="cart__result__checkout checkout__open">Check Out</a>
 
         <div class="checkout__fade">
@@ -119,6 +119,12 @@
                 </form>
             </div>		
         </div>
+        {% else %}
+        <div class="cart__message">
+            <p>To make a purchase, you need to <a href="{% url 'register' %}" class="cart__message__link">register</a> or <a href="{% url 'login' %}" class="cart__message__link">login</a>.</p>
+            <p>Don't worry, the items in your cart will be saved.</p>
+        </div>
+        {% endif %}
     </div>
 </section>
 

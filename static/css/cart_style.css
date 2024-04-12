@@ -138,3 +138,22 @@
     background-color: #fff;
     color: #333;
 }
+
+/* OTHER */
+
+.cart__message {
+    text-align: center;
+    font-size: 36px;
+    line-height: 1.6;
+    padding-top: 40px;
+    cursor: default;
+    color: #bfb0c4
+}
+
+.cart__message__link {
+    color: #837488;
+}
+
+.cart__message__link:hover {
+    text-decoration: underline;
+}

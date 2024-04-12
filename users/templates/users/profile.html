@@ -32,7 +32,7 @@
             <div class="profile__analytics__wrap">
                 <div class="profile__analytics__item">
                     <p class="profile__analytics__text">Amount of purchases:</p>
-                    <p class="profile__analytics__value">$ {{ orders.total_price|floatformat:2 }}</p>
+                    <p class="profile__analytics__value">$ {{ orders.total_price }}</p>
                 </div>
                 <div class="profile__analytics__item">
                     <p class="profile__analytics__text">Purchased sneakers:</p>
@@ -48,9 +48,9 @@
                     <div class="profile__order__info__wrap">
 
                         <p class="profile__order__info">Order № {{ order.id }} - {{ order.created_at }}</p>
-                        <p>Status: <span class="profile__order__status">{{ order.status }}</span></p>
-                        <p class="profile__order__info">Price: {{ order.order_price }}</p>
-                        <p class="profile__order__info">Quantity: {{ order.orderitem_quantity }}</p>
+                        <p>Status: <span class="profile__order__value">{{ order.status }}</span></p>
+                        <p class="profile__order__info">Price: <span class="profile__order__value">$ {{ order.order_price }}</span></p>
+                        <p class="profile__order__info">Quantity: <span class="profile__order__value">{{ order.orderitem_quantity }}</span></p>
                         
                     </div>
                     <hr>
