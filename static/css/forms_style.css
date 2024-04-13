@@ -54,6 +54,10 @@
     padding-bottom: 15px;
 }
 
+.auth__link {
+    color: #9c120b;
+}
+
 .auth__link:hover {
     text-decoration: underline;
 }

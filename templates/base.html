@@ -35,20 +35,15 @@
                 </a>
                 <nav class="header__nav">
                     <ul class="header__list">
-                        {% if user.is_authenticated %}
-                        <li class="header__item"><a href="{% url 'profile' %}" class="header__link">Profile</a></li>
-                        <li class="header__item"><a href="{% url 'logout' %}" class="header__link">Logout</a></li>
-                        {% else %}
-                        <li class="header__item"><a href="{% url 'login' %}" class="header__link">Login</a></li>
-                        <li class="header__item"><a href="{% url 'register' %}" class="header__link">Register</a></li>
-                        {% endif %}
-                        <li class="header__item"><a href="{% url 'about' %}" class="header__link">About us</a></li>
-                        {% if user.is_superuser %}<li class="header__item"><a href="/admin" class="header__link">To Admin panel</a></li>{% endif %}
+                        <li class="header__item"><a href="{% url 'categories' 'men' %}" class="header__link">Men</a></li>
+                        <li class="header__item"><a href="{% url 'categories' 'women' %}" class="header__link">Women</a></li>
+                        <li class="header__item"><a href="{% url 'categories' 'kids' %}" class="header__link">Kids</a></li>
+                        <li class="header__item"><a href="{% url 'about' %}" class="header__link">About Us</a></li>
                     </ul>
                 </nav>
                 <div class="header__user__links">
+                    <a href="{% url 'profile' %}" class="material-icons header__user__link">person</a>
                     <a href="{% url 'search' %}" class="material-icons header__user__link">search</a>
-                    {% comment %} <a href="#" class="material-icons header__user__link">favorite_border</a> {% endcomment %}
                     <div class="header__cart__wrap">
                         <a href="{% url 'cart' %}" class="material-icons header__user__link">shopping_cart</a>
                         <p id="ajax-qty">{{ carts_qty.total_qty }}</p>
@@ -56,7 +51,7 @@
                 </div>
             </div>
 
-            <ul class="nav__wrap">
+            {% comment %} <ul class="nav__wrap">
                 <li><a href="{% url 'catalog' 'men' 'all' %}">Men</a>
                     <ul>
                         {% for men_cat in men_cats %}
@@ -79,7 +74,7 @@
                     </ul>
                 </li>
                 <li><a href="{% url 'catalog' 'sale' 'all' %}">Sale</a></li>
-            </ul>            
+            </ul>             {% endcomment %}
         </div>
     </header>
     {% block content %}
