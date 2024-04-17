@@ -10,71 +10,108 @@
 {% block content %}
     <section class="main_section">
         <div class="container">
-            {% if products %}
-            <h2 class="main__title">{% categories_tag slug %}</h2>
-            <div class="catalog__info">
-                <div class="dropdown__wrap">
-                    <div class="dropdown_info">
-                        <span class="dropdown__title">Sort by:</span>
-                        {% if request.GET.order_by == 'price' %}
-                        <span>low to high</span>
-                        {% elif request.GET.order_by == '-price' %}
-                        <span>high to low</span>
-                        {% else %}
-                        <span>default</span>
-                        {% endif %}
-                    </div>
-                    <ul class="dropdown">
-                        <li><a href="?">Default</a></li>
-                        <li><a href="?order_by=price">Price: low to high</a></li>
-                        <li><a href="?order_by=-price">Price: high to low</a></li>
-                    </ul>
+
+            <div class="sidebar">
+                <div class="sidebar__container">
+                    <form method="get">
+                        <h2 class="sidebar__title">Filters</h2>
+                        <div class="sidebar__sort__wrap">
+                            <p class="sidebar__item__title">Sort by:</p>
+                                <div class="sidebar__item">
+                                <label class="sidebar__label" for="id_default">
+                                    <input name="sort_by" id="id_default" type="radio">
+                                    <span>Default</span>
+                                </label>
+                                <label class="sidebar__label" for="id_low_to_high">
+                                    <input name="sort_by" id="id_low_to_high" type="radio">
+                                    <span>Price: low to high</span>
+                                </label>
+                                <label class="sidebar__label" for="id_high_to_low">
+                                    <input name="sort_by" id="id_high_to_low" type="radio">
+                                    <span>Price: high to low</span>
+                                </label>
+                                <label class="sidebar__label" for="id_newest">
+                                    <input name="sort_by" id="id_newest" type="radio">
+                                    <span>Newest</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sidebar__price">
+                            <p class="sidebar__item__title">Price:</p>
+                            <div class="sidebar__price__input">
+                                <input type="number" class="sidebar__price__input_min">
+                                <input type="number" class="sidebar__price__input_max">
+                            </div>
+                        </div>
+                        <div class="sidebar__category">
+                            <p class="sidebar__item__title">Choose category:</p>
+                            <div class="sidebar__item">
+                                {% for category in categories %}
+                                <label class="sidebar__label" for="{{ category.id }}">
+                                    <input name="category" id="{{ category.id }}" type="radio">
+                                    <span>{{ category.name }}</span>
+                                </label>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <button type="submit">Apply</button>
+                    </form>
                 </div>
-                <p>Quantity of Sneakers: <span class="catalog__info__qty">{{ products|length }}</span></p>                
             </div>
-            <div class="catalog__wrap">
-                {% for product in products %}
-                <div class="catalog__card">
-                    <a href="{% url 'product_detail' product.slug %}" class="catalog__card__link">
-                        <img src="{{ product.image.url }}" alt="#" class="catalog__card__img">
-                    </a>
-                    <div class="catalog__card__info">
-                        <a href="#" class="catalog__card__name">{{ product.name }}</a>
-                        <div class="catalog__card__price__wrap">
-                            {% if product.discount %}
-                            <p class="catalog__card__price_new">${{ product.sell_price }}</p>
-                            <p class="catalog__card__price_old">${{ product.price }}</p>
-                            <small>-{{ product.discount }}%</small>
-                            {% else %}
-                            <p class="catalog__card__price">${{ product.price }}</p>
-                            {% endif %}
+
+            <h2 class="main__title">{% categories_tag slug %}</h2>            
+
+            <div class="catalog">
+                {% if products %}
+                <div class="catalog__info">
+                    <p>Quantity of Sneakers: <span class="catalog__info__qty">{{ products|length }}</span></p>                
+                </div>
+                <div class="catalog__wrap">
+                    {% for product in products %}
+                    <div class="catalog__card">
+                        <a href="{% url 'product_detail' product.slug %}" class="catalog__card__link">
+                            <img src="{{ product.image.url }}" alt="#" class="catalog__card__img">
+                        </a>
+                        <div class="catalog__card__info">
+                            <a href="#" class="catalog__card__name">{{ product.name }}</a>
+                            <div class="catalog__card__price__wrap">
+                                {% if product.discount %}
+                                <p class="catalog__card__price_new">${{ product.sell_price }}</p>
+                                <p class="catalog__card__price_old">${{ product.price }}</p>
+                                <small>-{{ product.discount }}%</small>
+                                {% else %}
+                                <p class="catalog__card__price">${{ product.price }}</p>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
-            </div>
-            {% if products.has_next and products.has_previous %}
-            <div class="pagination__wrap">
-                {% if products.has_previous %}
-                <a href="?{% change_params page=products.previous_page_number %}"><span class="material-icons pagination__button">arrow_back_ios</span></a>
-                {% else %}
-                <span class="material-icons pagination__button disabled">arrow_back_ios</span>
+                {% if products.has_next and products.has_previous %}
+                <div class="pagination__wrap">
+                    {% if products.has_previous %}
+                    <a href="?{% change_params page=products.previous_page_number %}"><span class="material-icons pagination__button">arrow_back_ios</span></a>
+                    {% else %}
+                    <span class="material-icons pagination__button disabled">arrow_back_ios</span>
+                    {% endif %}
+    
+                    {% for page in products.paginator.page_range %}
+                    <a {% if products.number == page %} class="disabled"{% endif %} href="?{% change_params page=page %}">{{ page }}</a>
+                    {% endfor %}
+    
+                    {% if products.has_next %}
+                    <a href="?{% change_params page=products.next_page_number %}"><span class="material-icons pagination__button">arrow_forward_ios</span></a>
+                    {% else %}
+                    <span class="material-icons pagination__button disabled">arrow_forward_ios</span>
+                    {% endif %}
+                </div>
                 {% endif %}
-
-                {% for page in products.paginator.page_range %}
-                <a {% if products.number == page %} class="disabled"{% endif %} href="?{% change_params page=page %}">{{ page }}</a>
-                {% endfor %}
-
-                {% if products.has_next %}
-                <a href="?{% change_params page=products.next_page_number %}"><span class="material-icons pagination__button">arrow_forward_ios</span></a>
-                {% else %}
-                <span class="material-icons pagination__button disabled">arrow_forward_ios</span>
-                {% endif %}
-            </div>
+            {% else %}
+            <p class="nothing-found">Nothing was found</p>
             {% endif %}
-        {% else %}
-        <p class="nothing-found">Nothing was found</p>
-        {% endif %}
+            </div>
+
+            
         </div>
     </section>
 

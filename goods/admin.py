@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product, ProductItem, ProductColor, ProductShots
+from .models import Category, Product, ProductItem, ProductColor, ProductShots, CategoryGender
 from django.utils.html import format_html
 from django.utils.text import slugify
 
@@ -55,3 +55,4 @@ class ProductItemAdmin(admin.ModelAdmin):
 
 admin.site.register(ProductShots)
 admin.site.register(ProductColor)
+admin.site.register(CategoryGender)

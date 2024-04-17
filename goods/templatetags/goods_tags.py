@@ -3,7 +3,7 @@
 
 from django import template 
 from django.utils.http import urlencode
-from goods.models import Category
+from goods.models import Category, CategoryGender
 
 register = template.Library()
 
@@ -24,7 +24,10 @@ def change_params(context, **kwargs):
     query.update(kwargs)
     return urlencode(query)
 
+@register.simple_tag()
+def get_categories_gender():
+    return CategoryGender.objects.all()
 
 @register.simple_tag()
 def get_categories(gender):
-    return Category.objects.filter(gender=gender)
+    return Category.objects.filter(gender__name=gender)

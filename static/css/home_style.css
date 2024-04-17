@@ -1,6 +1,7 @@
 /* SWIPER */
 
 .swiper {
+    margin-top: 82px;
     margin-bottom: 50px;
     width: 100%;
     background-color: #000;
@@ -55,22 +56,3 @@
     color: #fff;
     background-color: #9c120b;
 }
-
-
-/* OWL CAROUSEL */
-
-/* .prev-btn-owl {
-	position: absolute;
-	left: -50px;
-	top: 120px;
-	border: none;
-	font-size: 60px;
-}
-
-.next-btn-owl {
-	position: absolute;
-	right: -65px;
-	top: 120px;
-	border: none;
-	font-size: 60px;
-} */

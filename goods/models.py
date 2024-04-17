@@ -2,20 +2,26 @@ from django.db import models
 from django.urls import reverse
 
 
+class CategoryGender(models.Model):
+    class Meta:
+        verbose_name_plural = 'Categories genders'
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+    
+
 class Category(models.Model):
     class Meta:
         verbose_name_plural = "Categories"
 
     name = models.CharField(max_length=255)
-    gender = models.CharField(max_length=255, choices=(
-        ('men', 'Men'),
-        ('women', 'Women'),
-    ))
+    gender = models.ForeignKey(CategoryGender, on_delete=models.PROTECT)
     image = models.ImageField(null=True, blank=True)
     slug = models.SlugField(max_length=255, unique=True)
 
     def save(self, *args, **kwargs):
-        self.image.name = f'{self.gender}/{self.name}/{self.image.name}'
+        self.image.name = f'{self.gender.name}/{self.name}/{self.image.name}'
         super(Category, self).save(*args, **kwargs)
 
     def __str__(self):

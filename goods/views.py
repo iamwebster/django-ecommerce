@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from .models import Category, Product, ProductItem
+from .models import Category, Product
 from django.core.paginator import Paginator
 from .utils import query_search
 
 
 def categories(request, gender):
-    categories = Category.objects.filter(gender=gender)
+    categories = Category.objects.filter(gender__name=gender)
     return render(
         request,
         "goods/categories.html",
@@ -24,7 +24,7 @@ def catalog(request, gender, category_slug):
         products = Product.objects.exclude(discount__isnull=True)
 
     else:
-        products = Product.objects.filter(category__gender=gender)
+        products = Product.objects.filter(category__gender__name=gender)
         
 
     if order_by == 'price' or order_by == '-price':
@@ -33,8 +33,12 @@ def catalog(request, gender, category_slug):
     paginator = Paginator(products, 40)
     current_page = paginator.page(int(page))
 
+    categories = Category.objects.filter(gender__name=gender)
+
     return render(
-        request, "goods/catalog.html", {"products": current_page, 'slug': category_slug})
+        request, "goods/catalog.html", {"products": current_page, 
+                                        'slug': category_slug, 
+                                        'categories': categories})
 
 
 def product(request, product_slug):
