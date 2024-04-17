@@ -1,9 +1,8 @@
 /* SWIPER */
 
 .swiper {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     width: 100%;
-    /* background-color: #22262A; */
     background-color: #000;
     border-radius: 5px;
 }

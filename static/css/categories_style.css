@@ -4,14 +4,14 @@
     font-size: 28px;
     font-weight: 600;
     text-align: center;
-    background-color: #8e5959;
+    background-color: #000000;
     border-radius: 5px;
     color: #fff;
     margin-bottom: 30px;
 }
 
 .categories__all-link:hover {
-    background-color: #603737;
+    background-color: #312b2b;
 }
 
 .categories__wrap {

@@ -30,7 +30,7 @@
                     <div class="swiper-slide">
                         <div class="swiper-content">
                             <p class="swiper__title">The choice is yours</p>
-                            <p class="swiper__subtitle">Let's go</p>
+                            <p class="swiper__subtitle">Step into comfort</p>
                             <a href="#" class="swiper__link">Choose sneakers</a>
                         </div>
                         <img src="{% static 'img/slides/second.webp' %}" alt="">
@@ -38,7 +38,7 @@
                     <div class="swiper-slide">
                         <div class="swiper-content">
                             <p class="swiper__title">The choice is yours</p>
-                            <p class="swiper__subtitle">Let's go</p>
+                            <p class="swiper__subtitle">Step into comfort</p>
                             <a href="#" class="swiper__link">Choose sneakers</a>
                         </div>
                         <img src="{% static 'img/slides/third.jpg' %}" alt="">
@@ -46,30 +46,36 @@
                     <div class="swiper-slide">
                         <div class="swiper-content">
                             <p class="swiper__title">The choice is yours</p>
-                            <p class="swiper__subtitle">Let's go</p>
+                            <p class="swiper__subtitle">Step into comfort</p>
                             <a href="#" class="swiper__link">Choose sneakers</a>
                         </div>
                         <img src="{% static 'img/slides/four.jpg' %}" alt="">
                     </div>
                 </div>
+                
 
                 <div class="swiper-pagination"></div>
             
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
-            {% comment %} <p class="main__title">The best selection of trends this season.</p>
-            <div class="banner__wrap">
-                <img src="{% static 'img/banner-sneaker.png' %}" alt="banner sneaker" class="banner__img">
-                <div class="banner__info">
-                    <p class="banner__text">The best selection of trends this season.</p>
-                    <b class="banner__title">Step into comfort</b>
-                    <div class="banner__links__wrap">
-                        <a href="{% url 'categories' 'men' %}" class="banner__link">Men</a>
-                        <a href="{% url 'categories' 'women' %}" class="banner__link">Women</a>
-                    </div>
+            
+            <div class="choice">
+                <div class="choice__wrap">
+                    <a href="{% url 'categories' 'men' %}" class="choice__item">
+                        <img src="{% static 'img/main/man.jpg' %}" alt="">
+                        <span class="choice__text">Men</span>
+                    </a>
+                    <a href="{% url 'categories' 'women' %}" class="choice__item">
+                        <img src="{% static 'img/main/woman.jpg' %}" alt="">
+                        <span class="choice__text">Women</span>
+                    </a>
+                    <a href="{% url 'categories' 'kids' %}" class="choice__item">
+                        <img src="{% static 'img/main/kid.jpg' %}" alt="">
+                        <span class="choice__text">Kids</span>
+                    </a>
                 </div>
-            </div> {% endcomment %}
+            </div>
 
             <div class="fresh__wrap">
                 <h2 class="main__title">Fresh Out Sneakers</h2>
