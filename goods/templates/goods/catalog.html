@@ -10,59 +10,60 @@
 {% block content %}
     <section class="main_section">
         <div class="container">
-            <h2 class="main__title">{% categories_tag slug %}</h2>            
+            <h2 class="main__title">{% style_tag style_url %}</h2>            
             <div class="catalog__section__wrap">
                 <div class="sidebar">
                     <div class="sidebar__container">
                         <form method="get">
                             <h2 class="sidebar__title">Filters</h2>
                             <div class="sidebar__item">
-                                <p class="sidebar__item__title">Sort by:</p>
+                                <p class="sidebar__item__title">Order by:</p>
                                     <div class="sidebar__item__form">
                                     <label class="sidebar__label" for="id_default">
-                                        <input value="default" name="sort_by" id="id_default" type="radio">
+                                        <input value="id" name="order_by" id="id_default" type="radio"
+                                        {% if order_by == 'id' %} checked {% endif %}>
                                         <span>Default</span>
                                     </label>
                                     <label class="sidebar__label" for="id_low_to_high">
-                                        <input value="low_to_high" name="sort_by" id="id_low_to_high" type="radio">
+                                        <input value="price" name="order_by" id="id_low_to_high" type="radio"
+                                        {% if order_by == 'price' %} checked {% endif %}>
                                         <span>Price: low to high</span>
                                     </label>
                                     <label class="sidebar__label" for="id_high_to_low">
-                                        <input value="high_to_low" name="sort_by" id="id_high_to_low" type="radio">
+                                        <input value="-price" name="order_by" id="id_high_to_low" type="radio"
+                                        {% if order_by == '-price' %} checked {% endif %}>
                                         <span>Price: high to low</span>
-                                    </label>
-                                    <label class="sidebar__label" for="id_newest">
-                                        <input value="newest" name="sort_by" id="id_newest" type="radio">
-                                        <span>Newest</span>
                                     </label>
                                 </div>
                             </div>
 
                             <div class="sidebar__item">
                                 <p class="sidebar__item__title">Price:</p>
-                                <div class="sidebar__price-input">
-                                    <input name="min-price" type="number" class="input-min" value="100">
-                                    <input name="max-price" type="number" class="input-max" value="500">
-                                </div>
-                                <div class="sidebar__price-slider">
-                                    <div class="progress"></div>
-                                </div>
-                                <div class="range-input">
-                                    <input type="range" class="range-min" min="0" max="600" value="100" step="10">
-                                    <input type="range" class="range-max" min="0" max="600" value="500" step="10">
+                                <div class="sidebar__price__input">
+                                    <div class="sidebar__price__input__item">
+                                        <label for="id_min_price">Min</label>
+                                        <input name="min_price" type="number" id="id_min_price" class="input-min" value="{{ min_price_filter }}">
+                                    </div>
+                                    <div class="sidebar__price__input__item">
+                                        <label for="id_max_price">Max</label>
+                                        <input name="max_price" type="number" id="id_max_price" class="input-max" value="{{ max_price_filter }}">
+                                    </div>
                                 </div>
                             </div>
                             <div class="sidebar__item">
-                                <p class="sidebar__item__title">Choose category:</p>
+                                <p class="sidebar__item__title">Choose style:</p>
                                 <div class="sidebar__item__form">
-                                    <label class="sidebar__label" for="id_all">
-                                        <input value="All" name="category" id="id_all" type="radio">
+                                    <label class="sidebar__label" for="id_all">                                        
+                                        <input value="all" name="style" id="id_all" type="radio"
+                                        {% if style_url == 'all' %} checked {% endif %}>
                                         <span>All</span>
                                     </label>
-                                    {% for category in categories %}
-                                    <label class="sidebar__label" for="{{ category.id }}">
-                                        <input value="{{ category.name }}" name="category" id="{{ category.id }}" type="radio">
-                                        <span>{{ category.name }}</span>
+                                    {% get_style_tag category_name as styles %}
+                                    {% for style in styles %}
+                                    <label class="sidebar__label" for="{{ style.id }}">
+                                        <input value="{{ style.url }}" name="style" id="{{ style.id }}" type="radio"
+                                        {% if style_url == style.url %} checked {% endif %}>
+                                        <span>{{ style.name }}</span>
                                     </label>
                                     {% endfor %}
                                 </div>

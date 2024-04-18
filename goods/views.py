@@ -1,44 +1,47 @@
 from django.shortcuts import render
-from .models import Category, Product
+from .models import Product
 from django.core.paginator import Paginator
 from .utils import query_search
 
 
-def categories(request, gender):
-    categories = Category.objects.filter(gender__name=gender)
-    return render(
-        request,
-        "goods/categories.html",
-        {"categories": categories, 'gender': gender},
-    )
-
-
-def catalog(request, gender, category_slug):
+def catalog(request, category_name, style_url):
     page = request.GET.get('page', 1)
-    order_by = request.GET.get('order_by', None)
 
-    if category_slug != "all":
-        products = Product.objects.filter(category__slug=category_slug)
+    style_filter = request.GET.get('style', None)
+    if style_filter:
+        style_url = style_filter
 
-    elif gender == 'sale' and category_slug == 'all':
-        products = Product.objects.exclude(discount__isnull=True)
+    order_by = request.GET.get('order_by', 'id') 
 
+    if style_url != 'all':
+        products = Product.objects.filter(style__url=style_url)
     else:
-        products = Product.objects.filter(category__gender__name=gender)
-        
+        products = Product.objects.filter(style__category__name=category_name)
 
-    if order_by == 'price' or order_by == '-price':
-        products = products.order_by(order_by)
+
+    prices_list = Product.objects.values_list('price', flat=True)
+    min_price = int(prices_list.order_by('price').first())
+    max_price = int(prices_list.order_by('price').last())
+
+    min_price_filter = request.GET.get('min_price', None)
+    max_price_filter = request.GET.get('max_price', None)
+    if not min_price_filter or not max_price_filter:
+        min_price_filter = min_price
+        max_price_filter = max_price
     
+    
+    products = products.filter(price__gte=min_price_filter, price__lte=max_price_filter).order_by(order_by)
+
     paginator = Paginator(products, 40)
     current_page = paginator.page(int(page))
 
-    categories = Category.objects.filter(gender__name=gender)
 
-    return render(
-        request, "goods/catalog.html", {"products": current_page, 
-                                        'slug': category_slug, 
-                                        'categories': categories})
+    return render(request, 'goods/catalog.html', {'products': current_page, 
+                                                  'category_name': category_name, 
+                                                  'style_url': style_url,
+                                                  'order_by': order_by,
+                                                  'min_price_filter': min_price_filter,
+                                                  'max_price_filter': max_price_filter,})
 
 
 def product(request, product_slug):

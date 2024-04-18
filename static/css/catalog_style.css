@@ -171,77 +171,33 @@
     background-color: #312b2b;
 }
 
-.sidebar__price-input {
+
+.sidebar__price__input {
     width: 100%;
     display: flex;
-    margin: 10px 0;
+    margin-top: 5px;
     justify-content: space-between;
 }
 
 
-.sidebar__price-input input {
+.sidebar__price__input__item {
     width: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar__price__input input {
+    width: 90%;
     height: 100%;
     font-size: 16px;
     border-radius: 5px;
     padding: 5px 0;
     text-align: center;
     border: 1px solid #999;
-    -moz-appearance: textfield;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
-}
-
-
-.sidebar__price-slider {
-    height: 5px;
-    position: relative;
-    background: #ddd;
-    border-radius: 5px;
-}
-
-.sidebar__price-slider .progress {
-    height: 100%;
-    position: absolute;
-    border-radius: 5px;
-    background-color: #000;
-}
-
-.range-input {
-    position: relative;
-}
-    
-.range-input input {
-    position: absolute;
-    width: 100%;
-    height: 5px;
-    top: -5px;
-    background: none;
-    pointer-events: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    height: 17px;
-    width: 17px;
-    border-radius: 50%;
-    background: #000;
-    pointer-events: auto;
-    -webkit-appearance: none;
-    cursor: pointer;
-}
-
-input[type="range"]::-moz-range-thumb {
-    height: 17px;
-    width: 17px;
-    border: none;
-    border-radius: 50%;
-    background: #000;
-    pointer-events: auto;
-    -moz-appearance: none;
-    cursor: pointer;
 }

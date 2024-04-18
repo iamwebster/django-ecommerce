@@ -1,7 +1,7 @@
 const rangeInput = document.querySelectorAll(".range-input input"),
     priceInput = document.querySelectorAll(".sidebar__price-input input"),
     range = document.querySelector(".sidebar__price-slider .progress");
-let priceGap = 10;
+let priceGap = 0.2;
 
 let minPrice = parseInt(priceInput[0].value);
 range.style.left = (minPrice / rangeInput[0].max) * 100 + "%";

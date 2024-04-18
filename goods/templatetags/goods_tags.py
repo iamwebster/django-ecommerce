@@ -1,21 +1,18 @@
-# 5:47
-# Шаблонный тег
-
 from django import template 
 from django.utils.http import urlencode
-from goods.models import Category, CategoryGender
+from goods.models import Category, Style
 
 register = template.Library()
 
 
 @register.simple_tag()
-def categories_tag(slug):
+def style_tag(url):
     try:
-        category = Category.objects.get(slug=slug)
-        category_name = category.name
+        style = Style.objects.get(url=url)
+        style_name = style.name
     except:
-        category_name = 'All'
-    return category_name
+        style_name = 'All'
+    return style_name
 
 
 @register.simple_tag(takes_context=True)
@@ -24,10 +21,12 @@ def change_params(context, **kwargs):
     query.update(kwargs)
     return urlencode(query)
 
-@register.simple_tag()
-def get_categories_gender():
-    return CategoryGender.objects.all()
 
 @register.simple_tag()
-def get_categories(gender):
-    return Category.objects.filter(gender__name=gender)
+def get_categories_tag():
+    return Category.objects.all()
+
+
+@register.simple_tag()
+def get_style_tag(category_name):
+    return Style.objects.filter(category__name=category_name)

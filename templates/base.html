@@ -4,7 +4,7 @@
 
 {% get_user_carts request as carts_qty %}
 
-{% get_categories_gender as categories_genders %}
+{% get_categories_tag as categories_list %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,15 +35,15 @@
                 </a>
                 <nav class="header__nav">
                     <ul class="header__list">
-                        {% for cat_gender in categories_genders %}
+                        {% for category in categories_list %}
                         <li>
-                            <a href="{% url 'categories' cat_gender %}" class="header__link">{{ cat_gender }}</a>
-                            {% get_categories cat_gender as cats %}
+                            <a href="{% url 'catalog' category.name 'all' %}" class="header__link">{{ category.name }}</a>
+                            {% get_style_tag category.name as styles %}
                             <ul class="header__submenu">
-                                {% for cat in cats %}
+                                {% for style in styles %}
                                 <li>
-                                    <a href="{% url 'catalog' cat.gender cat.slug %}" 
-                                    class="header__link header__link_sub">{{ cat.name }}</a>
+                                    <a href="{% url 'catalog' style.category style.url %}" 
+                                    class="header__link header__link_sub">{{ style.name }}</a>
                                 </li>
                                 {% endfor %}
                             </ul>
@@ -52,9 +52,6 @@
                         <li><a href="{% url 'about' %}" class="header__link">About Us</a></li>
                     </ul>
                 </nav>
-                {% for i in Aaa.men %}
-                {{ i }}
-                {% endfor %}
                 <div class="header__user__links">
                     <a href="{% url 'profile' %}" class="material-icons header__user__link">person</a>
                     <a href="{% url 'search' %}" class="material-icons header__user__link">search</a>
@@ -64,15 +61,6 @@
                     </div>
                 </div>
             </div>
-
-            {% comment %} <ul class="nav__wrap">
-                <li><a href="{% url 'catalog' 'men' 'all' %}">Men</a>
-                    <ul>
-                        {% for men_cat in men_cats %}
-                        <li><a href="{% url 'catalog' men_cat.gender men_cat.slug %}">{{ men_cat.name }}</a></li>
-                        {% endfor %}
-                    </ul>
-          {% endcomment %}
         </div>
     </header>
 

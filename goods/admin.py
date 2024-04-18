@@ -1,37 +1,32 @@
 from django.contrib import admin
-from .models import Category, Product, ProductItem, ProductColor, ProductShots, CategoryGender
+from .models import Product, ProductItem, ProductColor, ProductShots, Style, Category
 from django.utils.html import format_html
 from django.utils.text import slugify
 
 
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug': ['gender', 'name']}
-    list_display = ['get_image', 'name', 'gender', 'slug']
-    list_display_links = ['get_image', 'name']
-    list_filter = ['name', 'gender']
-
-    def get_image(self, obj):
-        return format_html('<img src="{}" width="75px" />'.format(obj.image.url))
-
-    get_image.short_description = 'Image'
+@admin.register(Style)
+class StyleAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'url': ['name',]}
+    list_display = ['name', 'category', 'url']
+    list_display_links = ['name',]
+    list_filter = ['name', 'category']
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ['name', 'color']}
-    list_display = ['get_image', 'name', 'color_name', 'category', 'discount', 'sell_price']
+    list_display = ['get_image', 'name', 'color_name', 'style', 'discount', 'sell_price']
     list_display_links = ['get_image', 'name']
     list_editable = ['discount',]
     search_fields = ['name', 'description']
-    list_filter = ['discount', 'category']
+    list_filter = ['discount', 'style']
     fields = [
         ('name', 'slug'),
         'description',
         'image',
         'color',
         ('price', 'discount'),
-        ('category'),
+        ('style'),
     ]
 
     
@@ -55,4 +50,4 @@ class ProductItemAdmin(admin.ModelAdmin):
 
 admin.site.register(ProductShots)
 admin.site.register(ProductColor)
-admin.site.register(CategoryGender)
+admin.site.register(Category)

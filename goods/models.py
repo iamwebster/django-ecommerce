@@ -2,30 +2,23 @@ from django.db import models
 from django.urls import reverse
 
 
-class CategoryGender(models.Model):
+class Category(models.Model):
     class Meta:
-        verbose_name_plural = 'Categories genders'
+        verbose_name_plural = 'Categories'
+
     name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
     
 
-class Category(models.Model):
-    class Meta:
-        verbose_name_plural = "Categories"
-
+class Style(models.Model):
     name = models.CharField(max_length=255)
-    gender = models.ForeignKey(CategoryGender, on_delete=models.PROTECT)
-    image = models.ImageField(null=True, blank=True)
-    slug = models.SlugField(max_length=255, unique=True)
-
-    def save(self, *args, **kwargs):
-        self.image.name = f'{self.gender.name}/{self.name}/{self.image.name}'
-        super(Category, self).save(*args, **kwargs)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT)
+    url = models.CharField(max_length=255)
 
     def __str__(self):
-        return f'{self.gender} | {self.name}'
+        return f'{self.category} | {self.name}'
 
 
 class ProductColor(models.Model):
@@ -33,7 +26,7 @@ class ProductColor(models.Model):
 
     def __str__(self):
         return self.name
- 
+
 
 class Product(models.Model):
     class Meta:
@@ -45,8 +38,12 @@ class Product(models.Model):
     image = models.ImageField(upload_to='sneakers/')
     price = models.FloatField(default=0.00)
     discount = models.IntegerField(null=True, blank=True, verbose_name='Discount %')
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    style = models.ForeignKey(Style, on_delete=models.CASCADE)
     color = models.ManyToManyField(ProductColor)
+
+    def save(self, *args, **kwargs):
+        self.image.name = f"{self.name}/{self.image.name}"
+        super(Product, self).save(*args, **kwargs)
 
 
     def sell_price(self):

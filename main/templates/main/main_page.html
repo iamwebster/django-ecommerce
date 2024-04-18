@@ -62,15 +62,15 @@
             
             <div class="choice">
                 <div class="choice__wrap">
-                    <a href="{% url 'categories' 'men' %}" class="choice__item">
+                    <a href="{% url 'catalog' 'men' 'all' %}" class="choice__item">
                         <img src="{% static 'img/main/man.jpg' %}" alt="">
                         <span class="choice__text">Men</span>
                     </a>
-                    <a href="{% url 'categories' 'women' %}" class="choice__item">
+                    <a href="{% url 'catalog' 'women' 'all' %}" class="choice__item">
                         <img src="{% static 'img/main/woman.jpg' %}" alt="">
                         <span class="choice__text">Women</span>
                     </a>
-                    <a href="{% url 'categories' 'kids' %}" class="choice__item">
+                    <a href="{% url 'catalog' 'kids' 'all' %}" class="choice__item">
                         <img src="{% static 'img/main/kid.jpg' %}" alt="">
                         <span class="choice__text">Kids</span>
                     </a>
@@ -110,48 +110,5 @@
 integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" 
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $(".owl-carousel").owlCarousel(
-            {
-                loop:true,
-                autoplay: 5000,
-                margin:10,
-                navigation : false,
-                responsive:{
-                    0:{
-                        items:1
-                    },
-                    600:{
-                        items:3
-                    },
-                    1000:{
-                        items:5
-                    }
-                }
-            }
-        );
-        });
-</script>
-<script>
-    const swiper = new Swiper('.swiper', {
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-
-        loop: true,
-      
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-      
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      
-      });
-</script>
+<script src="{% static 'js/main-scripts.js' %}"></script>
 {% endblock %}
