@@ -1,7 +1,6 @@
 .profile__info__wrap {
     display: flex;
     gap: 30px;
-    align-items: center;
     padding-bottom: 30px;
 }
 
@@ -9,6 +8,19 @@
     max-width: 175px;
     object-fit: cover;
     border-radius: 3px;
+}
+
+.profile__logout__wrap {
+    margin-left: auto;
+}
+
+.profile__logout {
+    color: #818181;
+}
+
+.profile__logout:hover {
+    text-decoration: underline;
+    color: #000;
 }
 
 .profile__name__update__wrap {

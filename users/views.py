@@ -87,7 +87,6 @@ def update_profile(request):
     return render(request, 'users/update_profile.html', {'form': form})
 
 
-# @login_required
 def user_cart(request):
     if request.method == 'POST':
         form = CreateOrderForm(data=request.POST)
@@ -134,6 +133,7 @@ def user_cart(request):
                         return redirect('profile')
             except ValidationError:
                 return redirect('cart')
+            
     else:
         if request.user.is_authenticated:
             initial = {
@@ -145,8 +145,4 @@ def user_cart(request):
 
         form = CreateOrderForm(initial=initial)
 
-    context = {
-        'form': form,
-        'orders': True,
-    }
-    return render(request, 'users/cart_page.html', context=context)
+    return render(request, 'users/cart_page.html', {'form': form})

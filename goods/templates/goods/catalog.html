@@ -10,12 +10,23 @@
 {% block content %}
     <section class="main_section">
         <div class="container">
-            <h2 class="main__title">{% style_tag style_url %}</h2>            
+            <h2 class="main__title">{% style_tag style_url category_name %}</h2>            
             <div class="catalog__section__wrap">
                 <div class="sidebar">
                     <div class="sidebar__container">
+                        <h2 class="sidebar__title">Styles</h2>
+                        <div class="sidebar__styles__wrap">
+                            <a href="{% url 'catalog' category_name 'all' %}" 
+                            class="sidebar__styles__link{% if style_url == 'all' %} sidebar__styles__link_checked{% endif %}">All</a>
+                            {% get_style_tag category_name as styles %}
+                            {% for style in styles %}
+                            <a href="{% url 'catalog' category_name style.url %}" 
+                            class="sidebar__styles__link{% if style.url == style_url %} sidebar__styles__link_checked{% endif %}">{{ style.name }}</a>
+                            {% endfor %}
+                        </div>
+                    
+                        <h2 class="sidebar__title">Filters</h2>
                         <form method="get">
-                            <h2 class="sidebar__title">Filters</h2>
                             <div class="sidebar__item">
                                 <p class="sidebar__item__title">Order by:</p>
                                     <div class="sidebar__item__form">
@@ -49,33 +60,15 @@
                                         <input name="max_price" type="number" id="id_max_price" class="input-max" value="{{ max_price_filter }}">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="sidebar__item">
-                                <p class="sidebar__item__title">Choose style:</p>
-                                <div class="sidebar__item__form">
-                                    <label class="sidebar__label" for="id_all">                                        
-                                        <input value="all" name="style" id="id_all" type="radio"
-                                        {% if style_url == 'all' %} checked {% endif %}>
-                                        <span>All</span>
-                                    </label>
-                                    {% get_style_tag category_name as styles %}
-                                    {% for style in styles %}
-                                    <label class="sidebar__label" for="{{ style.id }}">
-                                        <input value="{{ style.url }}" name="style" id="{{ style.id }}" type="radio"
-                                        {% if style_url == style.url %} checked {% endif %}>
-                                        <span>{{ style.name }}</span>
-                                    </label>
-                                    {% endfor %}
-                                </div>
+                                <button class="sidebar__button__reset" name="reset" value="true" type="submit">Reset filters</button>
                             </div>
                             <button class="sidebar__button" type="submit">Apply</button>
                         </form>
                     </div>
                 </div>
 
-
                 <div class="catalog">
-                    {% if products %}
+                    {% comment %} {% if products %} {% endcomment %}
                     <div class="catalog__info">
                         <p>Quantity of Sneakers: <span class="catalog__info__qty">{{ products|length }}</span></p>                
                     </div>
@@ -119,17 +112,13 @@
                         {% endif %}
                     </div>
                     {% endif %}
-                {% else %}
+                {% comment %} {% else %} {% endcomment %}
                 <p class="nothing-found">Nothing was found</p>
-                {% endif %}
+                {% comment %} {% endif %} {% endcomment %}
                 </div>
 
             </div>
         </div>
     </section>
 
-{% endblock %}
-
-{% block script %}
-<script src="{% static 'js/price-slider.js' %}"></script>
 {% endblock %}

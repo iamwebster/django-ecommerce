@@ -6,9 +6,9 @@ register = template.Library()
 
 
 @register.simple_tag()
-def style_tag(url):
+def style_tag(style_url, category_name):
     try:
-        style = Style.objects.get(url=url)
+        style = Style.objects.filter(category__name=category_name).get(url=style_url)
         style_name = style.name
     except:
         style_name = 'All'

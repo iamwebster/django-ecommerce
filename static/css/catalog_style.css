@@ -142,25 +142,25 @@
     padding: 15px;
 }
 
-.sidebar a {
-    display: block;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
+.sidebar__styles__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-bottom: 20px;
+}
+
+.sidebar__styles__link {
+    display: inline-block;
+    font-size: 16px;
+}
+
+.sidebar__styles__link_checked {
+    color: #9c120b;
 }
 
 .sidebar__label {
     display: block;
     font-size: 16px;
-}
-
-.sidebar__price__input {
-    display: flex;
-    justify-content: space-between;
-}
-
-.sidebar__price__input input {
-    width: calc(50% - 5px);
 }
 
 .sidebar__button {
@@ -175,14 +175,17 @@
     background-color: #312b2b;
 }
 
+.sidebar__button__reset:hover {
+    text-decoration: underline;
+}
 
 .sidebar__price__input {
     width: 100%;
     display: flex;
     margin-top: 5px;
     justify-content: space-between;
+    padding-bottom: 10px;
 }
-
 
 .sidebar__price__input__item {
     width: 48%;
@@ -205,3 +208,4 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
+

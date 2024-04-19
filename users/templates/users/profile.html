@@ -27,6 +27,9 @@
                     <p class="profile__username">username: {{ user.username }}</p>
                     <p class="profile__email">email: {{ user.email }}</p>
                 </div>
+                <div class="profile__logout__wrap">
+                    <a href="{% url 'logout' %}" class="profile__logout">Logout</a>
+                </div>
             </div>
             <hr>
             <div class="profile__analytics__wrap">
