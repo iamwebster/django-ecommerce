@@ -19,18 +19,19 @@ def catalog(request, category_name, style_url):
         products = Product.objects.filter(style__category__name=category_name)
 
 
-    prices_list = Product.objects.values_list('price', flat=True)
-    min_price = int(prices_list.order_by('price').first())
-    max_price = int(prices_list.order_by('price').last())
+    prices_list = Product.objects.values_list('sell_price', flat=True)
+    min_price = int(prices_list.order_by('sell_price').first())
+    max_price = int(prices_list.order_by('sell_price').last())
 
     min_price_filter = request.GET.get('min_price', None)
     max_price_filter = request.GET.get('max_price', None)
     if not min_price_filter or not max_price_filter:
         min_price_filter = min_price
         max_price_filter = max_price
+
     
-    
-    products = products.filter(price__gte=min_price_filter, price__lte=max_price_filter).order_by(order_by)
+    products = products.filter(sell_price__gte=min_price_filter, 
+                               sell_price__lte=max_price_filter).order_by(order_by)
 
     paginator = Paginator(products, 40)
     current_page = paginator.page(int(page))

@@ -38,19 +38,26 @@ class Product(models.Model):
     image = models.ImageField(upload_to='sneakers/')
     price = models.FloatField(default=0.00)
     discount = models.IntegerField(null=True, blank=True, verbose_name='Discount %')
+    sell_price = models.FloatField(null=True, blank=True)
     style = models.ForeignKey(Style, on_delete=models.CASCADE)
     color = models.ManyToManyField(ProductColor)
 
-    def save(self, *args, **kwargs):
-        self.image.name = f"{self.name}/{self.image.name}"
-        super(Product, self).save(*args, **kwargs)
 
-
-    def sell_price(self):
+    @property
+    def get_sell_price(self):
         if self.discount:
             return round(self.price - self.price * self.discount / 100, 2)
         return self.price
-    
+
+
+    def save(self, *args, **kwargs):
+        self.sell_price = self.get_sell_price
+
+        if self.name not in self.image.name:
+            self.image.name = f"{self.name}/{self.image.name}"
+
+        super(Product, self).save(*args, **kwargs)
+        
 
     def get_absolute_url(self):
         return reverse("product_detail", kwargs={"product_slug": self.slug})
@@ -79,7 +86,8 @@ class ProductShots(models.Model):
     def save(self, *args, **kwargs):
         for i in range(1, 5):
             image_field = getattr(self, f"image{i}")
-            if image_field:
+            
+            if self.product.name not in image_field.name and image_field:
                 image_field.name = f"sneakers/{self.product.name}/{image_field.name}"
         super(ProductShots, self).save(*args, **kwargs)
 
@@ -96,3 +104,4 @@ class ProductItem(models.Model):
     
     def __str__(self):
         return f'{self.product.name} | {self.size}'
+    

@@ -134,6 +134,10 @@
     font-size: 18px;
 }
 
+.sidebar__item__form {
+    margin-top: 5px;
+}
+
 .sidebar__container {
     padding: 15px;
 }

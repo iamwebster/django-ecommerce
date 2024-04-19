@@ -69,7 +69,7 @@ class OrderItem(models.Model):
 
 
     def product_price(self):
-        return round(self.product_item.product.sell_price() * self.quantity, 2)
+        return round(self.product_item.product.sell_price * self.quantity, 2)
 
     def __str__(self):
         return f"Product {self.name} | Order № {self.order.pk}"

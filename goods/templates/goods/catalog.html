@@ -25,13 +25,13 @@
                                         <span>Default</span>
                                     </label>
                                     <label class="sidebar__label" for="id_low_to_high">
-                                        <input value="price" name="order_by" id="id_low_to_high" type="radio"
-                                        {% if order_by == 'price' %} checked {% endif %}>
+                                        <input value="sell_price" name="order_by" id="id_low_to_high" type="radio"
+                                        {% if order_by == 'sell_price' %} checked {% endif %}>
                                         <span>Price: low to high</span>
                                     </label>
                                     <label class="sidebar__label" for="id_high_to_low">
-                                        <input value="-price" name="order_by" id="id_high_to_low" type="radio"
-                                        {% if order_by == '-price' %} checked {% endif %}>
+                                        <input value="-sell_price" name="order_by" id="id_high_to_low" type="radio"
+                                        {% if order_by == '-sell_price' %} checked {% endif %}>
                                         <span>Price: high to low</span>
                                     </label>
                                 </div>

@@ -4,6 +4,15 @@ from django.utils.html import format_html
 from django.utils.text import slugify
 
 
+class ProductItemInline(admin.TabularInline):
+    model = ProductItem
+    extra = 5
+
+
+class ProductShotsInline(admin.StackedInline):
+    model = ProductShots
+
+
 @admin.register(Style)
 class StyleAdmin(admin.ModelAdmin):
     prepopulated_fields = {'url': ['name',]}
@@ -20,14 +29,17 @@ class ProductAdmin(admin.ModelAdmin):
     list_editable = ['discount',]
     search_fields = ['name', 'description']
     list_filter = ['discount', 'style']
+    readonly_fields = ['sell_price',]
     fields = [
         ('name', 'slug'),
         'description',
         'image',
         'color',
-        ('price', 'discount'),
+        ('price', 'discount', 'sell_price'),
         ('style'),
     ]
+    inlines = [ProductItemInline, ProductShotsInline]
+    save_on_top = True
 
     
     def color_name(self, obj):
