@@ -8,6 +8,7 @@ register = template.Library()
 
 @register.simple_tag()
 def get_user_carts(request):
+    """Template tag for getting user's shopping cart"""
     if request.user.is_authenticated:
         return UserCart.objects.filter(user=request.user)
     

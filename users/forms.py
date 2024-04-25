@@ -4,11 +4,13 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, User
 
 
 class UserLoginForm(AuthenticationForm):
+    '''The form for user authentication'''
     class Meta:
         model = get_user_model()
 
 
 class UserRegistrationForm(UserCreationForm):
+    '''The form for user registration'''
     class Meta:
         model = get_user_model()
         fields = (
@@ -29,6 +31,7 @@ class UserRegistrationForm(UserCreationForm):
 
 
 class ProfileForm(UserChangeForm):
+    '''The form for changing profile information'''
     class Meta:
         model = get_user_model()
         fields = (

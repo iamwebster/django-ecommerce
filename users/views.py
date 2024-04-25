@@ -14,6 +14,7 @@ from .forms import UserLoginForm, UserRegistrationForm, ProfileForm
 
 
 def login(request):
+    '''The view for user authentication'''
     if request.method == 'POST':
         form = UserLoginForm(data=request.POST)
         if form.is_valid():
@@ -41,6 +42,7 @@ def login(request):
 
 
 def registration(request):
+    '''The view for user registration'''
     if request.method == 'POST':
         form = UserRegistrationForm(data=request.POST)
         if form.is_valid():
@@ -63,12 +65,14 @@ def registration(request):
 
 @login_required
 def logout(request):
+    '''The view for logout'''
     auth.logout(request)
     return HttpResponseRedirect(reverse('home'))
 
 
 @login_required
 def profile(request):
+    '''The view for profile page and getting the user orders'''
     orders = Order.objects.filter(user=request.user)
 
     return render(request, 'users/profile.html', {'orders': orders})
@@ -76,6 +80,7 @@ def profile(request):
 
 @login_required
 def update_profile(request):
+    '''The view for updating profile'''
     if request.method == 'POST':
         form = ProfileForm(data=request.POST, instance=request.user, files=request.FILES)
         if form.is_valid():
@@ -88,6 +93,7 @@ def update_profile(request):
 
 
 def user_cart(request):
+    """The view for user's shopping cart"""
     if request.method == 'POST':
         form = CreateOrderForm(data=request.POST)
         if form.is_valid():

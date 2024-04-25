@@ -2,6 +2,3 @@ __pycache__/
 .env
 db.sqlite3
 media
-
-cart_copy.html
-profile_copy.html

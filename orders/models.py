@@ -5,7 +5,7 @@ from goods.models import ProductItem
     
 
 class OrderQuerySet(models.QuerySet):
-
+    '''The queryset for getting total products price and quantity in order'''
     def total_price(self):
         if self:
             return round(sum(order.order_price() for order in self), 2)
@@ -18,6 +18,7 @@ class OrderQuerySet(models.QuerySet):
     
 
 class Order(models.Model):
+    '''The model for order information'''
     user = models.ForeignKey(
         get_user_model(), 
         on_delete=models.SET_DEFAULT, 
@@ -45,9 +46,11 @@ class Order(models.Model):
 
 
     def order_price(self):
+        '''The method for getting particular product price'''
         return round(sum(item.product_price() for item in self.orderitem_set.all()), 2)
     
     def orderitem_quantity(self):
+        '''The method for getting particular product quantity'''
         return sum(item.quantity for item in self.orderitem_set.all())
 
     def __str__(self):
@@ -55,6 +58,7 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
+    '''The model for item of order'''
     order = models.ForeignKey(to=Order, on_delete=models.CASCADE)
     product_item = models.ForeignKey(
         to=ProductItem,
@@ -69,6 +73,7 @@ class OrderItem(models.Model):
 
 
     def product_price(self):
+        '''The method for getting the price of a product based on quantity'''
         return round(self.product_item.product.sell_price * self.quantity, 2)
 
     def __str__(self):

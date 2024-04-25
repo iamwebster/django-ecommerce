@@ -5,6 +5,7 @@ from .models import UserCart
 
 @admin.register(UserCart)
 class UserCartAdmin(admin.ModelAdmin):
+    '''Settings for the UserCart'''
     list_display = ['user_display', 'product_item', 'quantity']
     list_filter = ['user',]
 

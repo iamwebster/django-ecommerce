@@ -3,6 +3,7 @@ from django.db.models import Q
 
 
 def query_search(query):
+    '''The util for the searh filter'''
     if query.isdigit() and len(query) <=5:
         return Product.objects.filter(id=int(query))
     
@@ -16,5 +17,3 @@ def query_search(query):
         query_list |= Q(name__icontains=search_word)
 
     return Product.objects.filter(query_list)
-
-    

@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect
 from django.http import JsonResponse
-from goods.models import Product, ProductItem
+from goods.models import Product
 from .models import UserCart
 
 
 def cart_add(request):
+    '''API-endpoint for adding a product to the cart'''
     product_id = request.POST.get("product_id")
     size = request.POST.get('size')
     product = Product.objects.get(id=product_id)
@@ -36,7 +36,7 @@ def cart_add(request):
 
 
 def cart_change(request):
-    
+    '''API-endpoint for change product quantity in the cart'''
     cart_id = request.POST.get("cart_id")
     quantity = request.POST.get("quantity")
 
@@ -62,6 +62,7 @@ def cart_change(request):
 
 
 def cart_remove(request):
+    '''API-endpoint for delete product from the cart'''
     cart_id = request.POST.get('cart_id')
 
     cart = UserCart.objects.get(id=cart_id)

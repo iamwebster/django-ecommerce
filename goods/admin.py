@@ -5,16 +5,19 @@ from django.utils.text import slugify
 
 
 class ProductItemInline(admin.TabularInline):
+    '''Inline table for the ProductAdmin'''
     model = ProductItem
     extra = 5
 
 
 class ProductShotsInline(admin.StackedInline):
+    '''Inline table for the ProductAdmin'''
     model = ProductShots
 
 
 @admin.register(Style)
 class StyleAdmin(admin.ModelAdmin):
+    '''Settings for the Style model'''
     prepopulated_fields = {'url': ['name',]}
     list_display = ['name', 'category', 'url']
     list_display_links = ['name',]
@@ -23,6 +26,7 @@ class StyleAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
+    '''Settings for the Product model'''
     prepopulated_fields = {'slug': ['name', 'color']}
     list_display = ['get_image', 'name', 'color_name', 'style', 'discount', 'sell_price']
     list_display_links = ['get_image', 'name']
@@ -41,12 +45,12 @@ class ProductAdmin(admin.ModelAdmin):
     inlines = [ProductItemInline, ProductShotsInline]
     save_on_top = True
 
-    
     def color_name(self, obj):
+        '''The method for getting the names of colors and displaying them in the list_display'''
         return slugify([i.name for i in obj.color.all()])
         
-
     def get_image(self, obj):
+        '''The method for getting product main image and displaying it in the list_display'''
         if obj.image:
             return format_html('<img src="{}" width="75px" />'.format(obj.image.url))
         return 'No image'
@@ -56,6 +60,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(ProductItem)
 class ProductItemAdmin(admin.ModelAdmin):
+    '''Settings for the ProductItem model'''
     list_display = ['product', 'size', 'remains']
     list_filter = ['size', 'remains']
 

@@ -3,6 +3,7 @@ from django.urls import reverse
 
 
 class Category(models.Model):
+    '''The model for category names'''
     class Meta:
         verbose_name_plural = 'Categories'
 
@@ -13,6 +14,7 @@ class Category(models.Model):
     
 
 class Style(models.Model):
+    '''The model for styles'''
     name = models.CharField(max_length=255)
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
     url = models.CharField(max_length=255)
@@ -22,6 +24,7 @@ class Style(models.Model):
 
 
 class ProductColor(models.Model):
+    '''The model for the colors of the products'''
     name = models.CharField(max_length=255)
 
     def __str__(self):
@@ -29,6 +32,7 @@ class ProductColor(models.Model):
 
 
 class Product(models.Model):
+    '''The model for describing products'''
     class Meta:
         ordering = ('id',)
 
@@ -45,12 +49,16 @@ class Product(models.Model):
 
     @property
     def get_sell_price(self):
+        '''The method for getting the current price of the product'''
         if self.discount:
             return round(self.price - self.price * self.discount / 100, 2)
         return self.price
 
 
     def save(self, *args, **kwargs):
+        '''Redefined save method for 
+        setting the final product price and 
+        setting the correct image path'''
         self.sell_price = self.get_sell_price
 
         if self.name not in self.image.name:
@@ -60,10 +68,12 @@ class Product(models.Model):
         
 
     def get_absolute_url(self):
+        '''The method for getting product url path'''
         return reverse("product_detail", kwargs={"product_slug": self.slug})
     
 
     def article(self):
+        '''The method for generate product article'''
         return f'{self.id:05}'
 
 
@@ -72,6 +82,7 @@ class Product(models.Model):
     
 
 class ProductShots(models.Model):
+    '''The model for storing paths to additional images for products'''
     class Meta:
         verbose_name_plural = 'Product shots'
 
@@ -84,6 +95,7 @@ class ProductShots(models.Model):
 
 
     def save(self, *args, **kwargs):
+        '''Redefined save method for configuring image paths'''
         for i in range(1, 5):
             image_field = getattr(self, f"image{i}")
             
@@ -97,6 +109,7 @@ class ProductShots(models.Model):
     
 
 class ProductItem(models.Model):
+    '''The model for the sizes and residues of a particular product'''
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     size = models.DecimalField(default=00.0, max_digits=3, decimal_places=1)
     remains = models.PositiveIntegerField()

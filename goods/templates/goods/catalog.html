@@ -11,6 +11,7 @@
     <section class="main_section">
         <div class="container">
             <h2 class="main__title">{% style_tag style_url category_name %}</h2>            
+            {% if products %}
             <div class="catalog__section__wrap">
                 <div class="sidebar">
                     <div class="sidebar__container">
@@ -68,7 +69,6 @@
                 </div>
 
                 <div class="catalog">
-                    {% comment %} {% if products %} {% endcomment %}
                     <div class="catalog__info">
                         <p>Quantity of Sneakers: <span class="catalog__info__qty">{{ products|length }}</span></p>                
                     </div>
@@ -112,12 +112,11 @@
                         {% endif %}
                     </div>
                     {% endif %}
-                {% comment %} {% else %} {% endcomment %}
-                <p class="nothing-found">Nothing was found</p>
-                {% comment %} {% endif %} {% endcomment %}
                 </div>
-
             </div>
+            {% else %}
+            <p class="nothing-found">Nothing was found</p>
+            {% endif %}
         </div>
     </section>
 

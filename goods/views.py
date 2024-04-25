@@ -7,6 +7,7 @@ from .utils import query_search
 
 
 def catalog(request, category_name, style_url):
+    '''The view for getting a products for catalog'''
     page = request.GET.get('page', 1)
     order_by = request.GET.get('order_by', 'id') 
     min_price_filter = request.GET.get('min_price', None)
@@ -53,11 +54,13 @@ def catalog(request, category_name, style_url):
 
 
 def product(request, product_slug):
+    '''The view for a product detail page'''
     product = Product.objects.get(slug=product_slug)
     return render(request, "goods/product.html", {"product": product})
 
 
 def search(request):
+    '''The view for a products search'''
     query = request.GET.get('q', None)
     if query:
         products = query_search(query)

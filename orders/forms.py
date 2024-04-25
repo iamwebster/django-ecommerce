@@ -2,6 +2,7 @@ from django import forms
 
 
 class CreateOrderForm(forms.Form):
+    '''The form for creation a new user'''
     first_name = forms.CharField()
     last_name = forms.CharField()
     phone_number = forms.CharField()
@@ -17,6 +18,7 @@ class CreateOrderForm(forms.Form):
 
 
     def clean_phone_number(self):
+        '''The method for validate phone number field'''
         data = self.cleaned_data['phone_number']
 
         if not data.isdigit():

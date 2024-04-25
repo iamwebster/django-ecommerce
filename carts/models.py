@@ -4,7 +4,7 @@ from goods.models import ProductItem
 
 
 class CartQuerySet(models.QuerySet):
-
+    '''The queryset to get total price and total quantity'''
     def total_price(self):
         return round(sum(cart.product_price() for cart in self), 2)
 
@@ -15,6 +15,7 @@ class CartQuerySet(models.QuerySet):
 
 
 class UserCart(models.Model):
+    '''The model for the User's shopping cart'''
     user = models.ForeignKey(
         get_user_model(), on_delete=models.CASCADE, blank=True, null=True
     )
@@ -26,6 +27,7 @@ class UserCart(models.Model):
     objects = CartQuerySet().as_manager()
 
     def product_price(self):
+        '''The method for getting the price of a product based on quantity '''
         return round(self.product_item.product.sell_price * int(self.quantity), 2)
 
     def __str__(self):
