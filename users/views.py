@@ -73,7 +73,7 @@ def logout(request):
 @login_required
 def profile(request):
     '''The view for profile page and getting the user orders'''
-    orders = Order.objects.filter(user=request.user)
+    orders = Order.objects.filter(user=request.user).order_by('-id')
 
     return render(request, 'users/profile.html', {'orders': orders})
 
@@ -115,7 +115,7 @@ def user_cart(request):
                         for cart_item in cart_items:
                             product_item=cart_item.product_item
                             name=cart_item.product_item.product.name
-                            price=cart_item.product_item.product.sell_price()
+                            price=cart_item.product_item.product.sell_price
                             quantity=cart_item.quantity
 
 

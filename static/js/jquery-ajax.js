@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    $("#deliveryAddressField").hide(); 
+
 
     $('.checkout__open').click(function() {
         $('.checkout__fade').fadeIn();
@@ -23,13 +25,15 @@ $(document).ready(function () {
         }
     });	
 
-
-    $("input[name='need_delivery']").change(function() {
-        var selectedValue = $(this).val();
-        if (selectedValue === "1") {
-            $("#deliveryAddressField").show();
+    
+    $("input[name='need_delivery']").change(function() { 
+        var selectedValue = $(this).val(); 
+        if (selectedValue === "1") { 
+            $("#deliveryAddressField").show(); 
+            $("#id_delivery_address").prop('required', true); 
         } else {
-            $("#deliveryAddressField").hide();
+            $("#deliveryAddressField").hide(); 
+            $("#id_delivery_address").prop('required', false);
         }
     });
 
