@@ -1,0 +1,15 @@
+.about__wrap {
+	border: 2px solid black;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.about__text {
+	margin-top: 10px;
+	font-size: 16px;
+}
+
+.about__text:first-child {
+	margin-top: 0;
+}
+

@@ -1,0 +1,133 @@
+.profile__info__wrap {
+    display: flex;
+    gap: 30px;
+    padding-bottom: 30px;
+}
+
+.profile__img {
+    max-width: 175px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.profile__logout__wrap {
+    margin-left: auto;
+}
+
+.profile__logout {
+    color: #818181;
+}
+
+.profile__logout:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.profile__name__update__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile__name,
+.profile__orders__title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.profile__update__link {
+    display: block;
+}
+
+.profile__update__link:hover,
+.profile__order__history:hover {
+    text-decoration: underline;
+}
+
+.profile__username {
+    padding: 10px 0 3px 0;
+}
+
+
+.profile__analytics__wrap {
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+
+.profile__analytics__item {
+    font-size: 22px;
+    width: 40%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 5px;
+    border: 2px solid rgb(118, 63, 63);
+    background-color: #e8dbdb;
+    border-radius: 5px;
+}
+
+.profile__analytics__text {
+    font-weight: 500;
+}
+
+.profile__analytics__value {
+    font-weight: 600;
+}
+
+.profile__orders__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile__order__item {
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.profile__orders__title {
+    padding: 30px 0;
+    text-align: center;
+    font-size: 28px;
+}
+
+.profile__order__value {
+    font-weight: 500;
+}
+
+.profile__order__history {
+    display: inline-block;
+    padding-top: 10px;
+    font-weight: 300;
+}
+
+.order-item__wrap {
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.order-item__item {
+    background-color: #f0f0f0;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.order-item__image {
+    width: 100px;
+    border-radius: 5px 0 0 5px;
+    object-fit: cover;
+}
+
+.order-item__link:hover {
+    text-decoration: underline;
+}
