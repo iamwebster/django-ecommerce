@@ -1,0 +1,2664 @@
+[
+    {
+        "model": "admin.logentry",
+        "pk": 1,
+        "fields": {
+            "action_time": "2024-04-18T10:36:48.629Z",
+            "user": 1,
+            "content_type": 6,
+            "object_id": "1",
+            "object_repr": "men",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 2,
+        "fields": {
+            "action_time": "2024-04-18T10:36:53.250Z",
+            "user": 1,
+            "content_type": 6,
+            "object_id": "2",
+            "object_repr": "women",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2024-04-18T10:36:55.696Z",
+            "user": 1,
+            "content_type": 6,
+            "object_id": "3",
+            "object_repr": "kids",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2024-04-18T10:45:48.019Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "1",
+            "object_repr": "men | Lifestyle",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2024-04-18T10:45:54.471Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "2",
+            "object_repr": "men | Skate",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2024-04-18T10:59:54.741Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "1",
+            "object_repr": "Black",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2024-04-18T10:59:58.584Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "2",
+            "object_repr": "White",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2024-04-18T11:00:14.417Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "Nike air max 1",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2024-04-18T11:00:33.695Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "Nike Drift",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2024-04-18T11:07:56.219Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "2",
+            "object_repr": "men | Skate",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Url\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 11,
+        "fields": {
+            "action_time": "2024-04-18T11:08:01.601Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "1",
+            "object_repr": "men | Lifestyle",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Url\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 12,
+        "fields": {
+            "action_time": "2024-04-18T13:19:30.765Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "Nike air max 1",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 13,
+        "fields": {
+            "action_time": "2024-04-18T13:19:30.810Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "Nike Drift",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 14,
+        "fields": {
+            "action_time": "2024-04-18T13:22:58.378Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "3",
+            "object_repr": "Pink",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 15,
+        "fields": {
+            "action_time": "2024-04-18T13:23:09.529Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "4",
+            "object_repr": "Red",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 16,
+        "fields": {
+            "action_time": "2024-04-18T13:23:13.007Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "5",
+            "object_repr": "Grey",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 17,
+        "fields": {
+            "action_time": "2024-04-18T13:23:22.000Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "6",
+            "object_repr": "Brown",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 18,
+        "fields": {
+            "action_time": "2024-04-18T13:27:31.519Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "NIke Air 97",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 19,
+        "fields": {
+            "action_time": "2024-04-18T13:32:47.929Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "4",
+            "object_repr": "Nike Air Drift",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 20,
+        "fields": {
+            "action_time": "2024-04-18T13:33:31.979Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "Nike Air Jordan 1 Low",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 21,
+        "fields": {
+            "action_time": "2024-04-18T13:33:48.588Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "3",
+            "object_repr": "men | Running",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 22,
+        "fields": {
+            "action_time": "2024-04-18T13:34:00.556Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "4",
+            "object_repr": "women | Lifestyle",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 23,
+        "fields": {
+            "action_time": "2024-04-18T13:35:59.270Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "7",
+            "object_repr": "Blue",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 24,
+        "fields": {
+            "action_time": "2024-04-18T13:36:18.096Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "6",
+            "object_repr": "Nike Air Max 1 Blue",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 25,
+        "fields": {
+            "action_time": "2024-04-18T13:39:38.117Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "NIke Air 97",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 26,
+        "fields": {
+            "action_time": "2024-04-18T13:40:17.717Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "NIke Air 97",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 27,
+        "fields": {
+            "action_time": "2024-04-18T13:40:41.700Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "Nike Air 97",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 28,
+        "fields": {
+            "action_time": "2024-04-18T13:40:50.005Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "Nike Air 97",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 29,
+        "fields": {
+            "action_time": "2024-04-18T13:41:19.096Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "4",
+            "object_repr": "Nike Air Drift",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 30,
+        "fields": {
+            "action_time": "2024-04-18T13:41:29.332Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "Nike Air Jordan 1 Low",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 31,
+        "fields": {
+            "action_time": "2024-04-18T13:41:43.144Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "6",
+            "object_repr": "Nike Air Max 1 Blue",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 32,
+        "fields": {
+            "action_time": "2024-04-18T13:42:43.936Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "8",
+            "object_repr": "Gold",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 33,
+        "fields": {
+            "action_time": "2024-04-18T13:42:55.401Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "Nike Air Max Gold",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 34,
+        "fields": {
+            "action_time": "2024-04-18T13:43:32.912Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "8",
+            "object_repr": "NIke Air Max 1 Red",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 35,
+        "fields": {
+            "action_time": "2024-04-18T13:44:21.621Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "9",
+            "object_repr": "Nike Gamma Force",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 36,
+        "fields": {
+            "action_time": "2024-04-18T13:45:19.148Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "Jumpman MVP",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 37,
+        "fields": {
+            "action_time": "2024-04-18T13:53:21.762Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "1",
+            "object_repr": "Nike Air 97",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 38,
+        "fields": {
+            "action_time": "2024-04-18T13:53:57.787Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "2",
+            "object_repr": "Nike Air Drift",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 39,
+        "fields": {
+            "action_time": "2024-04-18T13:54:16.132Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "3",
+            "object_repr": "Nike Air Jordan 1 Low",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 40,
+        "fields": {
+            "action_time": "2024-04-18T13:54:52.852Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "4",
+            "object_repr": "Nike Air Max 1 Blue",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 41,
+        "fields": {
+            "action_time": "2024-04-18T13:55:10.742Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "5",
+            "object_repr": "Nike Air Max Gold",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 42,
+        "fields": {
+            "action_time": "2024-04-18T13:55:29.570Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "6",
+            "object_repr": "NIke Air Max 1 Red",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 43,
+        "fields": {
+            "action_time": "2024-04-18T13:55:58.417Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "7",
+            "object_repr": "Nike Gamma Force",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 44,
+        "fields": {
+            "action_time": "2024-04-18T13:56:27.674Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "8",
+            "object_repr": "Jumpman MVP",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 45,
+        "fields": {
+            "action_time": "2024-04-18T14:05:19.882Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "Nike Air 97",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"product item\", \"object\": \"Nike Air 97 | 39.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air 97 | 39.5\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air 97 | 40.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air 97 | 41.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air 97 | 41.5\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air 97 | 42.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air 97 | 43.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air 97 | 43.5\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air 97 | 44.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air 97 | 45.5\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 46,
+        "fields": {
+            "action_time": "2024-04-18T14:07:17.660Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "Nike Air 97",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 47,
+        "fields": {
+            "action_time": "2024-04-18T14:08:24.530Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "Nike Air 97",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 48,
+        "fields": {
+            "action_time": "2024-04-18T14:09:44.529Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "Nike Air 97",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 49,
+        "fields": {
+            "action_time": "2024-04-18T14:12:14.187Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "11",
+            "object_repr": "dasdsa",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 50,
+        "fields": {
+            "action_time": "2024-04-18T14:15:24.829Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "Nike Air 97",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 51,
+        "fields": {
+            "action_time": "2024-04-18T14:23:01.193Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "Nike Air 97",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 52,
+        "fields": {
+            "action_time": "2024-04-18T14:24:28.560Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "11",
+            "object_repr": "dasdsa",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 53,
+        "fields": {
+            "action_time": "2024-04-18T14:34:56.274Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "Nike Air 97",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 54,
+        "fields": {
+            "action_time": "2024-04-18T14:35:19.962Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "8",
+            "object_repr": "Jumpman MVP",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 55,
+        "fields": {
+            "action_time": "2024-04-18T14:37:05.348Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "8",
+            "object_repr": "Jumpman MVP",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 56,
+        "fields": {
+            "action_time": "2024-04-18T14:37:13.218Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "7",
+            "object_repr": "Nike Gamma Force",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 57,
+        "fields": {
+            "action_time": "2024-04-18T14:37:33.982Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "8",
+            "object_repr": "Jumpman MVP",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image1\", \"Image2\", \"Image3\", \"Image4\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 58,
+        "fields": {
+            "action_time": "2024-04-18T14:37:43.039Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "8",
+            "object_repr": "Jumpman MVP",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 59,
+        "fields": {
+            "action_time": "2024-04-18T14:38:46.617Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "8",
+            "object_repr": "Jumpman MVP",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 60,
+        "fields": {
+            "action_time": "2024-04-18T14:38:59.462Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "9",
+            "object_repr": "Jumpman MVP",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 61,
+        "fields": {
+            "action_time": "2024-04-18T14:39:33.059Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "9",
+            "object_repr": "Jumpman MVP",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image2\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 62,
+        "fields": {
+            "action_time": "2024-04-18T14:40:17.895Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "9",
+            "object_repr": "Jumpman MVP",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image3\", \"Image4\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 63,
+        "fields": {
+            "action_time": "2024-04-19T04:41:40.966Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "Nike Air 97",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 64,
+        "fields": {
+            "action_time": "2024-04-19T04:43:00.863Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "4",
+            "object_repr": "Nike Air Drift",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 65,
+        "fields": {
+            "action_time": "2024-04-19T04:43:05.047Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "Nike Air Jordan 1 Low",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 66,
+        "fields": {
+            "action_time": "2024-04-19T04:43:10.505Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "6",
+            "object_repr": "Nike Air Max 1 Blue",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 67,
+        "fields": {
+            "action_time": "2024-04-19T04:43:16.649Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "Nike Air Max Gold",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 68,
+        "fields": {
+            "action_time": "2024-04-19T04:43:21.768Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "8",
+            "object_repr": "NIke Air Max 1 Red",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 69,
+        "fields": {
+            "action_time": "2024-04-19T04:43:27.794Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "9",
+            "object_repr": "Nike Gamma Force",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 70,
+        "fields": {
+            "action_time": "2024-04-19T04:43:32.901Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "Jumpman MVP",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 71,
+        "fields": {
+            "action_time": "2024-04-24T14:56:11.670Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "5",
+            "object_repr": "women | Running",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 72,
+        "fields": {
+            "action_time": "2024-04-24T14:57:39.428Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "6",
+            "object_repr": "kids | Walking",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 73,
+        "fields": {
+            "action_time": "2024-04-24T15:00:36.871Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "7",
+            "object_repr": "women | Fitness",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 74,
+        "fields": {
+            "action_time": "2024-04-24T15:11:42.172Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "12",
+            "object_repr": "Nike Air Force 1",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Force 1 | 35.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Force 1 | 36\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Force 1 | 37.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Force 1 | 38.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Force 1 | 39.0\"}}, {\"added\": {\"name\": \"product shots\", \"object\": \"Nike Air Force 1\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 75,
+        "fields": {
+            "action_time": "2024-04-24T15:13:58.697Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "13",
+            "object_repr": "Nike Air Jordan 1 High OG",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Jordan 1 High OG | 37.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Jordan 1 High OG | 38.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Jordan 1 High OG | 39.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Jordan 1 High OG | 34.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Jordan 1 High OG | 35.0\"}}, {\"added\": {\"name\": \"product shots\", \"object\": \"Nike Air Jordan 1 High OG\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 76,
+        "fields": {
+            "action_time": "2024-04-24T15:16:06.098Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "12",
+            "object_repr": "Nike Air Force 1",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 77,
+        "fields": {
+            "action_time": "2024-04-24T15:17:25.484Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "20",
+            "object_repr": "Nike Air Jordan 1 High OG | 35.0",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 78,
+        "fields": {
+            "action_time": "2024-04-24T15:17:25.496Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "19",
+            "object_repr": "Nike Air Jordan 1 High OG | 34.0",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 79,
+        "fields": {
+            "action_time": "2024-04-24T15:19:10.194Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "14",
+            "object_repr": "Nike Air Max Dn",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Max Dn | 34.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Max Dn | 35.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Max Dn | 36.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Max Dn | 37.0\"}}, {\"added\": {\"name\": \"product shots\", \"object\": \"Nike Air Max Dn\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 80,
+        "fields": {
+            "action_time": "2024-04-24T15:20:06.222Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "15",
+            "object_repr": "Nike Dunk Low",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Dunk Low | 38.0\"}}, {\"added\": {\"name\": \"product shots\", \"object\": \"Nike Dunk Low\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 81,
+        "fields": {
+            "action_time": "2024-04-24T15:22:42.792Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "16",
+            "object_repr": "Nike SB Day One",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike SB Day One | 25.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike SB Day One | 26.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike SB Day One | 27.0\"}}, {\"added\": {\"name\": \"product shots\", \"object\": \"Nike SB Day One\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 82,
+        "fields": {
+            "action_time": "2024-04-24T15:24:18.793Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "17",
+            "object_repr": "Nike Court Borough Low Recraft",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Court Borough Low Recraft | 19.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Court Borough Low Recraft | 20.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Court Borough Low Recraft | 21.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Court Borough Low Recraft | 22.0\"}}, {\"added\": {\"name\": \"product shots\", \"object\": \"Nike Court Borough Low Recraft\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 83,
+        "fields": {
+            "action_time": "2024-04-24T15:24:56.122Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "17",
+            "object_repr": "Nike Court Borough Low",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 1,
+        "fields": {
+            "name": "Can add log entry",
+            "content_type": 1,
+            "codename": "add_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 2,
+        "fields": {
+            "name": "Can change log entry",
+            "content_type": 1,
+            "codename": "change_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 3,
+        "fields": {
+            "name": "Can delete log entry",
+            "content_type": 1,
+            "codename": "delete_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 4,
+        "fields": {
+            "name": "Can view log entry",
+            "content_type": 1,
+            "codename": "view_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 5,
+        "fields": {
+            "name": "Can add permission",
+            "content_type": 2,
+            "codename": "add_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 6,
+        "fields": {
+            "name": "Can change permission",
+            "content_type": 2,
+            "codename": "change_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 7,
+        "fields": {
+            "name": "Can delete permission",
+            "content_type": 2,
+            "codename": "delete_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 8,
+        "fields": {
+            "name": "Can view permission",
+            "content_type": 2,
+            "codename": "view_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 9,
+        "fields": {
+            "name": "Can add group",
+            "content_type": 3,
+            "codename": "add_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 10,
+        "fields": {
+            "name": "Can change group",
+            "content_type": 3,
+            "codename": "change_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 11,
+        "fields": {
+            "name": "Can delete group",
+            "content_type": 3,
+            "codename": "delete_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 12,
+        "fields": {
+            "name": "Can view group",
+            "content_type": 3,
+            "codename": "view_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 13,
+        "fields": {
+            "name": "Can add content type",
+            "content_type": 4,
+            "codename": "add_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 14,
+        "fields": {
+            "name": "Can change content type",
+            "content_type": 4,
+            "codename": "change_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 15,
+        "fields": {
+            "name": "Can delete content type",
+            "content_type": 4,
+            "codename": "delete_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 16,
+        "fields": {
+            "name": "Can view content type",
+            "content_type": 4,
+            "codename": "view_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 17,
+        "fields": {
+            "name": "Can add session",
+            "content_type": 5,
+            "codename": "add_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 18,
+        "fields": {
+            "name": "Can change session",
+            "content_type": 5,
+            "codename": "change_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 19,
+        "fields": {
+            "name": "Can delete session",
+            "content_type": 5,
+            "codename": "delete_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 20,
+        "fields": {
+            "name": "Can view session",
+            "content_type": 5,
+            "codename": "view_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 21,
+        "fields": {
+            "name": "Can add category",
+            "content_type": 6,
+            "codename": "add_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 22,
+        "fields": {
+            "name": "Can change category",
+            "content_type": 6,
+            "codename": "change_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 23,
+        "fields": {
+            "name": "Can delete category",
+            "content_type": 6,
+            "codename": "delete_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 24,
+        "fields": {
+            "name": "Can view category",
+            "content_type": 6,
+            "codename": "view_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 25,
+        "fields": {
+            "name": "Can add product",
+            "content_type": 7,
+            "codename": "add_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 26,
+        "fields": {
+            "name": "Can change product",
+            "content_type": 7,
+            "codename": "change_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 27,
+        "fields": {
+            "name": "Can delete product",
+            "content_type": 7,
+            "codename": "delete_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 28,
+        "fields": {
+            "name": "Can view product",
+            "content_type": 7,
+            "codename": "view_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 29,
+        "fields": {
+            "name": "Can add product color",
+            "content_type": 8,
+            "codename": "add_productcolor"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 30,
+        "fields": {
+            "name": "Can change product color",
+            "content_type": 8,
+            "codename": "change_productcolor"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 31,
+        "fields": {
+            "name": "Can delete product color",
+            "content_type": 8,
+            "codename": "delete_productcolor"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 32,
+        "fields": {
+            "name": "Can view product color",
+            "content_type": 8,
+            "codename": "view_productcolor"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 33,
+        "fields": {
+            "name": "Can add style",
+            "content_type": 9,
+            "codename": "add_style"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 34,
+        "fields": {
+            "name": "Can change style",
+            "content_type": 9,
+            "codename": "change_style"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 35,
+        "fields": {
+            "name": "Can delete style",
+            "content_type": 9,
+            "codename": "delete_style"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 36,
+        "fields": {
+            "name": "Can view style",
+            "content_type": 9,
+            "codename": "view_style"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 37,
+        "fields": {
+            "name": "Can add product shots",
+            "content_type": 10,
+            "codename": "add_productshots"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 38,
+        "fields": {
+            "name": "Can change product shots",
+            "content_type": 10,
+            "codename": "change_productshots"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 39,
+        "fields": {
+            "name": "Can delete product shots",
+            "content_type": 10,
+            "codename": "delete_productshots"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 40,
+        "fields": {
+            "name": "Can view product shots",
+            "content_type": 10,
+            "codename": "view_productshots"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 41,
+        "fields": {
+            "name": "Can add product item",
+            "content_type": 11,
+            "codename": "add_productitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 42,
+        "fields": {
+            "name": "Can change product item",
+            "content_type": 11,
+            "codename": "change_productitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 43,
+        "fields": {
+            "name": "Can delete product item",
+            "content_type": 11,
+            "codename": "delete_productitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 44,
+        "fields": {
+            "name": "Can view product item",
+            "content_type": 11,
+            "codename": "view_productitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 45,
+        "fields": {
+            "name": "Can add user",
+            "content_type": 12,
+            "codename": "add_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 46,
+        "fields": {
+            "name": "Can change user",
+            "content_type": 12,
+            "codename": "change_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 47,
+        "fields": {
+            "name": "Can delete user",
+            "content_type": 12,
+            "codename": "delete_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 48,
+        "fields": {
+            "name": "Can view user",
+            "content_type": 12,
+            "codename": "view_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 49,
+        "fields": {
+            "name": "Can add user cart",
+            "content_type": 13,
+            "codename": "add_usercart"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 50,
+        "fields": {
+            "name": "Can change user cart",
+            "content_type": 13,
+            "codename": "change_usercart"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 51,
+        "fields": {
+            "name": "Can delete user cart",
+            "content_type": 13,
+            "codename": "delete_usercart"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 52,
+        "fields": {
+            "name": "Can view user cart",
+            "content_type": 13,
+            "codename": "view_usercart"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 53,
+        "fields": {
+            "name": "Can add order",
+            "content_type": 14,
+            "codename": "add_order"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 54,
+        "fields": {
+            "name": "Can change order",
+            "content_type": 14,
+            "codename": "change_order"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 55,
+        "fields": {
+            "name": "Can delete order",
+            "content_type": 14,
+            "codename": "delete_order"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 56,
+        "fields": {
+            "name": "Can view order",
+            "content_type": 14,
+            "codename": "view_order"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 57,
+        "fields": {
+            "name": "Can add order item",
+            "content_type": 15,
+            "codename": "add_orderitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 58,
+        "fields": {
+            "name": "Can change order item",
+            "content_type": 15,
+            "codename": "change_orderitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 59,
+        "fields": {
+            "name": "Can delete order item",
+            "content_type": 15,
+            "codename": "delete_orderitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 60,
+        "fields": {
+            "name": "Can view order item",
+            "content_type": 15,
+            "codename": "view_orderitem"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 1,
+        "fields": {
+            "app_label": "admin",
+            "model": "logentry"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 2,
+        "fields": {
+            "app_label": "auth",
+            "model": "permission"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 3,
+        "fields": {
+            "app_label": "auth",
+            "model": "group"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 4,
+        "fields": {
+            "app_label": "contenttypes",
+            "model": "contenttype"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 5,
+        "fields": {
+            "app_label": "sessions",
+            "model": "session"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 6,
+        "fields": {
+            "app_label": "goods",
+            "model": "category"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 7,
+        "fields": {
+            "app_label": "goods",
+            "model": "product"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 8,
+        "fields": {
+            "app_label": "goods",
+            "model": "productcolor"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 9,
+        "fields": {
+            "app_label": "goods",
+            "model": "style"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 10,
+        "fields": {
+            "app_label": "goods",
+            "model": "productshots"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 11,
+        "fields": {
+            "app_label": "goods",
+            "model": "productitem"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 12,
+        "fields": {
+            "app_label": "users",
+            "model": "user"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 13,
+        "fields": {
+            "app_label": "carts",
+            "model": "usercart"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 14,
+        "fields": {
+            "app_label": "orders",
+            "model": "order"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 15,
+        "fields": {
+            "app_label": "orders",
+            "model": "orderitem"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "efk3muf5s779djfbmb8onqc4lgkd2tla",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2hAGsIJL9z0DGRhGqgaS0q6MdzckXej2v_f-WwTctxL2ntewkLgKEKffLWJ65joAPbDem0ytbusS5VDkQbucG-XX7XD_Dgr2MmpQKmbFBKQn7TVHYxKBJmZQMWXvwCRrtJ6cYjTM53SxDsii9-iJxecL8Ok4Ug:1rxrZm:uvai8KHzeafh8WAy6ykC9fL72rjs-kqF6hSQuO64du4",
+            "expire_date": "2024-05-03T16:59:02.670Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "foc94shydfnk4bzquefnhe46wrgda68u",
+        "fields": {
+            "session_data": "e30:1s036g:KTH6mN4wHYmuUsa--wLrFeWysQsfrlydWIPM5KaX6EQ",
+            "expire_date": "2024-05-09T17:42:02.708Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "jo8c4evuvbnk78no1qp7ftk4ysa69e0o",
+        "fields": {
+            "session_data": "e30:1s036q:vUTB_hwaSy4v8rDmxgGUsKb116r26zztWTQm5ccb3Ys",
+            "expire_date": "2024-05-09T17:42:12.605Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "m5zbwv7bx8j187y2yihonptnzl0f10wj",
+        "fields": {
+            "session_data": "e30:1s036a:sDG6JqbE9d7bhhV9BTBeYWRNbSFDwwk9YA5rox-CMkI",
+            "expire_date": "2024-05-09T17:41:56.284Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "ykwf5a8u7nf8ero27hrnvi24c9kfuku0",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2hAGsIJL9z0DGRhGqgaS0q6MdzckXej2v_f-WwTctxL2ntewkLgKEKffLWJ65joAPbDem0ytbusS5VDkQbucG-XX7XD_Dgr2MmpQKmbFBKQn7TVHYxKBJmZQMWXvwCRrtJ6cYjTM53SxDsii9-iJxecL8Ok4Ug:1rzdrH:_tZCc9vf2RbCBrcNHrFIP55EwGQu7w583VMy-Uf_AgI",
+            "expire_date": "2024-05-08T14:44:27.367Z"
+        }
+    },
+    {
+        "model": "goods.category",
+        "pk": 1,
+        "fields": {
+            "name": "men"
+        }
+    },
+    {
+        "model": "goods.category",
+        "pk": 2,
+        "fields": {
+            "name": "women"
+        }
+    },
+    {
+        "model": "goods.category",
+        "pk": 3,
+        "fields": {
+            "name": "kids"
+        }
+    },
+    {
+        "model": "goods.style",
+        "pk": 1,
+        "fields": {
+            "name": "Lifestyle",
+            "category": 1,
+            "url": "lifestyle"
+        }
+    },
+    {
+        "model": "goods.style",
+        "pk": 2,
+        "fields": {
+            "name": "Skate",
+            "category": 1,
+            "url": "skate"
+        }
+    },
+    {
+        "model": "goods.style",
+        "pk": 3,
+        "fields": {
+            "name": "Running",
+            "category": 1,
+            "url": "running"
+        }
+    },
+    {
+        "model": "goods.style",
+        "pk": 4,
+        "fields": {
+            "name": "Lifestyle",
+            "category": 2,
+            "url": "lifestyle"
+        }
+    },
+    {
+        "model": "goods.style",
+        "pk": 5,
+        "fields": {
+            "name": "Running",
+            "category": 2,
+            "url": "running"
+        }
+    },
+    {
+        "model": "goods.style",
+        "pk": 6,
+        "fields": {
+            "name": "Walking",
+            "category": 3,
+            "url": "walking"
+        }
+    },
+    {
+        "model": "goods.style",
+        "pk": 7,
+        "fields": {
+            "name": "Fitness",
+            "category": 2,
+            "url": "fitness"
+        }
+    },
+    {
+        "model": "goods.productcolor",
+        "pk": 1,
+        "fields": {
+            "name": "Black"
+        }
+    },
+    {
+        "model": "goods.productcolor",
+        "pk": 2,
+        "fields": {
+            "name": "White"
+        }
+    },
+    {
+        "model": "goods.productcolor",
+        "pk": 3,
+        "fields": {
+            "name": "Pink"
+        }
+    },
+    {
+        "model": "goods.productcolor",
+        "pk": 4,
+        "fields": {
+            "name": "Red"
+        }
+    },
+    {
+        "model": "goods.productcolor",
+        "pk": 5,
+        "fields": {
+            "name": "Grey"
+        }
+    },
+    {
+        "model": "goods.productcolor",
+        "pk": 6,
+        "fields": {
+            "name": "Brown"
+        }
+    },
+    {
+        "model": "goods.productcolor",
+        "pk": 7,
+        "fields": {
+            "name": "Blue"
+        }
+    },
+    {
+        "model": "goods.productcolor",
+        "pk": 8,
+        "fields": {
+            "name": "Gold"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 3,
+        "fields": {
+            "name": "Nike Air 97",
+            "slug": "nike-air-97-35",
+            "description": "Introducing our top-of-the-line modern sneakers that blend style, comfort, and performance seamlessly. Crafted with premium materials and cutting-edge design, these sneakers are a must-have for any fashion-forward individual. Whether you're hitting the gym, running errands, or simply hanging out with friends, these sneakers provide the perfect blend of support and style.\r\n\r\nThe sleek design and attention to detail make these sneakers stand out from the crowd. The breathable mesh upper ensures maximum airflow, keeping your feet cool and dry even during intense workouts. The cushioned midsole provides exceptional comfort and support, making every step feel like walking on clouds.\r\n\r\nWith their versatile design, these sneakers can easily transition from the gym to the street, adding a touch of urban flair to any outfit. Available in a range of stylish color options, you can choose the perfect pair to complement your personal style.\r\n\r\nDon't compromise on style or comfort - elevate your sneaker game with these modern kicks. Grab a pair today and step out in style!",
+            "image": "sneakers/Nike Air 97/air_97_main_image_p4liMtZ.png",
+            "price": 210.0,
+            "discount": 10,
+            "sell_price": 189.0,
+            "style": 1,
+            "color": [
+                3,
+                5
+            ]
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 4,
+        "fields": {
+            "name": "Nike Air Drift",
+            "slug": "nike-air-drift-12",
+            "description": "Introducing our top-of-the-line modern sneakers that blend style, comfort, and performance seamlessly. Crafted with premium materials and cutting-edge design, these sneakers are a must-have for any fashion-forward individual. Whether you're hitting the gym, running errands, or simply hanging out with friends, these sneakers provide the perfect blend of support and style.\r\n\r\nThe sleek design and attention to detail make these sneakers stand out from the crowd. The breathable mesh upper ensures maximum airflow, keeping your feet cool and dry even during intense workouts. The cushioned midsole provides exceptional comfort and support, making every step feel like walking on clouds.\r\n\r\nWith their versatile design, these sneakers can easily transition from the gym to the street, adding a touch of urban flair to any outfit. Available in a range of stylish color options, you can choose the perfect pair to complement your personal style.\r\n\r\nDon't compromise on style or comfort - elevate your sneaker game with these modern kicks. Grab a pair today and step out in style!",
+            "image": "sneakers/Nike Air Drift/air_drift_main_image.png",
+            "price": 189.0,
+            "discount": 5,
+            "sell_price": 179.55,
+            "style": 2,
+            "color": [
+                1,
+                2
+            ]
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 5,
+        "fields": {
+            "name": "Nike Air Jordan 1 Low",
+            "slug": "nike-air-jordan-1-low-456",
+            "description": "Introducing our top-of-the-line modern sneakers that blend style, comfort, and performance seamlessly. Crafted with premium materials and cutting-edge design, these sneakers are a must-have for any fashion-forward individual. Whether you're hitting the gym, running errands, or simply hanging out with friends, these sneakers provide the perfect blend of support and style.\r\n\r\nThe sleek design and attention to detail make these sneakers stand out from the crowd. The breathable mesh upper ensures maximum airflow, keeping your feet cool and dry even during intense workouts. The cushioned midsole provides exceptional comfort and support, making every step feel like walking on clouds.\r\n\r\nWith their versatile design, these sneakers can easily transition from the gym to the street, adding a touch of urban flair to any outfit. Available in a range of stylish color options, you can choose the perfect pair to complement your personal style.\r\n\r\nDon't compromise on style or comfort - elevate your sneaker game with these modern kicks. Grab a pair today and step out in style!",
+            "image": "sneakers/Nike Air Jordan 1 Low/main.png",
+            "price": 219.0,
+            "discount": null,
+            "sell_price": 219.0,
+            "style": 2,
+            "color": [
+                4,
+                5,
+                6
+            ]
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 6,
+        "fields": {
+            "name": "Nike Air Max 1 Blue",
+            "slug": "nike-air-max-1-blue-7",
+            "description": "Introducing our top-of-the-line modern sneakers that blend style, comfort, and performance seamlessly. Crafted with premium materials and cutting-edge design, these sneakers are a must-have for any fashion-forward individual. Whether you're hitting the gym, running errands, or simply hanging out with friends, these sneakers provide the perfect blend of support and style.\r\n\r\nThe sleek design and attention to detail make these sneakers stand out from the crowd. The breathable mesh upper ensures maximum airflow, keeping your feet cool and dry even during intense workouts. The cushioned midsole provides exceptional comfort and support, making every step feel like walking on clouds.\r\n\r\nWith their versatile design, these sneakers can easily transition from the gym to the street, adding a touch of urban flair to any outfit. Available in a range of stylish color options, you can choose the perfect pair to complement your personal style.\r\n\r\nDon't compromise on style or comfort - elevate your sneaker game with these modern kicks. Grab a pair today and step out in style!",
+            "image": "sneakers/Nike Air Max 1 Blue/air_max_1_main_image.png",
+            "price": 189.0,
+            "discount": 5,
+            "sell_price": 179.55,
+            "style": 3,
+            "color": [
+                7
+            ]
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 7,
+        "fields": {
+            "name": "Nike Air Max Gold",
+            "slug": "nike-air-max-gold-8",
+            "description": "Introducing our top-of-the-line modern sneakers that blend style, comfort, and performance seamlessly. Crafted with premium materials and cutting-edge design, these sneakers are a must-have for any fashion-forward individual. Whether you're hitting the gym, running errands, or simply hanging out with friends, these sneakers provide the perfect blend of support and style.\r\n\r\nThe sleek design and attention to detail make these sneakers stand out from the crowd. The breathable mesh upper ensures maximum airflow, keeping your feet cool and dry even during intense workouts. The cushioned midsole provides exceptional comfort and support, making every step feel like walking on clouds.\r\n\r\nWith their versatile design, these sneakers can easily transition from the gym to the street, adding a touch of urban flair to any outfit. Available in a range of stylish color options, you can choose the perfect pair to complement your personal style.\r\n\r\nDon't compromise on style or comfort - elevate your sneaker game with these modern kicks. Grab a pair today and step out in style!",
+            "image": "sneakers/Nike Air Max Gold/air_max_1_gold_main_image.png",
+            "price": 199.0,
+            "discount": null,
+            "sell_price": 199.0,
+            "style": 2,
+            "color": [
+                8
+            ]
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 8,
+        "fields": {
+            "name": "NIke Air Max 1 Red",
+            "slug": "nike-air-max-1-red-456",
+            "description": "Introducing our top-of-the-line modern sneakers that blend style, comfort, and performance seamlessly. Crafted with premium materials and cutting-edge design, these sneakers are a must-have for any fashion-forward individual. Whether you're hitting the gym, running errands, or simply hanging out with friends, these sneakers provide the perfect blend of support and style.\r\n\r\nThe sleek design and attention to detail make these sneakers stand out from the crowd. The breathable mesh upper ensures maximum airflow, keeping your feet cool and dry even during intense workouts. The cushioned midsole provides exceptional comfort and support, making every step feel like walking on clouds.\r\n\r\nWith their versatile design, these sneakers can easily transition from the gym to the street, adding a touch of urban flair to any outfit. Available in a range of stylish color options, you can choose the perfect pair to complement your personal style.\r\n\r\nDon't compromise on style or comfort - elevate your sneaker game with these modern kicks. Grab a pair today and step out in style!",
+            "image": "sneakers/NIke Air Max 1 Red/main_image.png",
+            "price": 199.0,
+            "discount": 5,
+            "sell_price": 189.05,
+            "style": 3,
+            "color": [
+                4,
+                5,
+                6
+            ]
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 9,
+        "fields": {
+            "name": "Nike Gamma Force",
+            "slug": "nike-gamma-force-267",
+            "description": "Introducing our top-of-the-line modern sneakers that blend style, comfort, and performance seamlessly. Crafted with premium materials and cutting-edge design, these sneakers are a must-have for any fashion-forward individual. Whether you're hitting the gym, running errands, or simply hanging out with friends, these sneakers provide the perfect blend of support and style.\r\n\r\nThe sleek design and attention to detail make these sneakers stand out from the crowd. The breathable mesh upper ensures maximum airflow, keeping your feet cool and dry even during intense workouts. The cushioned midsole provides exceptional comfort and support, making every step feel like walking on clouds.\r\n\r\nWith their versatile design, these sneakers can easily transition from the gym to the street, adding a touch of urban flair to any outfit. Available in a range of stylish color options, you can choose the perfect pair to complement your personal style.\r\n\r\nDon't compromise on style or comfort - elevate your sneaker game with these modern kicks. Grab a pair today and step out in style!",
+            "image": "sneakers/Nike Gamma Force/main_image.png",
+            "price": 249.0,
+            "discount": null,
+            "sell_price": 249.0,
+            "style": 1,
+            "color": [
+                2,
+                6,
+                7
+            ]
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 10,
+        "fields": {
+            "name": "Jumpman MVP",
+            "slug": "jumpman-mvp",
+            "description": "Introducing our top-of-the-line modern sneakers that blend style, comfort, and performance seamlessly. Crafted with premium materials and cutting-edge design, these sneakers are a must-have for any fashion-forward individual. Whether you're hitting the gym, running errands, or simply hanging out with friends, these sneakers provide the perfect blend of support and style.\r\n\r\nThe sleek design and attention to detail make these sneakers stand out from the crowd. The breathable mesh upper ensures maximum airflow, keeping your feet cool and dry even during intense workouts. The cushioned midsole provides exceptional comfort and support, making every step feel like walking on clouds.\r\n\r\nWith their versatile design, these sneakers can easily transition from the gym to the street, adding a touch of urban flair to any outfit. Available in a range of stylish color options, you can choose the perfect pair to complement your personal style.\r\n\r\nDon't compromise on style or comfort - elevate your sneaker game with these modern kicks. Grab a pair today and step out in style!",
+            "image": "sneakers/Jumpman MVP/main.png",
+            "price": 239.0,
+            "discount": 5,
+            "sell_price": 227.05,
+            "style": 3,
+            "color": [
+                2,
+                3,
+                4,
+                5,
+                8
+            ]
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 12,
+        "fields": {
+            "name": "Nike Air Force 1",
+            "slug": "nike-air-force-1-2",
+            "description": "Introducing our top-of-the-line modern sneakers that blend style, comfort, and performance seamlessly. Crafted with premium materials and cutting-edge design, these sneakers are a must-have for any fashion-forward individual. Whether you're hitting the gym, running errands, or simply hanging out with friends, these sneakers provide the perfect blend of support and style.\r\n\r\nThe sleek design and attention to detail make these sneakers stand out from the crowd. The breathable mesh upper ensures maximum airflow, keeping your feet cool and dry even during intense workouts. The cushioned midsole provides exceptional comfort and support, making every step feel like walking on clouds.\r\n\r\nWith their versatile design, these sneakers can easily transition from the gym to the street, adding a touch of urban flair to any outfit. Available in a range of stylish color options, you can choose the perfect pair to complement your personal style.\r\n\r\nDon't compromise on style or comfort - elevate your sneaker game with these modern kicks. Grab a pair today and step out in style!",
+            "image": "sneakers/Nike Air Force 1/main.png",
+            "price": 199.0,
+            "discount": null,
+            "sell_price": 199.0,
+            "style": 4,
+            "color": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 13,
+        "fields": {
+            "name": "Nike Air Jordan 1 High OG",
+            "slug": "nike-air-jordan-1-high-og-456",
+            "description": "Introducing our top-of-the-line modern sneakers that blend style, comfort, and performance seamlessly. Crafted with premium materials and cutting-edge design, these sneakers are a must-have for any fashion-forward individual. Whether you're hitting the gym, running errands, or simply hanging out with friends, these sneakers provide the perfect blend of support and style.\r\n\r\nThe sleek design and attention to detail make these sneakers stand out from the crowd. The breathable mesh upper ensures maximum airflow, keeping your feet cool and dry even during intense workouts. The cushioned midsole provides exceptional comfort and support, making every step feel like walking on clouds.\r\n\r\nWith their versatile design, these sneakers can easily transition from the gym to the street, adding a touch of urban flair to any outfit. Available in a range of stylish color options, you can choose the perfect pair to complement your personal style.\r\n\r\nDon't compromise on style or comfort - elevate your sneaker game with these modern kicks. Grab a pair today and step out in style!",
+            "image": "sneakers/Nike Air Jordan 1 High OG/main.jpg",
+            "price": 219.0,
+            "discount": 5,
+            "sell_price": 208.05,
+            "style": 4,
+            "color": [
+                4,
+                5,
+                6
+            ]
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 14,
+        "fields": {
+            "name": "Nike Air Max Dn",
+            "slug": "nike-air-max-dn-12345",
+            "description": "Introducing our top-of-the-line modern sneakers that blend style, comfort, and performance seamlessly. Crafted with premium materials and cutting-edge design, these sneakers are a must-have for any fashion-forward individual. Whether you're hitting the gym, running errands, or simply hanging out with friends, these sneakers provide the perfect blend of support and style.\r\n\r\nThe sleek design and attention to detail make these sneakers stand out from the crowd. The breathable mesh upper ensures maximum airflow, keeping your feet cool and dry even during intense workouts. The cushioned midsole provides exceptional comfort and support, making every step feel like walking on clouds.\r\n\r\nWith their versatile design, these sneakers can easily transition from the gym to the street, adding a touch of urban flair to any outfit. Available in a range of stylish color options, you can choose the perfect pair to complement your personal style.\r\n\r\nDon't compromise on style or comfort - elevate your sneaker game with these modern kicks. Grab a pair today and step out in style!",
+            "image": "sneakers/Nike Air Max Dn/main.png",
+            "price": 199.0,
+            "discount": 10,
+            "sell_price": 179.1,
+            "style": 5,
+            "color": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 15,
+        "fields": {
+            "name": "Nike Dunk Low",
+            "slug": "nike-dunk-low-678",
+            "description": "Introducing our top-of-the-line modern sneakers that blend style, comfort, and performance seamlessly. Crafted with premium materials and cutting-edge design, these sneakers are a must-have for any fashion-forward individual. Whether you're hitting the gym, running errands, or simply hanging out with friends, these sneakers provide the perfect blend of support and style.\r\n\r\nThe sleek design and attention to detail make these sneakers stand out from the crowd. The breathable mesh upper ensures maximum airflow, keeping your feet cool and dry even during intense workouts. The cushioned midsole provides exceptional comfort and support, making every step feel like walking on clouds.\r\n\r\nWith their versatile design, these sneakers can easily transition from the gym to the street, adding a touch of urban flair to any outfit. Available in a range of stylish color options, you can choose the perfect pair to complement your personal style.\r\n\r\nDon't compromise on style or comfort - elevate your sneaker game with these modern kicks. Grab a pair today and step out in style!",
+            "image": "sneakers/Nike Dunk Low/dunk_low.png",
+            "price": 239.0,
+            "discount": 5,
+            "sell_price": 227.05,
+            "style": 7,
+            "color": [
+                6,
+                7,
+                8
+            ]
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 16,
+        "fields": {
+            "name": "Nike SB Day One",
+            "slug": "nike-sb-day-one-3456",
+            "description": "Introducing our top-of-the-line modern sneakers that blend style, comfort, and performance seamlessly. Crafted with premium materials and cutting-edge design, these sneakers are a must-have for any fashion-forward individual. Whether you're hitting the gym, running errands, or simply hanging out with friends, these sneakers provide the perfect blend of support and style.\r\n\r\nThe sleek design and attention to detail make these sneakers stand out from the crowd. The breathable mesh upper ensures maximum airflow, keeping your feet cool and dry even during intense workouts. The cushioned midsole provides exceptional comfort and support, making every step feel like walking on clouds.\r\n\r\nWith their versatile design, these sneakers can easily transition from the gym to the street, adding a touch of urban flair to any outfit. Available in a range of stylish color options, you can choose the perfect pair to complement your personal style.\r\n\r\nDon't compromise on style or comfort - elevate your sneaker game with these modern kicks. Grab a pair today and step out in style!",
+            "image": "sneakers/Nike SB Day One/main.jpg",
+            "price": 139.0,
+            "discount": 10,
+            "sell_price": 125.1,
+            "style": 6,
+            "color": [
+                3,
+                4,
+                5,
+                6
+            ]
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 17,
+        "fields": {
+            "name": "Nike Court Borough Low",
+            "slug": "nike-court-borough-low-recraft-45",
+            "description": "Introducing our top-of-the-line modern sneakers that blend style, comfort, and performance seamlessly. Crafted with premium materials and cutting-edge design, these sneakers are a must-have for any fashion-forward individual. Whether you're hitting the gym, running errands, or simply hanging out with friends, these sneakers provide the perfect blend of support and style.\r\n\r\nThe sleek design and attention to detail make these sneakers stand out from the crowd. The breathable mesh upper ensures maximum airflow, keeping your feet cool and dry even during intense workouts. The cushioned midsole provides exceptional comfort and support, making every step feel like walking on clouds.\r\n\r\nWith their versatile design, these sneakers can easily transition from the gym to the street, adding a touch of urban flair to any outfit. Available in a range of stylish color options, you can choose the perfect pair to complement your personal style.\r\n\r\nDon't compromise on style or comfort - elevate your sneaker game with these modern kicks. Grab a pair today and step out in style!",
+            "image": "sneakers/Nike Court Borough Low Recraft/main.png",
+            "price": 119.0,
+            "discount": 15,
+            "sell_price": 101.15,
+            "style": 6,
+            "color": [
+                4,
+                5
+            ]
+        }
+    },
+    {
+        "model": "goods.productshots",
+        "pk": 1,
+        "fields": {
+            "product": 3,
+            "image1": "sneakers/Nike Air 97/air_97_1.png",
+            "image2": "sneakers/Nike Air 97/air_97_2.png",
+            "image3": "sneakers/Nike Air 97/air_97_3.png",
+            "image4": "sneakers/Nike Air 97/air_97_4.png"
+        }
+    },
+    {
+        "model": "goods.productshots",
+        "pk": 2,
+        "fields": {
+            "product": 4,
+            "image1": "sneakers/Nike Air Drift/air_drift_1.png",
+            "image2": "sneakers/Nike Air Drift/air_drift_2.png",
+            "image3": "sneakers/Nike Air Drift/air_drift_3.png",
+            "image4": "sneakers/Nike Air Drift/air_drift_4.png"
+        }
+    },
+    {
+        "model": "goods.productshots",
+        "pk": 3,
+        "fields": {
+            "product": 5,
+            "image1": "sneakers/Nike Air Jordan 1 Low/1.jpg",
+            "image2": "sneakers/Nike Air Jordan 1 Low/2.png",
+            "image3": "sneakers/Nike Air Jordan 1 Low/3.png",
+            "image4": "sneakers/Nike Air Jordan 1 Low/4.png"
+        }
+    },
+    {
+        "model": "goods.productshots",
+        "pk": 4,
+        "fields": {
+            "product": 6,
+            "image1": "sneakers/Nike Air Max 1 Blue/air_max_1_1.png",
+            "image2": "sneakers/Nike Air Max 1 Blue/air_max_1_2.png",
+            "image3": "sneakers/Nike Air Max 1 Blue/air_max_1_3.png",
+            "image4": "sneakers/Nike Air Max 1 Blue/air_max_1_4.png"
+        }
+    },
+    {
+        "model": "goods.productshots",
+        "pk": 5,
+        "fields": {
+            "product": 7,
+            "image1": "sneakers/Nike Air Max Gold/1.png",
+            "image2": "sneakers/Nike Air Max Gold/2.png",
+            "image3": "sneakers/Nike Air Max Gold/3.png",
+            "image4": "sneakers/Nike Air Max Gold/4.png"
+        }
+    },
+    {
+        "model": "goods.productshots",
+        "pk": 6,
+        "fields": {
+            "product": 8,
+            "image1": "sneakers/NIke Air Max 1 Red/1.png",
+            "image2": "sneakers/NIke Air Max 1 Red/2.png",
+            "image3": "sneakers/NIke Air Max 1 Red/3.png",
+            "image4": "sneakers/NIke Air Max 1 Red/4.png"
+        }
+    },
+    {
+        "model": "goods.productshots",
+        "pk": 7,
+        "fields": {
+            "product": 9,
+            "image1": "sneakers/Nike Gamma Force/1.png",
+            "image2": "sneakers/Nike Gamma Force/2.png",
+            "image3": "sneakers/Nike Gamma Force/3.png",
+            "image4": "sneakers/Nike Gamma Force/4.png"
+        }
+    },
+    {
+        "model": "goods.productshots",
+        "pk": 9,
+        "fields": {
+            "product": 10,
+            "image1": "sneakers/Jumpman MVP/1_ao7PXLR.png",
+            "image2": "sneakers/Jumpman MVP/2_23IovnQ.png",
+            "image3": "sneakers/Jumpman MVP/3_w2YTBRb.png",
+            "image4": "sneakers/Jumpman MVP/4_4gF6r7M.png"
+        }
+    },
+    {
+        "model": "goods.productshots",
+        "pk": 10,
+        "fields": {
+            "product": 12,
+            "image1": "sneakers/Nike Air Force 1/1.png",
+            "image2": "sneakers/Nike Air Force 1/2.png",
+            "image3": "sneakers/Nike Air Force 1/3.png",
+            "image4": "sneakers/Nike Air Force 1/4.png"
+        }
+    },
+    {
+        "model": "goods.productshots",
+        "pk": 11,
+        "fields": {
+            "product": 13,
+            "image1": "sneakers/Nike Air Jordan 1 High OG/1.png",
+            "image2": "sneakers/Nike Air Jordan 1 High OG/2.jpg",
+            "image3": "sneakers/Nike Air Jordan 1 High OG/3.jpg",
+            "image4": "sneakers/Nike Air Jordan 1 High OG/4.jpg"
+        }
+    },
+    {
+        "model": "goods.productshots",
+        "pk": 12,
+        "fields": {
+            "product": 14,
+            "image1": "sneakers/Nike Air Max Dn/1.png",
+            "image2": "sneakers/Nike Air Max Dn/2.png",
+            "image3": "sneakers/Nike Air Max Dn/3.png",
+            "image4": "sneakers/Nike Air Max Dn/4.png"
+        }
+    },
+    {
+        "model": "goods.productshots",
+        "pk": 13,
+        "fields": {
+            "product": 15,
+            "image1": "sneakers/Nike Dunk Low/1.png",
+            "image2": "sneakers/Nike Dunk Low/2.png",
+            "image3": "sneakers/Nike Dunk Low/3.png",
+            "image4": "sneakers/Nike Dunk Low/4.png"
+        }
+    },
+    {
+        "model": "goods.productshots",
+        "pk": 14,
+        "fields": {
+            "product": 16,
+            "image1": "sneakers/Nike SB Day One/1.png",
+            "image2": "sneakers/Nike SB Day One/2.png",
+            "image3": "sneakers/Nike SB Day One/3.jpg",
+            "image4": "sneakers/Nike SB Day One/4.png"
+        }
+    },
+    {
+        "model": "goods.productshots",
+        "pk": 15,
+        "fields": {
+            "product": 17,
+            "image1": "sneakers/Nike Court Borough Low Recraft/1.png",
+            "image2": "sneakers/Nike Court Borough Low Recraft/2.png",
+            "image3": "sneakers/Nike Court Borough Low Recraft/3.png",
+            "image4": "sneakers/Nike Court Borough Low Recraft/4.png"
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 1,
+        "fields": {
+            "product": 3,
+            "size": "39.0",
+            "remains": 9
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 2,
+        "fields": {
+            "product": 3,
+            "size": "39.5",
+            "remains": 5
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 3,
+        "fields": {
+            "product": 3,
+            "size": "40.0",
+            "remains": 11
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 4,
+        "fields": {
+            "product": 3,
+            "size": "41.0",
+            "remains": 18
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 5,
+        "fields": {
+            "product": 3,
+            "size": "41.5",
+            "remains": 20
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 6,
+        "fields": {
+            "product": 3,
+            "size": "42.0",
+            "remains": 3
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 7,
+        "fields": {
+            "product": 3,
+            "size": "43.0",
+            "remains": 7
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 8,
+        "fields": {
+            "product": 3,
+            "size": "43.5",
+            "remains": 10
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 9,
+        "fields": {
+            "product": 3,
+            "size": "44.0",
+            "remains": 14
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 10,
+        "fields": {
+            "product": 3,
+            "size": "45.5",
+            "remains": 22
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 11,
+        "fields": {
+            "product": 12,
+            "size": "35.0",
+            "remains": 5
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 12,
+        "fields": {
+            "product": 12,
+            "size": "36.0",
+            "remains": 12
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 13,
+        "fields": {
+            "product": 12,
+            "size": "37.0",
+            "remains": 32
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 14,
+        "fields": {
+            "product": 12,
+            "size": "38.0",
+            "remains": 22
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 15,
+        "fields": {
+            "product": 12,
+            "size": "39.0",
+            "remains": 10
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 16,
+        "fields": {
+            "product": 13,
+            "size": "37.0",
+            "remains": 10
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 17,
+        "fields": {
+            "product": 13,
+            "size": "38.0",
+            "remains": 12
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 18,
+        "fields": {
+            "product": 13,
+            "size": "39.0",
+            "remains": 5
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 21,
+        "fields": {
+            "product": 14,
+            "size": "34.0",
+            "remains": 22
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 22,
+        "fields": {
+            "product": 14,
+            "size": "35.0",
+            "remains": 11
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 23,
+        "fields": {
+            "product": 14,
+            "size": "36.0",
+            "remains": 15
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 24,
+        "fields": {
+            "product": 14,
+            "size": "37.0",
+            "remains": 5
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 25,
+        "fields": {
+            "product": 15,
+            "size": "38.0",
+            "remains": 20
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 26,
+        "fields": {
+            "product": 16,
+            "size": "25.0",
+            "remains": 10
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 27,
+        "fields": {
+            "product": 16,
+            "size": "26.0",
+            "remains": 21
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 28,
+        "fields": {
+            "product": 16,
+            "size": "27.0",
+            "remains": 12
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 29,
+        "fields": {
+            "product": 17,
+            "size": "19.0",
+            "remains": 10
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 30,
+        "fields": {
+            "product": 17,
+            "size": "20.0",
+            "remains": 15
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 31,
+        "fields": {
+            "product": 17,
+            "size": "21.0",
+            "remains": 31
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 32,
+        "fields": {
+            "product": 17,
+            "size": "22.0",
+            "remains": 22
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$ch7wUGF6VzSJYWK1HIfQ3y$E6Wz3ZxbDRCHwbz6hVjURfJ9sJTXgGk0oNHDNBRpkDs=",
+            "last_login": "2024-04-24T14:44:27.356Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "Ryan",
+            "last_name": "Gosling",
+            "email": "gosling@mail.gosl",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2024-04-18T10:35:18.194Z",
+            "image": "users_images/cat_ZoIXEq6.jpg",
+            "phone_number": null,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "carts.usercart",
+        "pk": 2,
+        "fields": {
+            "user": 1,
+            "product_item": 1,
+            "quantity": 1,
+            "session_key": null,
+            "created_at": "2024-04-19T04:44:09.549Z"
+        }
+    },
+    {
+        "model": "orders.order",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "created_at": "2024-04-18T16:29:09.138Z",
+            "phone_number": "89128836484",
+            "need_delivery": true,
+            "delivery_address": "",
+            "payment_on_delivery": false,
+            "is_paid": false,
+            "status": "In processing"
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 1,
+        "fields": {
+            "order": 1,
+            "product_item": 1,
+            "name": "Nike Air 97",
+            "price": "189.00",
+            "quantity": 1,
+            "created_at": "2024-04-18T16:29:09.144Z"
+        }
+    }
+]
