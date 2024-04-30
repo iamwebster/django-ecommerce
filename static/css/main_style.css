@@ -42,7 +42,6 @@ span {
 	font: inherit;
 }
 
-
 .container {
 	max-width: 1240px;
 	margin: 0 auto;
@@ -63,7 +62,6 @@ span {
 /* HEADER */
 
 .header {
-	/* position: fixed; */
 	position: fixed;
   top: 0;
   left: 0;
@@ -71,12 +69,12 @@ span {
   background-color: #fff;
   z-index: 9999;
 }
+
 .header__logo {
 	display: block;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	width: 20%;
+	gap: 5px;
 }
 
 .header__logo__icon {
@@ -96,6 +94,12 @@ span {
 	font-size: 28px;
 	line-height: 42px;
 	font-weight: 700;
+}
+
+@media (max-width: 1240px) {
+	.header__logo__title {
+		font-size: 26px;
+	}
 }
 
 .header__nav {

@@ -10,7 +10,7 @@
 .catalog__wrap {
     padding-bottom: 50px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -19,25 +19,26 @@
     border-radius: 10px;
 }
 
-.catalog__card__img {
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-    object-fit: cover;
-    height: 80%;
+.catalog__card__link {
+    display: block;
 }
 
-.catalog__card__info {
-    padding: 10px;
-    height: 20%;
+.catalog__card__img {
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    display: block;
 }
 
 .catalog__card__name {
+    display: block;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
+    padding: 10px;
+    min-height: 30px;
 }
 
 .catalog__card__price__wrap {
-    padding: 5px 0;
+    padding: 0 10px 10px 10px;
     display: flex;
     gap: 10px;
 }
