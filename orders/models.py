@@ -27,6 +27,7 @@ class Order(models.Model):
         null=True
     )
     created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     phone_number = models.CharField(max_length=20)
     need_delivery = models.BooleanField(default=False)
     delivery_address = models.TextField(null=True, blank=True)

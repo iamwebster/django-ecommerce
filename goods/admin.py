@@ -40,7 +40,7 @@ class ProductAdmin(admin.ModelAdmin):
         'image',
         'color',
         ('price', 'discount', 'sell_price'),
-        ('style'),
+        'style',
     ]
     inlines = [ProductItemInline, ProductShotsInline]
     save_on_top = True
@@ -49,13 +49,13 @@ class ProductAdmin(admin.ModelAdmin):
         '''The method for getting the names of colors and displaying them in the list_display'''
         return slugify([i.name for i in obj.color.all()])
         
+    @admin.display(description='Product Image')
     def get_image(self, obj):
-        '''The method for getting product main image and displaying it in the list_display'''
+        '''The method for getting product main image and displaying it'''
         if obj.image:
             return format_html('<img src="{}" width="75px" />'.format(obj.image.url))
         return 'No image'
     
-    get_image.short_description = 'Image'
     
 
 @admin.register(ProductItem)
