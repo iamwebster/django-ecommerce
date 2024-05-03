@@ -1,15 +1,57 @@
 .about__wrap {
-	border: 2px solid black;
-    padding: 30px;
-    border-radius: 5px;
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.about__banner {
+	width: 45%;
+	object-fit: cover;
+	height: 100%;
+}
+
+.about__content {
+	width: 45%;
+}
+
+.about__title {
+	padding-bottom: 10px;
+}
+
+.about__subtitle {
+	padding-bottom: 2px;
+	font-weight: 600;
 }
 
 .about__text {
+	font-size: 14px;
+	margin-bottom: 5px;
+	line-height: 1.5;
+}
+
+.about__links__wrap {
 	margin-top: 10px;
-	font-size: 16px;
+	display: flex;
+	gap: 10px;
 }
 
-.about__text:first-child {
-	margin-top: 0;
+.about__link {
+	padding: 5px 30px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+
 }
 
+.about__link_telegram {
+	background-color: #0088cc;
+}
+
+.about__link_github {
+	background-color: #000;
+}
+
+.about__link:hover {
+	opacity: 0.8;
+}
