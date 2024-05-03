@@ -7,8 +7,19 @@ from .models import Order, OrderItem
 @admin.register(OrderItem)
 class OrderItemAdmin(admin.ModelAdmin):
     '''Settings for the OrderItem model'''
-    list_display = ['get_image', '__str__', 'quantity']
+    list_display = ['get_image', '__str__', 'product_item', 'quantity']
     list_display_links = ['get_image', '__str__']
+    search_fields = ['name',]
+    list_filter = ['order', 'quantity']
+    readonly_fields = ['get_image',]
+    fields = [
+        'get_image',
+        'order',
+        'product_item',
+        'name',
+        'price',
+        'quantity',
+    ]
 
     @admin.display(description='Product Image')
     def get_image(self, obj):
@@ -18,9 +29,10 @@ class OrderItemAdmin(admin.ModelAdmin):
         return 'No image'
 
 
-class OrderItemInline(admin.TabularInline):
+class OrderItemInline(admin.StackedInline):
     '''Inline table for the OrderAdmin'''
     model = OrderItem
+    show_change_link = True
     exclude = ['price',]
 
 
@@ -30,6 +42,7 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = ['__str__', 'updated_at', 'get_status_display']
     search_fields = ['id', 'user', 'status']
     list_filter = ['user', 'status', 'need_delivery', 'payment_on_delivery', 'is_paid']
+    inlines = [OrderItemInline]
 
     def get_readonly_fields(self, request, obj=None):
         readonly_fields = [
@@ -48,4 +61,3 @@ class OrderAdmin(admin.ModelAdmin):
         else:
             return self.readonly_fields
     
-    inlines = [OrderItemInline]

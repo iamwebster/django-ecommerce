@@ -50,6 +50,11 @@
                         </li>
                         {% endfor %}
                         <li><a href="{% url 'about' %}" class="header__link">About Us</a></li>
+                        {% if user.is_staff %}
+                        <li>
+                            <a href="/admin" class="header__link">To admin panel</a>
+                        </li>
+                        {% endif %}
                     </ul>
                 </nav>
                 <div class="header__user__links">
@@ -67,7 +72,7 @@
     {% block content %}
     {% endblock %}
     <script src="{% static 'js/jquery/jquery-3.7.1.js' %}"></script>
-    <script src="{% static 'js/jquery-ajax.js' %}"></script>
+    <script src="{% static 'js/base_script.js' %}"></script>
     {% block script %}
     {% endblock %}
 </body>
