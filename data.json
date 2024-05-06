@@ -1079,6 +1079,149 @@
         }
     },
     {
+        "model": "admin.logentry",
+        "pk": 84,
+        "fields": {
+            "action_time": "2024-05-01T17:41:52.105Z",
+            "user": 1,
+            "content_type": 3,
+            "object_id": "1",
+            "object_repr": "Managers",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 85,
+        "fields": {
+            "action_time": "2024-05-01T17:44:43.114Z",
+            "user": 1,
+            "content_type": 12,
+            "object_id": "2",
+            "object_repr": "dsa",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 86,
+        "fields": {
+            "action_time": "2024-05-01T17:46:04.658Z",
+            "user": 1,
+            "content_type": 12,
+            "object_id": "2",
+            "object_repr": "dsa",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 87,
+        "fields": {
+            "action_time": "2024-05-01T18:02:00.073Z",
+            "user": 1,
+            "content_type": 3,
+            "object_id": "1",
+            "object_repr": "Managers",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 88,
+        "fields": {
+            "action_time": "2024-05-01T18:18:08.625Z",
+            "user": 1,
+            "content_type": 3,
+            "object_id": "1",
+            "object_repr": "Managers",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 89,
+        "fields": {
+            "action_time": "2024-05-01T18:28:41.768Z",
+            "user": 1,
+            "content_type": 3,
+            "object_id": "1",
+            "object_repr": "Managers",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 90,
+        "fields": {
+            "action_time": "2024-05-03T11:38:48.972Z",
+            "user": 2,
+            "content_type": 14,
+            "object_id": "1",
+            "object_repr": "Order № 1 | Customer Ryan Gosling",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 91,
+        "fields": {
+            "action_time": "2024-05-03T13:21:02.026Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "4",
+            "object_repr": "Nike Air Drift",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Drift | 38.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Drift | 39.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Drift | 40.0\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 92,
+        "fields": {
+            "action_time": "2024-05-03T13:21:14.351Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "Nike Air Jordan 1 Low",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"product item\", \"object\": \"Nike Air Jordan 1 Low | 43.0\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 93,
+        "fields": {
+            "action_time": "2024-05-03T13:21:35.600Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "9",
+            "object_repr": "Nike Gamma Force",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"product item\", \"object\": \"Nike Gamma Force | 43.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Nike Gamma Force | 44.0\"}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 94,
+        "fields": {
+            "action_time": "2024-05-03T13:24:04.758Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "Jumpman MVP",
+            "action_flag": 2,
+            "change_message": "[{\"added\": {\"name\": \"product item\", \"object\": \"Jumpman MVP | 40.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Jumpman MVP | 41.0\"}}, {\"added\": {\"name\": \"product item\", \"object\": \"Jumpman MVP | 42.0\"}}]"
+        }
+    },
+    {
         "model": "auth.permission",
         "pk": 1,
         "fields": {
@@ -1619,6 +1762,18 @@
         }
     },
     {
+        "model": "auth.group",
+        "pk": 1,
+        "fields": {
+            "name": "Managers",
+            "permissions": [
+                54,
+                56,
+                60
+            ]
+        }
+    },
+    {
         "model": "contenttypes.contenttype",
         "pk": 1,
         "fields": {
@@ -1752,6 +1907,14 @@
         "fields": {
             "session_data": "e30:1s036g:KTH6mN4wHYmuUsa--wLrFeWysQsfrlydWIPM5KaX6EQ",
             "expire_date": "2024-05-09T17:42:02.708Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "gy6zo1jshmv2yrd17o0vevs9osutyrct",
+        "fields": {
+            "session_data": "e30:1s2v8y:hUafYZW_REFHU1rdhZFYJhbSYWCwrUxQDjXhTplXPMg",
+            "expire_date": "2024-05-17T15:48:16.380Z"
         }
     },
     {
@@ -2430,7 +2593,7 @@
         "fields": {
             "product": 12,
             "size": "35.0",
-            "remains": 5
+            "remains": 3
         }
     },
     {
@@ -2475,7 +2638,7 @@
         "fields": {
             "product": 13,
             "size": "37.0",
-            "remains": 10
+            "remains": 8
         }
     },
     {
@@ -2605,11 +2768,92 @@
         }
     },
     {
+        "model": "goods.productitem",
+        "pk": 33,
+        "fields": {
+            "product": 4,
+            "size": "38.0",
+            "remains": 5
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 34,
+        "fields": {
+            "product": 4,
+            "size": "39.0",
+            "remains": 10
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 35,
+        "fields": {
+            "product": 4,
+            "size": "40.0",
+            "remains": 15
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 36,
+        "fields": {
+            "product": 5,
+            "size": "43.0",
+            "remains": 12
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 37,
+        "fields": {
+            "product": 9,
+            "size": "43.0",
+            "remains": 5
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 38,
+        "fields": {
+            "product": 9,
+            "size": "44.0",
+            "remains": 5
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 39,
+        "fields": {
+            "product": 10,
+            "size": "40.0",
+            "remains": 5
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 40,
+        "fields": {
+            "product": 10,
+            "size": "41.0",
+            "remains": 15
+        }
+    },
+    {
+        "model": "goods.productitem",
+        "pk": 41,
+        "fields": {
+            "product": 10,
+            "size": "42.0",
+            "remains": 12
+        }
+    },
+    {
         "model": "users.user",
         "pk": 1,
         "fields": {
             "password": "pbkdf2_sha256$600000$ch7wUGF6VzSJYWK1HIfQ3y$E6Wz3ZxbDRCHwbz6hVjURfJ9sJTXgGk0oNHDNBRpkDs=",
-            "last_login": "2024-04-24T14:44:27.356Z",
+            "last_login": "2024-05-03T13:20:26.585Z",
             "is_superuser": true,
             "username": "admin",
             "first_name": "Ryan",
@@ -2625,14 +2869,25 @@
         }
     },
     {
-        "model": "carts.usercart",
+        "model": "users.user",
         "pk": 2,
         "fields": {
-            "user": 1,
-            "product_item": 1,
-            "quantity": 1,
-            "session_key": null,
-            "created_at": "2024-04-19T04:44:09.549Z"
+            "password": "pbkdf2_sha256$600000$3MroEG7WVUWEK1nhRxyqdh$KFvVrxsHGctyZnQ5OEzxPHpXS9mR6yqIbawSonL23/8=",
+            "last_login": "2024-05-03T12:34:52.397Z",
+            "is_superuser": false,
+            "username": "dsa",
+            "first_name": "Denis",
+            "last_name": "Vernick",
+            "email": "denis@gmail.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2024-05-01T17:44:17Z",
+            "image": "",
+            "phone_number": null,
+            "groups": [
+                1
+            ],
+            "user_permissions": []
         }
     },
     {
@@ -2641,8 +2896,24 @@
         "fields": {
             "user": 1,
             "created_at": "2024-04-18T16:29:09.138Z",
+            "updated_at": "2024-05-03T11:38:48.968Z",
             "phone_number": "89128836484",
             "need_delivery": true,
+            "delivery_address": "",
+            "payment_on_delivery": false,
+            "is_paid": false,
+            "status": "sent"
+        }
+    },
+    {
+        "model": "orders.order",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "created_at": "2024-05-01T18:13:36.502Z",
+            "updated_at": "2024-05-01T18:13:36.502Z",
+            "phone_number": "431421",
+            "need_delivery": false,
             "delivery_address": "",
             "payment_on_delivery": false,
             "is_paid": false,
@@ -2659,6 +2930,30 @@
             "price": "189.00",
             "quantity": 1,
             "created_at": "2024-04-18T16:29:09.144Z"
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 2,
+        "fields": {
+            "order": 2,
+            "product_item": 16,
+            "name": "Nike Air Jordan 1 High OG",
+            "price": "208.05",
+            "quantity": 2,
+            "created_at": "2024-05-01T18:13:36.509Z"
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 3,
+        "fields": {
+            "order": 2,
+            "product_item": 11,
+            "name": "Nike Air Force 1",
+            "price": "199.00",
+            "quantity": 2,
+            "created_at": "2024-05-01T18:13:36.513Z"
         }
     }
 ]

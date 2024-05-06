@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-from .local_settings import DEBUG
+
+
+DEBUG = True
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -119,7 +121,7 @@ LOGIN_URL = '/user/login/'
 USE_THOUSAND_SEPARATOR = True
 
 
-try:
+if DEBUG:
     from .local_settings import *
-except ImportError:
+else:
     from .prod_settings import *
