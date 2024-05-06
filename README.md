@@ -1,15 +1,13 @@
-<br />
-<div align="center">
-  <a href="https://github.com/iamwebster">
-    <img src="github_images/public.svg" alt="Logo" width="100" height="100">
-  </a>
-  <h1 align="center">Sneaker World</h1>
-  <p align="center">
-    <i>Step into comfort</i>
-    <br />
-    <a href="http://45.87.246.104/"><strong>Go to site</strong></a>
-  </p>
-</div>
+<p align="center">
+<img src="github_images/public.svg" style="width: 120px;">
+</p>
+<h1 style="font-size: 48px;" align="center">Sneaker World </h1>
+
+<p align="center">
+  <i>Step into comfort</i>
+  <br />
+  <a href="http://45.87.246.104/"><strong>Go to site</strong></a>
+</p>
 
 
 <details>
@@ -45,14 +43,17 @@ Since its inception, "Sneaker World" has grown rapidly, attracting customers fro
 
 ## Built With
 
-* ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
+
+* ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+* ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 * ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 * ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-* ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+* ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
+* ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 * ![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)
 * ![Gunicorn](https://img.shields.io/badge/gunicorn-%298729.svg?style=for-the-badge&logo=gunicorn&logoColor=white)
 * ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
-* ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
