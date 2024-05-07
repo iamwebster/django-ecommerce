@@ -1,6 +1,8 @@
-<a href="https://sneaker-world.ru/" style="display: block;" align="center">
-<img src="github_images/public.svg" style="width: 120px;">
-</a>
+<p align="center">
+  <a href="https://sneaker-world.ru/">
+    <img src="github_images/public.svg" style="width: 120px;">
+  </a>
+</p>
 <h1 style="font-size: 48px;" align="center">Sneaker World </h1>
 
 <p align="center">
