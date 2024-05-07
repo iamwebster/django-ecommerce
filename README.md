@@ -1,12 +1,12 @@
-<p align="center">
+<a href="https://sneaker-world.ru/" style="display: block;" align="center">
 <img src="github_images/public.svg" style="width: 120px;">
-</p>
+</a>
 <h1 style="font-size: 48px;" align="center">Sneaker World </h1>
 
 <p align="center">
   <i>Step into comfort</i>
   <br />
-  <a href="http://45.87.246.104/"><strong>Go to site</strong></a>
+  <a href="https://sneaker-world.ru"><strong>Go to site</strong></a>
 </p>
 
 
@@ -25,9 +25,9 @@
 
 ## About The Project
 
-<p align="center">
+<a href="https://sneaker-world.ru" align="center">
   <img src="github_images/main_page.jpg" />
-</p>
+</a>
 
 ### Legend:
 "Sneaker World" is an online store that specializes in selling a wide range of sneakers. The store was founded by a group of passionate sneaker enthusiasts who wanted to create a platform where people could find the latest and most exclusive sneaker releases.
